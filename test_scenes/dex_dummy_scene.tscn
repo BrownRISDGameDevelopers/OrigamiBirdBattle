@@ -14,9 +14,9 @@ position = Vector2(587, 338)
 scale = Vector2(2.07826, 2.07826)
 texture = ExtResource("1_w2hc8")
 script = ExtResource("2_alicg")
-loop_time = 200.0
 
 [node name="IndicatorSprite" type="Sprite2D" parent="FoldingMinigame/PaperSprite"]
+scale = Vector2(1, 0.480334)
 texture = ExtResource("2_8aysr")
 
 [node name="GoalSprite" type="Sprite2D" parent="FoldingMinigame/PaperSprite"]

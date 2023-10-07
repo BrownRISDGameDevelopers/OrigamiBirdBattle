@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bj8ykl2xsj26m"]
+
+[ext_resource type="Texture2D" uid="uid://24i1r61rrf8d" path="res://assets/Art Folder/test paper.png" id="1_w2hc8"]
+[ext_resource type="Texture2D" uid="uid://db5u5h6klxp2a" path="res://assets/Art Folder/test indicator.png" id="2_8aysr"]
+[ext_resource type="Script" path="res://test_scenes/PaperSprite.gd" id="2_alicg"]
+[ext_resource type="Texture2D" uid="uid://oukb5vqnb3k5" path="res://assets/Art Folder/test goal.png" id="4_jc24w"]
+
+[node name="DexDummyScene" type="Node2D"]
+
+[node name="FoldingMinigame" type="Node2D" parent="."]
+
+[node name="PaperSprite" type="Sprite2D" parent="FoldingMinigame"]
+position = Vector2(587, 338)
+scale = Vector2(2.07826, 2.07826)
+texture = ExtResource("1_w2hc8")
+script = ExtResource("2_alicg")
+loop_time = 200.0
+
+[node name="IndicatorSprite" type="Sprite2D" parent="FoldingMinigame/PaperSprite"]
+texture = ExtResource("2_8aysr")
+
+[node name="GoalSprite" type="Sprite2D" parent="FoldingMinigame/PaperSprite"]
+texture = ExtResource("4_jc24w")

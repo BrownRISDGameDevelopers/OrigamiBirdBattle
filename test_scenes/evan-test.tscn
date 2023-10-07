@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://swfapi4efb7f"]
+
+[ext_resource type="Texture2D" uid="uid://r181ywme6cxn" path="res://icon.svg" id="1_5ohfv"]
+[ext_resource type="Script" path="res://scripts/block_aggregate.gd" id="2_c1vpp"]
+[ext_resource type="PackedScene" uid="uid://7a3oyt2rsyhf" path="res://game_objects/blocks/block_base.tscn" id="3_3mllg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbg7h"]
+size = Vector2(128, 128)
+
+[node name="evan-test" type="Node2D"]
+
+[node name="Platform" type="RigidBody2D" parent="."]
+position = Vector2(482, 526)
+scale = Vector2(7.36, 1)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_hbg7h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+texture = ExtResource("1_5ohfv")
+
+[node name="BlockAggregate" type="Node2D" parent="." node_paths=PackedStringArray("timer")]
+position = Vector2(363, 64)
+script = ExtResource("2_c1vpp")
+timer = NodePath("Timer")
+
+[node name="BlockBase" parent="BlockAggregate" instance=ExtResource("3_3mllg")]
+position = Vector2(-43, 0)
+
+[node name="BlockBase4" parent="BlockAggregate" instance=ExtResource("3_3mllg")]
+position = Vector2(-43, -128)
+
+[node name="BlockBase2" parent="BlockAggregate" instance=ExtResource("3_3mllg")]
+position = Vector2(85, 0)
+
+[node name="BlockBase3" parent="BlockAggregate" instance=ExtResource("3_3mllg")]
+position = Vector2(213, 0)
+
+[node name="Timer" type="Timer" parent="BlockAggregate"]
+wait_time = 3.0
+autostart = true

@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://7a3oyt2rsyhf"]
+
+[ext_resource type="Script" path="res://scripts/base_block.gd" id="1_8jlb4"]
+[ext_resource type="Script" path="res://scripts/health.gd" id="2_7msrj"]
+[ext_resource type="Texture2D" uid="uid://r181ywme6cxn" path="res://icon.svg" id="3_3i4tn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8sg70"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgfaq"]
+size = Vector2(128, 128)
+
+[node name="BlockBase" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_8sg70")
+script = ExtResource("1_8jlb4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hgfaq")
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("2_7msrj")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_3i4tn")

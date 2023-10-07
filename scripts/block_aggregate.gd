@@ -15,10 +15,14 @@ func _ready():
 			(child as BlockBase).deactivate()
 	
 	if timer != null:
-		timer.timeout.connect(activate_all)
+		timer.timeout.connect(activate)
 
 
 
-func activate_all():
+func activate():
 	for child in blocks:
 		child.activate()
+
+func deactivate():
+	for child in blocks:
+		child.deactivate()

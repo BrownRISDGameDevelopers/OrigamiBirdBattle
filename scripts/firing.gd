@@ -10,13 +10,15 @@ var rotation_dir = -1
 var force_magnitude = 2000
 var start_firing = false
 
-func rotateNeedle(delta):
+func update_launch_angle(delta):
 	if (launch_angle <= rotation_min):
 		rotation_dir = 1
 	if (launch_angle >= rotation_max):
 		rotation_dir = -1
 	launch_angle += delta * rotation_dir * rotation_speed * PI / 180
 	launch_angle = clamp(launch_angle, rotation_min, rotation_max)
+
+func rotate_needle():
 	needle.set_rotation(launch_angle)
 	
 func launch():
@@ -33,7 +35,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if start_firing:
-		rotateNeedle(delta)
+		update_launch_angle(delta)
+		rotate_needle()
 
 func _on_button_pressed():
 	if start_firing:
@@ -42,3 +45,4 @@ func _on_button_pressed():
 
 func _on_button_2_pressed():
 	start_firing = true
+	launch_angle = 0

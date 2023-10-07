@@ -22,6 +22,7 @@ shape = SubResource("RectangleShape2D_hbg7h")
 texture = ExtResource("1_5ohfv")
 
 [node name="BlockAggregate" type="Node2D" parent="." node_paths=PackedStringArray("timer")]
+visible = false
 position = Vector2(363, 64)
 script = ExtResource("2_c1vpp")
 timer = NodePath("Timer")

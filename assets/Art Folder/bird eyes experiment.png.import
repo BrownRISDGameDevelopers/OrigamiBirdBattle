@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kvdgjmd1s2hi"
-path="res://.godot/imported/bird eyes experiment.png-8c394b89b6cbe44f91e6332e90460498.ctex"
+path="res://.godot/imported/bird eyes experiment.png-aeab26a651d8680355bd2ba2192a0e74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Folder/bird eyes experiment.png"
-dest_files=["res://.godot/imported/bird eyes experiment.png-8c394b89b6cbe44f91e6332e90460498.ctex"]
+source_file="res://assets/Art Folder/bird eyes experiment.png"
+dest_files=["res://.godot/imported/bird eyes experiment.png-aeab26a651d8680355bd2ba2192a0e74.ctex"]
 
 [params]
 

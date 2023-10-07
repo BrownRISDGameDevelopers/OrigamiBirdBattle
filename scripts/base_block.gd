@@ -14,3 +14,11 @@ func _ready():
 	mass = sturdiness
 	health_node.set_max_health_and_health(health)
 	sprite.set_texture(texture)
+
+func deactivate():
+	set_process(false)
+	freeze = true
+
+func activate():
+	set_process(true)
+	freeze = false

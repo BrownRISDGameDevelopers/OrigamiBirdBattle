@@ -1,25 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bj8ykl2xsj26m"]
+[gd_scene load_steps=2 format=3 uid="uid://bj8ykl2xsj26m"]
 
-[ext_resource type="Script" path="res://test_scenes/FoldingMinigame.gd" id="1_i4r46"]
-[ext_resource type="Texture2D" uid="uid://24i1r61rrf8d" path="res://assets/Art Folder/test paper.png" id="1_w2hc8"]
-[ext_resource type="Texture2D" uid="uid://db5u5h6klxp2a" path="res://assets/Art Folder/test indicator.png" id="2_8aysr"]
-[ext_resource type="Script" path="res://test_scenes/PaperSprite.gd" id="2_alicg"]
-[ext_resource type="Texture2D" uid="uid://oukb5vqnb3k5" path="res://assets/Art Folder/test goal.png" id="4_jc24w"]
+[ext_resource type="PackedScene" uid="uid://dxxldugxfexup" path="res://game_objects/folding_minigame.tscn" id="1_ffilw"]
 
 [node name="DexDummyScene" type="Node2D"]
 
-[node name="FoldingMinigame" type="Node2D" parent="."]
-script = ExtResource("1_i4r46")
-
-[node name="PaperSprite" type="Sprite2D" parent="FoldingMinigame"]
-position = Vector2(587, 338)
-scale = Vector2(2.07826, 2.07826)
-texture = ExtResource("1_w2hc8")
-script = ExtResource("2_alicg")
-
-[node name="IndicatorSprite" type="Sprite2D" parent="FoldingMinigame/PaperSprite"]
-scale = Vector2(1, 0.480334)
-texture = ExtResource("2_8aysr")
-
-[node name="GoalSprite" type="Sprite2D" parent="FoldingMinigame/PaperSprite"]
-texture = ExtResource("4_jc24w")
+[node name="FoldingMinigame" parent="." instance=ExtResource("1_ffilw")]

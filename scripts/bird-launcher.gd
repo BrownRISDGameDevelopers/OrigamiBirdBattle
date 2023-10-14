@@ -68,3 +68,9 @@ func _on_launch_reset_timer_timeout():
 	_arm.set_rotation(0)
 	is_ready = true
 	_fake_bird.show()
+
+func set_angle():
+	_firing.set_angle()
+
+func launch_bird():
+	_firing.launch_bird()

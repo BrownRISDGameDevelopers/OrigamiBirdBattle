@@ -19,7 +19,7 @@ var is_launching = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_fake_bird.set_gravity_scale(0)
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

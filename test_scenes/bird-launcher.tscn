@@ -18,16 +18,16 @@ texture = ExtResource("2_t03q7")
 centered = false
 offset = Vector2(-1000, -50)
 
+[node name="fake_bird" parent="arm" instance=ExtResource("1_d7d6s")]
+z_index = -1
+position = Vector2(-983.333, -103.333)
+scale = Vector2(3.33333, 3.33333)
+
 [node name="nest" type="Sprite2D" parent="arm"]
 z_index = 1
 position = Vector2(-930, -5)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_wkpan")
-
-[node name="fake_bird" parent="arm/nest" instance=ExtResource("1_d7d6s")]
-z_index = -1
-position = Vector2(-100, -96.6666)
-scale = Vector2(6.66667, 6.66667)
 
 [node name="firing" parent="." instance=ExtResource("5_w6xiv")]
 position = Vector2(203, 351)

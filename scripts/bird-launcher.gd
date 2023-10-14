@@ -1,6 +1,6 @@
 extends Node2D
 @onready var _arm = $arm
-@onready var _fake_bird = $arm/nest/fake_bird
+@onready var _fake_bird = $arm/fake_bird
 @onready var _firing = $firing
 @onready var _launch_reset_timer = $launch_reset_timer
 
@@ -53,14 +53,15 @@ func _on_firing_start_launch(angle):
 
 func finish_launch():
 	_fake_bird.hide()
-	var bird_position = _fake_bird.get_position();
 	var bird = bird_scene.instantiate()
+	var bird_position = _fake_bird.global_position
 	bird.position = Vector2(bird_position.x, bird_position.y)
 	var launch_angle = _firing.get_launch_angle()
 	var force_direction = Vector2(cos(launch_angle), sin(launch_angle))
 	var force_vector = force_direction * force_magnitude
 	bird.apply_central_impulse(force_vector)
-	add_child(bird)
+	print(get_tree().get_root())
+	get_tree().get_root().add_child(bird)
 	_launch_reset_timer.start()
 
 func _on_launch_reset_timer_timeout():

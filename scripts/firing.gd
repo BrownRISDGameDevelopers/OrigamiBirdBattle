@@ -1,16 +1,17 @@
 extends Node2D
 
 @export var rotation_speed = 90
-@export var bird_scene: PackedScene
 @onready var needle = $needle
 var launch_angle = 0
 var rotation_min = -PI / 2
 var rotation_max = 0
 var rotation_dir = -1
-var force_magnitude = 2000
 var start_firing = false
 
-signal launched(angle)
+signal start_launch(angle)
+
+func get_launch_angle():
+	return launch_angle
 
 func update_launch_angle(delta):
 	if (launch_angle <= rotation_min):
@@ -22,15 +23,6 @@ func update_launch_angle(delta):
 
 func rotate_needle():
 	needle.set_rotation(launch_angle)
-	
-func launch():
-	var bird = bird_scene.instantiate()
-	var force_direction = Vector2(cos(launch_angle), sin(launch_angle))
-	var force_vector = force_direction * force_magnitude
-	bird.apply_central_impulse(force_vector)
-	add_child(bird)
-	launched.emit(launch_angle)
-	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -44,7 +36,7 @@ func _process(delta):
 
 func _on_button_pressed():
 	if start_firing:
-		launch()
+		start_launch.emit(launch_angle)
 		start_firing = false
 
 func _on_button_2_pressed():

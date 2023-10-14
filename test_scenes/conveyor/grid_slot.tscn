@@ -5,19 +5,19 @@
 
 [node name="slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
-custom_minimum_size = Vector2(40, 40)
+custom_minimum_size = Vector2(80, 80)
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_jrtkj")
 
 [node name="bg" type="Sprite2D" parent="."]
 position = Vector2(1.90735e-06, 1.90735e-06)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_77x57")
 centered = false
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-custom_minimum_size = Vector2(40, 40)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -26,6 +26,6 @@ offset_bottom = 40.0
 layout_mode = 2
 
 [node name="item" type="Sprite2D" parent="CenterContainer/Panel"]
-position = Vector2(-20, -10)
-scale = Vector2(0.1, 0.1)
+position = Vector2(-40, -20)
+scale = Vector2(0.2, 0.2)
 centered = false

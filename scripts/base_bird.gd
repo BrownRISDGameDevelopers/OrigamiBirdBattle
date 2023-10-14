@@ -8,7 +8,6 @@ signal on_col()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	mass = rb_mass
 	pass # Replace with function body.
 
@@ -16,10 +15,7 @@ func _ready():
 func tap():
 	on_tap.emit()
 
-# func col():
-	
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _on_body_entered(body):
+	on_col.emit()
+	#pass # Replace with function body.

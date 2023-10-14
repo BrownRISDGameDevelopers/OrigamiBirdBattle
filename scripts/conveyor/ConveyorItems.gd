@@ -11,12 +11,13 @@ var blocks = DirAccess.open(FILEPATH).get_files()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 		for i in range(item_num):
-			queue.push_back(blocks[randi() % len(blocks)])
+			var blockdata = load(FILEPATH + blocks[randi() % len(blocks)])
+			add_item(blocks[randi() % len(blocks)], blockdata.block_thumb, false)
 		
 
 func _pop_block():
-	var blockres = queue.pop_front()
-	var blockdata = load(FILEPATH + blockres)
+	print("popping")
+	var blockdata = load(FILEPATH + blocks[randi() % len(blocks)])
 	drop_block.emit(blockdata)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

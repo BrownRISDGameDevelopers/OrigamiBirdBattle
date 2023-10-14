@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsenqsyvi5a6o"]
+
+[ext_resource type="PackedScene" uid="uid://02pf6twkqab8" path="res://test_scenes/temp_bird.tscn" id="1_d7d6s"]
+[ext_resource type="Script" path="res://scripts/bird-launcher.gd" id="1_p457b"]
+[ext_resource type="Texture2D" uid="uid://ddv7x7jrvqihh" path="res://assets/Art Folder/Untitled_Artwork 30.png" id="2_t03q7"]
+[ext_resource type="Texture2D" uid="uid://bm3mvjj4k2uai" path="res://assets/Art Folder/Untitled_Artwork 33.png" id="3_wkpan"]
+[ext_resource type="PackedScene" uid="uid://jaeggyic56rb" path="res://test_scenes/firing.tscn" id="5_w6xiv"]
+
+[node name="bird-launcher" type="Node2D"]
+position = Vector2(577, 187)
+script = ExtResource("1_p457b")
+
+[node name="arm" type="Sprite2D" parent="."]
+position = Vector2(12, 66)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_t03q7")
+centered = false
+offset = Vector2(-1000, -50)
+
+[node name="nest" type="Sprite2D" parent="arm"]
+z_index = 1
+position = Vector2(-930, -5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_wkpan")
+
+[node name="fake_bird" parent="arm/nest" instance=ExtResource("1_d7d6s")]
+z_index = -1
+position = Vector2(-100, -96.6666)
+scale = Vector2(6.66667, 6.66667)
+
+[node name="firing" parent="." instance=ExtResource("5_w6xiv")]
+
+[connection signal="launched" from="firing" to="." method="_on_firing_launched"]

@@ -10,6 +10,8 @@ var rotation_dir = -1
 var force_magnitude = 2000
 var start_firing = false
 
+signal launched(angle)
+
 func update_launch_angle(delta):
 	if (launch_angle <= rotation_min):
 		rotation_dir = 1
@@ -27,6 +29,8 @@ func launch():
 	var force_vector = force_direction * force_magnitude
 	bird.apply_central_impulse(force_vector)
 	add_child(bird)
+	launched.emit(launch_angle)
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

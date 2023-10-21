@@ -1,11 +1,11 @@
 extends Node2D
 
 @export var rotation_speed = 90
+@export var rotation_min: float = -PI / 2
+@export var rotation_max: float = 0
+@export var rotation_dir: int = -1
 @onready var needle = $needle
 var launch_angle = 0
-var rotation_min = -PI / 2
-var rotation_max = 0
-var rotation_dir = -1
 var start_firing = false
 
 signal start_launch(angle)

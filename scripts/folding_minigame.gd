@@ -1,3 +1,4 @@
+class_name FoldingMinigame
 extends Sprite2D
 
 var go_flag
@@ -19,7 +20,7 @@ var loop_dir
 var goal
 var goal_y
 var goal_range
-@export var kindness = float(20)
+@export var kindness = float(80)
 var goal_limit_up
 var goal_limit_down
 
@@ -73,8 +74,9 @@ func _process(delta):
 				loop_dir = loop_dir * -1
 	pass
 	
-func _start_rounds(num):
+func start_rounds(num):
 	repeat_count = num
+	print("minigame s")
 	_start_game()
 	
 func _start_game():

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bj8ykl2xsj26m"]
 
-[ext_resource type="PackedScene" uid="uid://dxxldugxfexup" path="res://game_objects/folding_minigame.tscn" id="1_ffilw"]
+[ext_resource type="PackedScene" uid="uid://dxxldugxfexup" path="res://test_scenes/folding_minigame.tscn" id="1_ffilw"]
 
 [node name="DexDummyScene" type="Node2D"]
 

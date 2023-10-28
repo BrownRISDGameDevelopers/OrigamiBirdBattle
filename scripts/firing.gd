@@ -34,12 +34,6 @@ func _process(delta):
 		update_launch_angle(delta)
 		rotate_needle()
 
-func _on_button_pressed():
-	launch_bird()
-	
-func _on_button_2_pressed():
-	set_angle()
-
 func launch_bird():
 	if start_firing:
 		start_launch.emit(launch_angle)
@@ -48,3 +42,10 @@ func launch_bird():
 func set_angle():
 	start_firing = true
 	launch_angle = 0
+	
+func _on_button_pressed():
+	launch_bird()
+	
+func _on_button_2_pressed():
+	set_angle()
+	

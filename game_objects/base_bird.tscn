@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cls4p6r4uyhl6"]
 
 [ext_resource type="Script" path="res://scripts/base_bird.gd" id="1_7165y"]
-[ext_resource type="PackedScene" uid="uid://c5hfmi635v4qw" path="res://test_scenes/temp_explosion.tscn" id="2_gw3la"]
+[ext_resource type="PackedScene" path="res://test_scenes/temp_explosion.tscn" id="2_gw3la"]
 [ext_resource type="Texture2D" uid="uid://0qstetax0x6o" path="res://assets/Art Folder/spritesheets for animation/swansheet_300x364.png" id="2_proxx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qgnae"]

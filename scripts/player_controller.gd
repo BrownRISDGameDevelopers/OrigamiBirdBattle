@@ -3,7 +3,7 @@ extends Node
 @export var pc_launch: String # press button once to set angle, then press again to launch
 @export var pc_fold_left: String
 @export var pc_fold_right: String
-@onready var player_manager = get_child(0)
+@export var player_manager: PlayerManager
 
 var launch_flag = 0 # 0 = set angle, 1 = launch
 

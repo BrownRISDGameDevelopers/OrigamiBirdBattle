@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg0hjgw5nr3ec"]
+
+[ext_resource type="PackedScene" uid="uid://cls4p6r4uyhl6" path="res://game_objects/base_bird.tscn" id="1_h5if7"]
+[ext_resource type="Texture2D" uid="uid://dn0tvqfe307qh" path="res://assets/Art Folder/spritesheets for animation/swanALT2sheet_300x364.png" id="2_e63nn"]
+
+[node name="RigidBody2D" instance=ExtResource("1_h5if7")]
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_e63nn")

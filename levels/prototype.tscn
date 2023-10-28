@@ -162,7 +162,7 @@ scale = Vector2(10, 1)
 freeze = true
 
 [node name="SpawnPos1" type="Node2D" parent="World"]
-position = Vector2(145.656, 468)
+position = Vector2(-61.4881, 488)
 
 [node name="SpawnPos2" type="Node2D" parent="World"]
 position = Vector2(145.656, 468)

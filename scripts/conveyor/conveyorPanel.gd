@@ -9,5 +9,9 @@ extends Panel
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func update(bdata: Droppable_Block):
+	if (bdata == null):
+		item_sprite.texture = null
+		return 
+	
 	item_sprite.texture = bdata.block_thumb
 	blockdata = bdata

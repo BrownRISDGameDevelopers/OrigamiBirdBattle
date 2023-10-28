@@ -19,6 +19,7 @@ enum FoldingState {
 
 enum LaunchingState {
 	READY,
+	SETANGLE,
 	LAUNCH
 }
 
@@ -35,6 +36,7 @@ var cur_battle_state: BattleState = BattleState.SELECT
 @onready var folding_game: FoldingMinigame = $FoldingMinigame
 # todo: add typing for firing
 @onready var firing = $Firing
+@onready var building_game = $Building
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,6 +49,7 @@ func _ready():
 
 func set_battle_mode():
 	# hide build stuff
+	building_game.hide()
 	# show battle stuff
 	battle_goto_fold()
 
@@ -54,7 +57,7 @@ func set_build_mode():
 	# hide battle stuff
 	firing.hide()
 	folding_game.hide()
-	
+	building_game.show()
 	# show build stuff
 	pass
 

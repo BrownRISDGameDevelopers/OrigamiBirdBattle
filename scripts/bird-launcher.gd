@@ -10,7 +10,8 @@ extends Node2D
 @export var launch_anim_duration_max = 0.2 # animation duration scales off of angle catapault moves
 @export var time_per_shake = 0.3
 @export var shake_delta_deg = 3
-@export var right_side: bool = false
+#@export var right_side: bool = false
+@export var direction_multi: int = 1
 
 var arm_angle = 0
 var shake_delta_acc = 0
@@ -51,21 +52,19 @@ func _on_firing_start_launch(angle):
 	is_launching = true
 	arm_angle = angle * 180/PI + 90
 	launch_delta_acc = 0
-	if not right_side:
-		launch_anim_duration = launch_anim_duration_max * (arm_angle / 90)
-	else:
-		launch_anim_duration = launch_anim_duration_max * (-arm_angle / 90)
+	launch_anim_duration = launch_anim_duration_max * (direction_multi * arm_angle / 90)
+
+
 func finish_launch():
 	_fake_bird.hide()
 	var bird = bird_scene.instantiate()
 	var bird_position = _fake_bird.global_position
 	bird.position = Vector2(bird_position.x, bird_position.y)
-	if right_side:
-		var bird_sprite = bird.get_node("AnimatedSprite2D")
-		bird_sprite.scale.x *= -1
+	var bird_sprite = bird.get_node("AnimatedSprite2D")
+	bird_sprite.scale.x *= sign(direction_multi)
 	var launch_angle = _firing.get_launch_angle()
-	var force_direction = Vector2(cos(launch_angle), sin(launch_angle))
-	var force_vector = force_direction * force_magnitude
+	var force_direction = Vector2(cos(launch_angle), direction_multi * sin(launch_angle))
+	var force_vector = direction_multi * force_direction * force_magnitude
 	bird.apply_central_impulse(force_vector)
 	get_tree().get_root().add_child(bird)
 	_launch_reset_timer.start()

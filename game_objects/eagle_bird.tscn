@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfvjq4vu22yca"]
+[gd_scene load_steps=3 format=3 uid="uid://bsfd1hrmei2mw"]
 
 [ext_resource type="PackedScene" uid="uid://cls4p6r4uyhl6" path="res://game_objects/base_bird.tscn" id="1_hl1xo"]
 [ext_resource type="Texture2D" uid="uid://rhhutspo76h1" path="res://assets/Art Folder/spritesheets for animation/eaglesheet_300x699.png" id="2_nxbq1"]

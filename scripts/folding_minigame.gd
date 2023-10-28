@@ -31,10 +31,22 @@ var rng
 @export var miss_punish = 100
 var miss_flag
 var miss_time
+
+@onready var arrows: Node2D = $arrows
+var arrows_array 
+var arrows_position: Transform2D
+
+var steps
+
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
 	go_flag = false
+	
+	arrows_array = [$arrows/downSprite, $arrows/upSprite, $arrows/leftSprite, $arrows/rightSprite]
+	arrows_position = arrows.get_global_transform()
+	
+	steps = $steps._get_steps()
 	
 	rng = RandomNumberGenerator.new()
 	
@@ -44,16 +56,20 @@ func _ready():
 	
 	goal = $GoalSprite
 	
-	next_press_range = [0,1]
+	next_press_range = [0,1,2,3]
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if go_flag:
-		if Input.is_action_just_released("dex_left"):
+		if Input.is_action_just_released("fold_down"):
 			_timing_press(0)
-		elif Input.is_action_just_released("dex_right"):
+		elif Input.is_action_just_released("fold_up"):
 			_timing_press(1)
+		elif Input.is_action_just_released("fold_left"):
+			_timing_press(2)
+		elif Input.is_action_just_released("fold_right"):
+			_timing_press(3)
 			
 		if miss_flag:
 			print("miss")
@@ -83,6 +99,11 @@ func _start_game():
 	loop_time = rng.randf_range(loop_time_down,loop_time_up)
 	print(loop_time)
 	
+	for i in steps:
+		i.visible = false
+	
+	steps[repeat_count].visible = true
+	
 	current_time = float(0)
 	loop_percent = float(0)
 	loop_dir = 1 # 1 is down, -1 is up
@@ -95,16 +116,19 @@ func _start_game():
 	set_rotation_degrees(rng.randf_range(0,360))
 	
 	next_press = next_press_range[int(rng.randf_range(0, next_press_range.size()))]
-	print(next_press)
+	arrows_array[next_press].visible = true
 	
 	miss_flag = false
 	miss_time = 0
 	
 	go_flag = true
 	
+	arrows.set_global_transform(arrows_position)
+	
 func _timing_press(press):
 	if indicator_pos.y > goal_limit_down and indicator_pos.y < goal_limit_up and press == next_press:
-		print(press)
+		for i in arrows_array:
+			i.visible = false
 		if repeat_count > 0:
 			repeat_count = repeat_count - 1
 			_start_game()

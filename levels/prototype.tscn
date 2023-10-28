@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://crnv1jnvepyxn"]
+[gd_scene load_steps=7 format=3 uid="uid://crnv1jnvepyxn"]
 
 [ext_resource type="Texture2D" uid="uid://b3y35pe78dlwa" path="res://assets/Art Folder/backgrounds/background op4.jpg" id="1_0g5qd"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_cvwoe"]
@@ -6,12 +6,6 @@
 [ext_resource type="Script" path="res://scripts/player_manager.gd" id="3_8bg8t"]
 [ext_resource type="PackedScene" uid="uid://dsenqsyvi5a6o" path="res://test_scenes/bird-launcher.tscn" id="4_kol10"]
 [ext_resource type="PackedScene" uid="uid://7a3oyt2rsyhf" path="res://game_objects/blocks/block_base.tscn" id="5_awdwr"]
-[ext_resource type="FontFile" uid="uid://c3yfwahfend6a" path="res://assets/Art Folder/handwritten_origami-Regular.ttf" id="6_nd72w"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_mrwj7"]
-font = ExtResource("6_nd72w")
-font_size = 69
-shadow_size = 10
 
 [node name="Root" type="Node2D"]
 
@@ -22,16 +16,21 @@ texture = ExtResource("1_0g5qd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(712, 408)
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.25, 0.25)
 
 [node name="Game" type="Node2D" parent="."]
+position = Vector2(-1128, 0)
 script = ExtResource("1_cvwoe")
 
+[node name="Timer" type="Timer" parent="Game"]
+wait_time = 20.0
+
 [node name="Player1" type="Node2D" parent="Game"]
+position = Vector2(459, 272)
 script = ExtResource("3_8bg8t")
 
 [node name="FoldingMinigame" parent="Game/Player1" instance=ExtResource("2_04l87")]
-position = Vector2(272, 256)
+position = Vector2(216, 256)
 scale = Vector2(0.95913, 0.99913)
 
 [node name="Firing" parent="Game/Player1" instance=ExtResource("4_kol10")]
@@ -40,46 +39,96 @@ position = Vector2(344, 632)
 [node name="firing" parent="Game/Player1/Firing" index="1"]
 position = Vector2(-128, 112)
 
-[node name="Label" type="Label" parent="Game"]
-modulate = Color(0, 0, 0, 1)
-offset_left = 224.0
-offset_top = -96.0
-offset_right = 1301.0
-offset_bottom = 7.0
-text = "origami bird battle"
-label_settings = SubResource("LabelSettings_mrwj7")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Player2" type="Node2D" parent="Game"]
+position = Vector2(2464, 272)
+script = ExtResource("3_8bg8t")
 
-[node name="Structure" type="Node2D" parent="."]
+[node name="FoldingMinigame" parent="Game/Player2" instance=ExtResource("2_04l87")]
+position = Vector2(216, 256)
+scale = Vector2(0.95913, 0.99913)
 
-[node name="BlockBase" parent="Structure" instance=ExtResource("5_awdwr")]
-position = Vector2(1072, 792)
+[node name="Firing" parent="Game/Player2" instance=ExtResource("4_kol10")]
+position = Vector2(168, 624)
+scale = Vector2(-1, 1)
+right_side = true
+
+[node name="firing" parent="Game/Player2/Firing" index="1"]
+position = Vector2(-128, 112)
+
+[node name="World" type="Node2D" parent="."]
+position = Vector2(0, 880)
+scale = Vector2(15.873, 1)
+
+[node name="Structure" type="Node2D" parent="World"]
+position = Vector2(144.648, 136)
+scale = Vector2(0.0630001, 1)
+
+[node name="BlockBase" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(-0.00012207, 0)
 scale = Vector2(5.68, 0.360002)
 freeze = true
 
-[node name="BlockBase2" parent="Structure" instance=ExtResource("5_awdwr")]
-position = Vector2(1080, 704)
+[node name="BlockBase2" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(8, -88)
 
-[node name="BlockBase3" parent="Structure" instance=ExtResource("5_awdwr")]
-position = Vector2(1208, 704)
+[node name="BlockBase3" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(136, -88)
 
-[node name="BlockBase4" parent="Structure" instance=ExtResource("5_awdwr")]
-position = Vector2(1144, 576)
+[node name="BlockBase4" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(72, -216)
 
-[node name="BlockBase5" parent="Structure" instance=ExtResource("5_awdwr")]
-position = Vector2(1144, 448)
+[node name="BlockBase5" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(72, -344)
 
-[node name="BlockBase6" parent="Structure" instance=ExtResource("5_awdwr")]
-position = Vector2(1144, 320)
+[node name="BlockBase6" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(72, -472)
 
-[node name="BlockBase7" parent="Structure" instance=ExtResource("5_awdwr")]
-position = Vector2(952, 704)
+[node name="BlockBase7" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(-120, -88)
 
-[node name="BlockBase8" parent="Structure" instance=ExtResource("5_awdwr")]
-position = Vector2(1016, 576)
+[node name="BlockBase8" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(-56, -216)
 
-[node name="BlockBase9" parent="Structure" instance=ExtResource("5_awdwr")]
-position = Vector2(1336, 704)
+[node name="BlockBase9" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(264, -88)
+
+[node name="Structure2" type="Node2D" parent="World"]
+position = Vector2(-69.5521, 112)
+scale = Vector2(0.0630001, 1)
+
+[node name="BlockBase" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(5.68, 0.360002)
+freeze = true
+
+[node name="BlockBase2" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(8, -88)
+
+[node name="BlockBase3" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(136, -88)
+
+[node name="BlockBase4" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(72, -216)
+
+[node name="BlockBase5" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(72, -344)
+
+[node name="BlockBase6" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(72, -472)
+
+[node name="BlockBase7" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(-120, -88)
+
+[node name="BlockBase8" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(-56, -216)
+
+[node name="BlockBase9" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(264, -88)
+
+[node name="BlockBase10" parent="World" instance=ExtResource("5_awdwr")]
+position = Vector2(0, 200)
+scale = Vector2(10, 1)
+freeze = true
 
 [editable path="Game/Player1/Firing"]
+[editable path="Game/Player2/Firing"]

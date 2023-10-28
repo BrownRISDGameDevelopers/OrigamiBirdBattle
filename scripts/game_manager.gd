@@ -15,8 +15,6 @@ enum Stage {
 #@onready var minigame: FoldingMinigame = $FoldingMinigame
 
 var cur_stage: Stage = Stage.START
-
-
 @onready var timer: Timer = $Timer
 
 # Start

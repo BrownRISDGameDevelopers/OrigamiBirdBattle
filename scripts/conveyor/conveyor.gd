@@ -7,6 +7,7 @@ signal drop_block(blockdata)
 const FILEPATH = "res://resources/block_resources/"
 var queue = []
 var blocks = DirAccess.open(FILEPATH).get_files()
+var block_free = true
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,5 +32,7 @@ func _pop_block():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_released("queuePop"):
+	if Input.is_action_just_released("queuePop") and block_free:
 		_pop_block();
+
+		

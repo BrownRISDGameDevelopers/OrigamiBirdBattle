@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Droppable_Block" load_steps=4 format=3 uid="uid://b8v54clisjluc"]
 
+[ext_resource type="PackedScene" uid="uid://do1hqpw0saynb" path="res://game_objects/blocks/normal_block.tscn" id="1_4hnvm"]
 [ext_resource type="Texture2D" uid="uid://du813g2g2i14h" path="res://assets/Art Folder/blocks/small square 1x1.png" id="1_1656t"]
 [ext_resource type="Script" path="res://scripts/droppable.gd" id="1_heo7b"]
-[ext_resource type="PackedScene" uid="uid://7a3oyt2rsyhf" path="res://game_objects/blocks/block_base.tscn" id="1_qpbau"]
 
 [resource]
 script = ExtResource("1_heo7b")
-block_shape = ExtResource("1_qpbau")
+block_shape = ExtResource("1_4hnvm")
 block_thumb = ExtResource("1_1656t")
 name = "block2"

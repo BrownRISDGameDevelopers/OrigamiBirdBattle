@@ -21,11 +21,11 @@ position = Vector2(36, 7)
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(545, 565)
+position = Vector2(548, 628)
 shape = SubResource("RectangleShape2D_wqg1c")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-position = Vector2(545, 565)
+position = Vector2(551, 631)
 scale = Vector2(3.27, 1)
 texture = ExtResource("2_0or68")
 

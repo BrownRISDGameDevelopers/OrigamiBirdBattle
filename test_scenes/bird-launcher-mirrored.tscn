@@ -37,7 +37,7 @@ animations = [{
 }]
 
 [node name="bird-launcher" type="Node2D"]
-position = Vector2(397, 1040)
+position = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("1_xgeqg")
 bird_scene = ExtResource("2_lyg4h")
 right_side = true

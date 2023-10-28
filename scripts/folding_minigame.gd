@@ -54,7 +54,6 @@ func _process(delta):
 			_timing_press(0)
 		elif Input.is_action_just_released("dex_right"):
 			_timing_press(1)
-			
 		if miss_flag:
 			print("miss")
 			miss_time = miss_time + 1
@@ -113,3 +112,10 @@ func _timing_press(press):
 	else:
 		miss_flag = true
 	
+
+func _on_player_1_folding_input(fold_input):
+	match fold_input:
+		PlayerManager.FoldingState.LEFT:
+			_timing_press(0)
+		PlayerManager.FoldingState.RIGHT:
+			_timing_press(1)

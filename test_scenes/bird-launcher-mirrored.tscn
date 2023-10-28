@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://02pf6twkqab8" path="res://test_scenes/temp_bird.tscn" id="2_lyg4h"]
 [ext_resource type="Texture2D" uid="uid://ddv7x7jrvqihh" path="res://assets/Art Folder/Untitled_Artwork 30.png" id="3_1ho2q"]
 [ext_resource type="Texture2D" uid="uid://bm3mvjj4k2uai" path="res://assets/Art Folder/Untitled_Artwork 33.png" id="4_5y3nn"]
-[ext_resource type="Texture2D" uid="uid://yre5lupnchus" path="res://assets/Art Folder/spritesheets for animation/purpleswansheet_269x433.png" id="5_v1kko"]
+[ext_resource type="Texture2D" uid="uid://d0d1tn33rh3pp" path="res://assets/Art Folder/spritesheets for animation/purpleswansheet_269x433.png" id="5_v1kko"]
 [ext_resource type="PackedScene" uid="uid://rd5ltgrkj4fg" path="res://test_scenes/firing-mirrored.tscn" id="6_lmgry"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pnhd6"]
@@ -37,7 +37,7 @@ animations = [{
 }]
 
 [node name="bird-launcher" type="Node2D"]
-position = Vector2(397, 1040)
+position = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("1_xgeqg")
 bird_scene = ExtResource("2_lyg4h")
 right_side = true

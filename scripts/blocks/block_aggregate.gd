@@ -4,7 +4,7 @@ extends Node2D
 var blocks: Array[BlockBase]
 
 @export var timer: Timer = null
-
+signal block_freed()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -16,6 +16,7 @@ func _ready():
 	
 	if timer != null:
 		timer.timeout.connect(activate)
+	activate()
 
 
 

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgjkt20p0yqpg"]
+
+[ext_resource type="PackedScene" uid="uid://cls4p6r4uyhl6" path="res://game_objects/base_bird.tscn" id="1_u5qtj"]
+[ext_resource type="Texture2D" uid="uid://g3xhj8tgjwy7" path="res://assets/Art Folder/spritesheets for animation/purpleswanALTsheet_269x433.png" id="2_umu31"]
+
+[node name="RigidBody2D" instance=ExtResource("1_u5qtj")]
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_umu31")

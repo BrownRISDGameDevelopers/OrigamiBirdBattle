@@ -29,20 +29,21 @@ var cur_build_state: BuildState = BuildState.SELECT
 var cur_battle_state: BattleState = BattleState.SELECT
 
 @onready var folding_game: FoldingMinigame = $FoldingMinigame
-# todo: add typing for bird_launcher
 @onready var bird_launcher: BirdLauncher = $Firing
+@onready var building_game = $Building
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
 #	folding_game.connect("finish", battle_goto_launch, CONNECT_ONE_SHOT)
-	battle_goto_fold()
+#	battle_goto_fold()
 	
 	pass # Replace with function body.
 
 
 func set_battle_mode():
 	# hide build stuff
+	building_game.hide()
 	# show battle stuff
 	battle_goto_fold()
 
@@ -50,7 +51,7 @@ func set_build_mode():
 	# hide battle stuff
 	bird_launcher.hide()
 	folding_game.hide()
-	
+	building_game.show()
 	# show build stuff
 	pass
 

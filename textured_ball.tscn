@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtw7dsshk7w8i"]
+
+[ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="1_bdcec"]
+[ext_resource type="Texture2D" uid="uid://d2vcd41dp4t6d" path="res://assets/Art Folder/blocks textured version/ball 2x2 textured.png" id="2_n4x5v"]
+[ext_resource type="Script" path="res://scripts/health.gd" id="3_p27lf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ejjr"]
+radius = 249.25
+height = 503.73
+
+[node name="BlockBase" type="RigidBody2D"]
+script = ExtResource("1_bdcec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_0ejjr")
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("3_p27lf")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_n4x5v")

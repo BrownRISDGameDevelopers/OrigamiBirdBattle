@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3o6o6bfgdsl"]
+
+[ext_resource type="PackedScene" uid="uid://cls4p6r4uyhl6" path="res://game_objects/base_bird.tscn" id="1_m4yof"]
+[ext_resource type="Texture2D" uid="uid://yre5lupnchus" path="res://assets/Art Folder/spritesheets for animation/purpleswansheet_269x433.png" id="2_lq2av"]
+
+[node name="RigidBody2D" instance=ExtResource("1_m4yof")]
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_lq2av")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfvjq4vu22yca"]
+
+[ext_resource type="PackedScene" uid="uid://cls4p6r4uyhl6" path="res://game_objects/base_bird.tscn" id="1_hl1xo"]
+[ext_resource type="Texture2D" uid="uid://rhhutspo76h1" path="res://assets/Art Folder/spritesheets for animation/eaglesheet_300x699.png" id="2_nxbq1"]
+
+[node name="RigidBody2D" instance=ExtResource("1_hl1xo")]
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("2_nxbq1")

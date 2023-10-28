@@ -40,9 +40,23 @@ var cur_battle_state: BattleState = BattleState.SELECT
 func _ready():
 	
 #	folding_game.connect("finish", battle_goto_launch, CONNECT_ONE_SHOT)
-	battle_goto_fold()
+#	battle_goto_fold()
 	
 	pass # Replace with function body.
+
+
+func set_battle_mode():
+	# hide build stuff
+	# show battle stuff
+	battle_goto_fold()
+
+func set_build_mode():
+	# hide battle stuff
+	firing.hide()
+	folding_game.hide()
+	
+	# show build stuff
+	pass
 
 
 func battle_goto_launch():

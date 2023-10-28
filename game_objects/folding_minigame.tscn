@@ -28,6 +28,7 @@ texture = ExtResource("4_qcdyg")
 texture = ExtResource("5_7k83o")
 
 [node name="arrows" type="Node2D" parent="."]
+visible = false
 
 [node name="downSprite" type="Sprite2D" parent="arrows"]
 visible = false
@@ -78,7 +79,6 @@ scale = Vector2(0.487198, 0.487198)
 texture = ExtResource("12_2rgqk")
 
 [node name="step1" type="Sprite2D" parent="steps"]
-visible = false
 position = Vector2(-17.8033, -43.7866)
 rotation = -1.19955
 scale = Vector2(0.44426, 0.44426)

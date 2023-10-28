@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://crnv1jnvepyxn"]
+[gd_scene load_steps=9 format=3 uid="uid://crnv1jnvepyxn"]
 
 [ext_resource type="Texture2D" uid="uid://b3y35pe78dlwa" path="res://assets/Art Folder/backgrounds/background op4.jpg" id="1_0g5qd"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_cvwoe"]
 [ext_resource type="PackedScene" uid="uid://gbvopuoe0kt8" path="res://game_objects/folding_minigame.tscn" id="2_04l87"]
+[ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_dyisa"]
 [ext_resource type="Script" path="res://scripts/player_manager.gd" id="3_8bg8t"]
 [ext_resource type="PackedScene" uid="uid://dsenqsyvi5a6o" path="res://test_scenes/bird-launcher.tscn" id="4_kol10"]
 [ext_resource type="PackedScene" uid="uid://7a3oyt2rsyhf" path="res://game_objects/blocks/block_base.tscn" id="5_awdwr"]
+[ext_resource type="PackedScene" uid="uid://ci03oqour7ioh" path="res://test_scenes/build_scene.tscn" id="7_rvvj6"]
 
 [node name="Root" type="Node2D"]
 
@@ -18,12 +20,30 @@ texture = ExtResource("1_0g5qd")
 position = Vector2(712, 408)
 zoom = Vector2(0.25, 0.25)
 
+[node name="Controllers" type="Node2D" parent="."]
+
+[node name="Player1" type="Node2D" parent="Controllers" node_paths=PackedStringArray("player_manager")]
+script = ExtResource("2_dyisa")
+pc_launch = "player1_launch"
+pc_fold_left = "player1_fold_left"
+pc_fold_right = "player1_fold_right"
+build = "player1_build"
+player_manager = NodePath("../../Game/Player1")
+
+[node name="Player2" type="Node2D" parent="Controllers" node_paths=PackedStringArray("player_manager")]
+script = ExtResource("2_dyisa")
+pc_launch = "player2_launch"
+pc_fold_left = "player2_fold_left"
+pc_fold_right = "player2_fold_right"
+build = "player2_build"
+player_manager = NodePath("../../Game/Player2")
+
 [node name="Game" type="Node2D" parent="."]
 position = Vector2(-1128, 0)
 script = ExtResource("1_cvwoe")
 
 [node name="Timer" type="Timer" parent="Game"]
-wait_time = 20.0
+wait_time = 2.0
 
 [node name="Player1" type="Node2D" parent="Game"]
 position = Vector2(459, 272)
@@ -34,10 +54,15 @@ position = Vector2(216, 256)
 scale = Vector2(0.95913, 0.99913)
 
 [node name="Firing" parent="Game/Player1" instance=ExtResource("4_kol10")]
-position = Vector2(344, 632)
+position = Vector2(341, 544)
 
 [node name="firing" parent="Game/Player1/Firing" index="1"]
 position = Vector2(-128, 112)
+
+[node name="Building" parent="Game/Player1" node_paths=PackedStringArray("to_parent", "spawn_pos") instance=ExtResource("7_rvvj6")]
+position = Vector2(-907, 147)
+to_parent = NodePath("../../../World")
+spawn_pos = NodePath("../../../World/SpawnPos1")
 
 [node name="Player2" type="Node2D" parent="Game"]
 position = Vector2(2464, 272)
@@ -48,19 +73,24 @@ position = Vector2(216, 256)
 scale = Vector2(0.95913, 0.99913)
 
 [node name="Firing" parent="Game/Player2" instance=ExtResource("4_kol10")]
-position = Vector2(168, 624)
+position = Vector2(168, 548)
 scale = Vector2(-1, 1)
-right_side = true
+direction_multi = -1
 
 [node name="firing" parent="Game/Player2/Firing" index="1"]
 position = Vector2(-128, 112)
 
+[node name="Building" parent="Game/Player2" node_paths=PackedStringArray("to_parent", "spawn_pos") instance=ExtResource("7_rvvj6")]
+position = Vector2(384, 112)
+to_parent = NodePath("../../../World")
+spawn_pos = NodePath("../../../World/SpawnPos2")
+
 [node name="World" type="Node2D" parent="."]
-position = Vector2(0, 880)
 scale = Vector2(15.873, 1)
 
 [node name="Structure" type="Node2D" parent="World"]
-position = Vector2(144.648, 136)
+visible = false
+position = Vector2(144.648, 10000)
 scale = Vector2(0.0630001, 1)
 
 [node name="BlockBase" parent="World/Structure" instance=ExtResource("5_awdwr")]
@@ -93,7 +123,8 @@ position = Vector2(-56, -216)
 position = Vector2(264, -88)
 
 [node name="Structure2" type="Node2D" parent="World"]
-position = Vector2(-69.5521, 112)
+visible = false
+position = Vector2(-69.552, 100000)
 scale = Vector2(0.0630001, 1)
 
 [node name="BlockBase" parent="World/Structure2" instance=ExtResource("5_awdwr")]
@@ -126,9 +157,15 @@ position = Vector2(-56, -216)
 position = Vector2(264, -88)
 
 [node name="BlockBase10" parent="World" instance=ExtResource("5_awdwr")]
-position = Vector2(0, 200)
+position = Vector2(0, 1080)
 scale = Vector2(10, 1)
 freeze = true
+
+[node name="SpawnPos1" type="Node2D" parent="World"]
+position = Vector2(145.656, 468)
+
+[node name="SpawnPos2" type="Node2D" parent="World"]
+position = Vector2(145.656, 468)
 
 [editable path="Game/Player1/Firing"]
 [editable path="Game/Player2/Firing"]

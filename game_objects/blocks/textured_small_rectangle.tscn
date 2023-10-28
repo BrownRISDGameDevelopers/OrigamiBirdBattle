@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt0q8qo2vlqxi"]
+
+[ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="1_0k2s6"]
+[ext_resource type="Script" path="res://scripts/health.gd" id="2_rjnxm"]
+[ext_resource type="Texture2D" uid="uid://cyvqat7kyssfy" path="res://assets/Art Folder/blocks textured version/small rectangle 2x2 textured.png" id="3_n1est"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbac0"]
+size = Vector2(480, 240)
+
+[node name="SmallRectangle" type="RigidBody2D"]
+script = ExtResource("1_0k2s6")
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("2_rjnxm")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_n1est")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vbac0")

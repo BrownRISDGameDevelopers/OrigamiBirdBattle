@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8ixnckpvd033"]
+
+[ext_resource type="Script" path="res://test_scenes/height_measure_test_scene.gd" id="1_m5txr"]
+
+[sub_resource type="GDScript" id="GDScript_r8oya"]
+script/source = "extends Node2D
+var blocks: Array[RigidBody2D]
+var rect_shapes: Array[CollisionShape2D]
+var poly_shapes: Array[CollisionPolygon2D]
+var highest: float
+
+var count = 0
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	count = 0
+	highest = 0
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func _get_blocks(new_blocks):
+	blocks = new_blocks
+
+func _get_heights():
+	for count in blocks.size():
+		for i in blocks[count].get_children():
+			if i is CollisionShape2D:
+				_check_height_rect(i)
+			elif i is CollisionPolygon2D:
+				_check_height_poly(i)
+	
+
+func _check_height_rect(block):
+	# do later
+	pass
+	
+
+func _check_height_poly(block):
+	var new = 0.0
+	var corners = block.get_polygon()
+	print(corners)
+	var highest = corners[0].y + block.get_global_position().y
+	for i in corners:
+		new = i.y + block.get_global_position().y
+		if new < highest:
+			highest = new
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cug42"]
+size = Vector2(20, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_122hs"]
+
+[node name="height measure test scene" type="Node2D" node_paths=PackedStringArray("block_array")]
+script = ExtResource("1_m5txr")
+block_array = [NodePath("testshapes/rect1"), NodePath("testshapes/rect2"), NodePath("testshapes/poly1"), NodePath("testshapes/poly2"), NodePath("testshapes/rectpoly")]
+
+[node name="Heightchecker" type="Node2D" parent="."]
+script = SubResource("GDScript_r8oya")
+
+[node name="testshapes" type="Node2D" parent="."]
+
+[node name="rect1" type="RigidBody2D" parent="testshapes"]
+
+[node name="rect1 1" type="CollisionShape2D" parent="testshapes/rect1"]
+position = Vector2(14, 5)
+rotation = -0.279253
+shape = SubResource("RectangleShape2D_cug42")
+
+[node name="rect2" type="RigidBody2D" parent="testshapes"]
+
+[node name="rect2 1" type="CollisionShape2D" parent="testshapes/rect2"]
+position = Vector2(-16, -27)
+rotation = 0.287979
+shape = SubResource("RectangleShape2D_cug42")
+
+[node name="rect2 2" type="CollisionShape2D" parent="testshapes/rect2"]
+position = Vector2(-28, -28)
+shape = SubResource("RectangleShape2D_cug42")
+
+[node name="poly1" type="RigidBody2D" parent="testshapes"]
+
+[node name="poly 1 1" type="CollisionPolygon2D" parent="testshapes/poly1"]
+position = Vector2(45.8396, 31.3208)
+scale = Vector2(1.36111, 2.68229)
+polygon = PackedVector2Array(2.25, -3.2, 3.05663, -8.69437, -3, -8, -1.5, -4)
+
+[node name="poly2" type="RigidBody2D" parent="testshapes"]
+
+[node name="poly2 1" type="CollisionPolygon2D" parent="testshapes/poly2"]
+position = Vector2(79, -18)
+scale = Vector2(1.58173, 1.57143)
+polygon = PackedVector2Array(1, -6, 5, -7, 7, -1, 7, 5, 0, 7, -5, 5, 1, 1, -6, -2)
+
+[node name="poly2 2" type="CollisionPolygon2D" parent="testshapes/poly2"]
+position = Vector2(2, -19)
+polygon = PackedVector2Array(-4, -6, 2, -8, 7, -7, 5, 6, -4, 6, 1, -2)
+
+[node name="rectpoly" type="RigidBody2D" parent="testshapes"]
+
+[node name="rectpoly rect" type="CollisionShape2D" parent="testshapes/rectpoly"]
+position = Vector2(-58, -12)
+shape = SubResource("RectangleShape2D_122hs")
+
+[node name="rectpoly poly" type="CollisionPolygon2D" parent="testshapes/rectpoly"]
+position = Vector2(-46, -20)
+polygon = PackedVector2Array(-2, -4, -7, 1, -1, 7, 4, 4, -3, 2)

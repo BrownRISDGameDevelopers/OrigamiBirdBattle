@@ -79,3 +79,10 @@ func set_angle():
 
 func launch_bird():
 	_firing.launch_bird()
+
+func _on_player_1_launching_input(launch_input):
+	match launch_input:
+		PlayerManager.LaunchingState.READY:
+			set_angle()
+		PlayerManager.LaunchingState.LAUNCH:
+			launch_bird()

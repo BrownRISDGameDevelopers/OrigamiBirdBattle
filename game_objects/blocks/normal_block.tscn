@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://do1hqpw0saynb"]
 
 [ext_resource type="PackedScene" uid="uid://7a3oyt2rsyhf" path="res://game_objects/blocks/block_base.tscn" id="1_rkgc8"]
-[ext_resource type="Texture2D" uid="uid://c3hsfgqbvdbg8" path="res://assets/Art Folder/blocks textured version/square 1 x 1 textured.png" id="2_e1exx"]
+[ext_resource type="Texture2D" uid="uid://du813g2g2i14h" path="res://assets/Art Folder/blocks/small square 1x1.png" id="2_nhwcl"]
 
 [node name="NormalBlock" instance=ExtResource("1_rkgc8")]
 
-[node name="Sprite" parent="." index="2"]
+[node name="Sprite" parent="." index="1"]
 scale = Vector2(0.55, 0.55)
-texture = ExtResource("2_e1exx")
+texture = ExtResource("2_nhwcl")

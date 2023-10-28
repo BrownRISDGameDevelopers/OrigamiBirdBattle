@@ -1,16 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://qufiucyh4obt"]
+[gd_scene load_steps=3 format=3 uid="uid://qufiucyh4obt"]
 
 [ext_resource type="PackedScene" uid="uid://7a3oyt2rsyhf" path="res://game_objects/blocks/block_base.tscn" id="1_7sscj"]
-[ext_resource type="Texture2D" uid="uid://c7s8jek6xoyj3" path="res://assets/Art Folder/blocks textured version/large square 2x2 textured.png" id="2_3yc21"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdl06"]
-size = Vector2(256, 256)
+[ext_resource type="Texture2D" uid="uid://bs2htkux1g2kl" path="res://assets/Art Folder/blocks/large square 2x2.png" id="2_ybe15"]
 
 [node name="LargeBlock" instance=ExtResource("1_7sscj")]
 
-[node name="CollisionShape2D" parent="." index="0"]
-shape = SubResource("RectangleShape2D_fdl06")
-
-[node name="Sprite" parent="." index="2"]
+[node name="Sprite" parent="." index="1"]
 scale = Vector2(0.51, 0.51)
-texture = ExtResource("2_3yc21")
+texture = ExtResource("2_ybe15")
+
+[node name="CollisionPolygon2D" parent="." index="2"]
+position = Vector2(1.5, -1.49999)
+scale = Vector2(1.88942, 1.90918)

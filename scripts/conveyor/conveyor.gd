@@ -1,7 +1,7 @@
-extends GridContainer
+extends Control
 
 @export var item_num: int = 20
-@onready var conveyor_display: Array = $".".get_children()
+@onready var conveyor_display: Array = $NinePatchRect/conveyor_grid.get_children()
 signal drop_block(blockdata)
 
 const FILEPATH = "res://resources/block_resources/"

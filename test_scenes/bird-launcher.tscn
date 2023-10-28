@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/bird-launcher.gd" id="1_p457b"]
 [ext_resource type="Texture2D" uid="uid://ddv7x7jrvqihh" path="res://assets/Art Folder/Untitled_Artwork 30.png" id="2_t03q7"]
 [ext_resource type="Texture2D" uid="uid://bm3mvjj4k2uai" path="res://assets/Art Folder/Untitled_Artwork 33.png" id="3_wkpan"]
-[ext_resource type="Texture2D" uid="uid://yre5lupnchus" path="res://assets/Art Folder/spritesheets for animation/purpleswansheet_269x433.png" id="5_5i8pw"]
+[ext_resource type="Texture2D" uid="uid://d0d1tn33rh3pp" path="res://assets/Art Folder/spritesheets for animation/purpleswansheet_269x433.png" id="5_5i8pw"]
 [ext_resource type="PackedScene" uid="uid://jaeggyic56rb" path="res://test_scenes/firing.tscn" id="5_w6xiv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pnhd6"]

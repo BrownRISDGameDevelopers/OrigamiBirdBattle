@@ -1,5 +1,85 @@
-[gd_scene format=3 uid="uid://crnv1jnvepyxn"]
+[gd_scene load_steps=9 format=3 uid="uid://crnv1jnvepyxn"]
+
+[ext_resource type="Texture2D" uid="uid://b3y35pe78dlwa" path="res://assets/Art Folder/backgrounds/background op4.jpg" id="1_0g5qd"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_cvwoe"]
+[ext_resource type="PackedScene" uid="uid://gbvopuoe0kt8" path="res://game_objects/folding_minigame.tscn" id="2_04l87"]
+[ext_resource type="Script" path="res://scripts/player_manager.gd" id="3_8bg8t"]
+[ext_resource type="PackedScene" uid="uid://dsenqsyvi5a6o" path="res://test_scenes/bird-launcher.tscn" id="4_kol10"]
+[ext_resource type="PackedScene" uid="uid://7a3oyt2rsyhf" path="res://game_objects/blocks/block_base.tscn" id="5_awdwr"]
+[ext_resource type="FontFile" uid="uid://c3yfwahfend6a" path="res://assets/Art Folder/handwritten_origami-Regular.ttf" id="6_nd72w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mrwj7"]
+font = ExtResource("6_nd72w")
+font_size = 69
+shadow_size = 10
 
 [node name="Root" type="Node2D"]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(708, 412)
+scale = Vector2(1.2125, 1.25185)
+texture = ExtResource("1_0g5qd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(712, 408)
+zoom = Vector2(0.5, 0.5)
+
 [node name="Game" type="Node2D" parent="."]
+script = ExtResource("1_cvwoe")
+
+[node name="Player1" type="Node2D" parent="Game"]
+script = ExtResource("3_8bg8t")
+
+[node name="FoldingMinigame" parent="Game/Player1" instance=ExtResource("2_04l87")]
+position = Vector2(272, 256)
+scale = Vector2(0.95913, 0.99913)
+
+[node name="Firing" parent="Game/Player1" instance=ExtResource("4_kol10")]
+position = Vector2(344, 632)
+
+[node name="firing" parent="Game/Player1/Firing" index="1"]
+position = Vector2(-128, 112)
+
+[node name="Label" type="Label" parent="Game"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 224.0
+offset_top = -96.0
+offset_right = 1301.0
+offset_bottom = 7.0
+text = "origami bird battle"
+label_settings = SubResource("LabelSettings_mrwj7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Structure" type="Node2D" parent="."]
+
+[node name="BlockBase" parent="Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(1072, 792)
+scale = Vector2(5.68, 0.360002)
+freeze = true
+
+[node name="BlockBase2" parent="Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(1080, 704)
+
+[node name="BlockBase3" parent="Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(1208, 704)
+
+[node name="BlockBase4" parent="Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(1144, 576)
+
+[node name="BlockBase5" parent="Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(1144, 448)
+
+[node name="BlockBase6" parent="Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(1144, 320)
+
+[node name="BlockBase7" parent="Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(952, 704)
+
+[node name="BlockBase8" parent="Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(1016, 576)
+
+[node name="BlockBase9" parent="Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(1336, 704)
+
+[editable path="Game/Player1/Firing"]

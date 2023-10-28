@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://blf4hbcirqd70" path="res://assets/temporary/firingneedletemp.png" id="2_mh6mu"]
 
 [node name="firing" type="Node2D"]
-position = Vector2(309, 1251)
+position = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("1_crr5r")
 
 [node name="background" type="Sprite2D" parent="."]
@@ -34,6 +34,7 @@ offset_top = 58.0
 offset_right = -67.0
 offset_bottom = 89.0
 text = "Start Firing..."
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

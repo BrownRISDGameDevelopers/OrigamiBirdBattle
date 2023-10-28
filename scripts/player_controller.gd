@@ -18,7 +18,7 @@ func _process(delta):
 	
 	# ===== Build Inputs =====
 	if Input.is_action_just_released(build):
-		player_manager.building_game.drop_block()
+		player_manager.try_drop_block()
 	
 	# ===== Launching Inputs =====
 	if Input.is_action_just_released(pc_launch):

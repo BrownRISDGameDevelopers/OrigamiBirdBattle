@@ -15,7 +15,6 @@ offset_left = 584.0
 offset_top = 9.0
 offset_right = 584.0
 offset_bottom = 9.0
-item_num = null
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(36, 7)

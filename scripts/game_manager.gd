@@ -35,7 +35,7 @@ var player_managers: Array[PlayerManager] = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	timer.wait_time = 5
+	timer.wait_time = 2
 	timer.connect("timeout", goto_next_state)
 	timer.start()
 	
@@ -43,6 +43,7 @@ func _ready():
 	for child in get_children():
 		if child is PlayerManager:
 			player_managers.append(child)
+			child.hide_all()
 	
 #	minigame.start_rounds(3)
 	print("minigame s")
@@ -60,7 +61,7 @@ func goto_next_state():
 		
 	# Go to battle mode
 	elif cur_stage == Stage.BUILDING:
-		timer.wait_time = 20
+		timer.wait_time = 30
 		timer.start()
 		for player in player_managers:
 			player.set_battle_mode()

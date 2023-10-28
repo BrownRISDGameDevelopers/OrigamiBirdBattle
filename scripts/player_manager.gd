@@ -30,7 +30,7 @@ var cur_battle_state: BattleState = BattleState.SELECT
 
 @onready var folding_game: FoldingMinigame = $FoldingMinigame
 @onready var bird_launcher: BirdLauncher = $Firing
-@onready var building_game = $Building
+@onready var building_game: Builder = $Building
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,6 +40,10 @@ func _ready():
 	
 	pass # Replace with function body.
 
+func hide_all():
+	building_game.hide()
+	bird_launcher.hide()
+	folding_game.hide()
 
 func set_battle_mode():
 	# hide build stuff
@@ -64,7 +68,11 @@ func battle_goto_launch():
 
 func battle_goto_fold_wrap(angle):
 	battle_goto_fold()
-	
+
+
+func try_drop_block():
+	if (building_game.visible):
+		building_game.drop_block()
 #func battle_goto_select():
 #	folding_game.hide()
 
@@ -75,10 +83,13 @@ func battle_goto_fold():
 	bird_launcher.hide()
 
 func submit_fold(fold_state):
-	folding_game.process_folding_input(fold_state)
+	if (folding_game.visible):
+		folding_game._timing_press(0)
+#	folding_game.process_folding_input(fold_state)
 
 func submit_launch(launch_state):
-	bird_launcher.process_launching_input(launch_state)
+	if (bird_launcher.visible):
+		bird_launcher.process_launching_input(launch_state)
 
 #func build_goto
 

@@ -20,6 +20,8 @@ var launch_anim_duration = 0
 var is_ready = false
 var is_launching = false
 
+signal launched()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -68,6 +70,8 @@ func finish_launch():
 	bird.apply_central_impulse(force_vector)
 	get_tree().get_root().add_child(bird)
 	_launch_reset_timer.start()
+	
+	
 
 func _on_launch_reset_timer_timeout():
 	_arm.set_rotation(0)
@@ -79,6 +83,7 @@ func set_angle():
 
 func launch_bird():
 	_firing.launch_bird()
+	launched.emit()
 
 func process_launching_input(launch_input):
 	match launch_input:

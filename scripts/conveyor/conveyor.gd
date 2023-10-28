@@ -1,4 +1,5 @@
 extends Control
+class_name Conveyor
 
 @export var item_num: int = 20
 @onready var conveyor_display: Array = $NinePatchRect/conveyor_grid.get_children()
@@ -31,5 +32,6 @@ func pop_block():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	pass
 #	if Input.is_action_just_released("queuePop"):
 #		_pop_block();

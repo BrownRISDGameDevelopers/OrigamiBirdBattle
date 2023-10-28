@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvx56heuihmeh"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_orwi4"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_orwi4")
+
+[node name="MainMessage" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -228.0
+offset_top = 70.0
+offset_right = -75.0
+offset_bottom = 96.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+text = "Origami Bird Battle!"
+horizontal_alignment = 1
+
+[node name="StartGame" type="Button" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 300.0
+offset_top = -124.0
+offset_right = 346.0
+offset_bottom = -93.0
+grow_vertical = 2
+scale = Vector2(3, 3)
+text = "Start"
+
+[node name="Credits" type="Button" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -477.0
+offset_top = -124.0
+offset_right = -414.0
+offset_bottom = -93.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(3, 3)
+text = "Credits"
+
+[node name="Quit" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -76.0
+offset_top = -298.0
+offset_right = -34.0
+offset_bottom = -267.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3, 3)
+text = "Quit"

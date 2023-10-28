@@ -20,6 +20,7 @@ centered = false
 offset = Vector2(2.08165e-12, -120)
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = 139.0
 offset_top = 58.0
 offset_right = 208.0
@@ -29,6 +30,7 @@ text = "Launch!
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="."]
+visible = false
 offset_left = -174.0
 offset_top = 58.0
 offset_right = -67.0

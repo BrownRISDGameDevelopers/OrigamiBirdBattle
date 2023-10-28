@@ -20,7 +20,7 @@ func addBlock():
 	var blockdata = load(FILEPATH + blocks[randi() % len(blocks)])
 	queue.push_back(blockdata)
 	
-func _pop_block():
+func pop_block():
 	if(queue.size() == conveyor_display.size()):
 		for i in range(blocks.size()):
 			addBlock()
@@ -31,5 +31,5 @@ func _pop_block():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_released("queuePop"):
-		_pop_block();
+#	if Input.is_action_just_released("queuePop"):
+#		_pop_block();

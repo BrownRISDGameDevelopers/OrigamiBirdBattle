@@ -4,15 +4,15 @@
 [ext_resource type="Script" path="res://scripts/folding_minigame.gd" id="2_r2kfw"]
 [ext_resource type="Texture2D" uid="uid://db5u5h6klxp2a" path="res://assets/Art Folder/test indicator.png" id="4_qcdyg"]
 [ext_resource type="Texture2D" uid="uid://oukb5vqnb3k5" path="res://assets/Art Folder/test goal.png" id="5_7k83o"]
-[ext_resource type="Texture2D" uid="uid://chk7a6kx8v270" path="res://assets/Art Folder/arrow-controls/controls_down-arrow.png" id="5_7vjkd"]
-[ext_resource type="Texture2D" uid="uid://v3p75yt616rw" path="res://assets/Art Folder/arrow-controls/controls_up-arrow.png" id="6_hjdd8"]
-[ext_resource type="Texture2D" uid="uid://ctq5vyphmdna7" path="res://assets/Art Folder/arrow-controls/controls_left-arrow.png" id="7_0y2cy"]
-[ext_resource type="Texture2D" uid="uid://b5lahpknxq24p" path="res://assets/Art Folder/arrow-controls/controls_right-arrow.png" id="8_rgpko"]
+[ext_resource type="Texture2D" uid="uid://cfku1jesc4ttp" path="res://assets/Art Folder/arrow-controls/controls_down-arrow.png" id="5_7vjkd"]
+[ext_resource type="Texture2D" uid="uid://ddtsvspubayn1" path="res://assets/Art Folder/arrow-controls/controls_up-arrow.png" id="6_hjdd8"]
+[ext_resource type="Texture2D" uid="uid://bx17tqlcmvl3e" path="res://assets/Art Folder/arrow-controls/controls_left-arrow.png" id="7_0y2cy"]
+[ext_resource type="Texture2D" uid="uid://braag7cxqluvi" path="res://assets/Art Folder/arrow-controls/controls_right-arrow.png" id="8_rgpko"]
 [ext_resource type="Script" path="res://game_objects/steps.gd" id="9_asjb5"]
-[ext_resource type="Texture2D" uid="uid://jxgox6fudfck" path="res://assets/Art Folder/bird1-instructions/folding game/origami bird ui_1-step4.png" id="10_8m5cb"]
-[ext_resource type="Texture2D" uid="uid://c65tgbu78ykod" path="res://assets/Art Folder/bird1-instructions/folding game/origami bird ui_1-step3.png" id="11_7xq6t"]
-[ext_resource type="Texture2D" uid="uid://dgys6rljn3a5n" path="res://assets/Art Folder/bird1-instructions/folding game/origami bird ui_1-step2.png" id="12_2rgqk"]
-[ext_resource type="Texture2D" uid="uid://bcjvvj46gul7l" path="res://assets/Art Folder/bird1-instructions/folding game/origami bird ui_1-step1.png" id="13_v4yxp"]
+[ext_resource type="Texture2D" uid="uid://dba3s6kt26hyw" path="res://assets/Art Folder/bird1-instructions/folding game/origami bird ui_1-step4.png" id="10_8m5cb"]
+[ext_resource type="Texture2D" uid="uid://v32f081b3m4x" path="res://assets/Art Folder/bird1-instructions/folding game/origami bird ui_1-step3.png" id="11_7xq6t"]
+[ext_resource type="Texture2D" uid="uid://fqwe2sti1ill" path="res://assets/Art Folder/bird1-instructions/folding game/origami bird ui_1-step2.png" id="12_2rgqk"]
+[ext_resource type="Texture2D" uid="uid://cpd7q3wbr6tm6" path="res://assets/Art Folder/bird1-instructions/folding game/origami bird ui_1-step1.png" id="13_v4yxp"]
 
 [node name="FoldingMinigame" type="Sprite2D"]
 position = Vector2(587, 338)
@@ -78,7 +78,6 @@ scale = Vector2(0.487198, 0.487198)
 texture = ExtResource("12_2rgqk")
 
 [node name="step1" type="Sprite2D" parent="steps"]
-visible = false
 position = Vector2(-17.8033, -43.7866)
 rotation = -1.19955
 scale = Vector2(0.44426, 0.44426)

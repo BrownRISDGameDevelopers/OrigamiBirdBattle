@@ -1,4 +1,7 @@
 extends Node2D
+class_name Builder
+
+@onready var conveyor = $conveyor
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,6 +11,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
+	pass
+	
+
+func drop_block():
+	conveyor.pop_block()
 	pass
 
 

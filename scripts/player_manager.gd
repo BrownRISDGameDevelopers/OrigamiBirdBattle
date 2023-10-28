@@ -57,7 +57,8 @@ func set_build_mode():
 
 
 func battle_goto_launch():
-	folding_game.hide()
+	if (folding_game):
+		folding_game.hide()
 	bird_launcher.connect("launched", battle_goto_fold_wrap, CONNECT_ONE_SHOT)
 	bird_launcher.show()
 

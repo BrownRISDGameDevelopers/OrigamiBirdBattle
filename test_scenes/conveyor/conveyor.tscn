@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cncnwhk65yfbx"]
+[gd_scene load_steps=4 format=3 uid="uid://cncnwhk65yfbx"]
 
 [ext_resource type="Script" path="res://scripts/conveyor/conveyor.gd" id="1_3cf7x"]
 [ext_resource type="PackedScene" uid="uid://c8nnoqkygx18a" path="res://test_scenes/conveyor/grid_slot.tscn" id="2_xsut0"]
+[ext_resource type="AudioStream" uid="uid://48e2owx6u1r5" path="res://assets/sound/paper_crinkle.mp3" id="3_0krtn"]
 
 [node name="conveyor" type="Control"]
 layout_mode = 3
@@ -66,3 +67,6 @@ layout_mode = 2
 
 [node name="slot10" parent="NinePatchRect/conveyor_grid" instance=ExtResource("2_xsut0")]
 layout_mode = 2
+
+[node name="BlockDropSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0krtn")

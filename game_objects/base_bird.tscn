@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c5hfmi635v4qw" path="res://test_scenes/temp_explosion.tscn" id="2_gw3la"]
 [ext_resource type="Texture2D" uid="uid://0qstetax0x6o" path="res://assets/Art Folder/spritesheets for animation/swansheet_300x364.png" id="2_proxx"]
 [ext_resource type="Texture2D" uid="uid://cdl2e60gfkes3" path="res://assets/Art Folder/spritesheets for animation/explosionALTsheet_532x506.png" id="4_a8u8u"]
-[ext_resource type="AudioStream" uid="uid://feqjebcudhi" path="res://assets/sound/vine-boom.mp3" id="5_cgho1"]
+[ext_resource type="AudioStream" uid="uid://ctc8u7b20lxuu" path="res://assets/sound/pop_1.mp3" id="5_hf1jh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qgnae"]
 radius = 4.0
@@ -24,22 +24,6 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_5wgxn"]
-resource_name = "explode"
-length = 0.45
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4]
-}
-
 [sub_resource type="Animation" id="Animation_snrc2"]
 resource_name = "cartoon_explosion"
 length = 0.53
@@ -55,6 +39,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_5wgxn"]
+resource_name = "explode"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mhyp6"]
@@ -90,6 +90,6 @@ texture = ExtResource("4_a8u8u")
 hframes = 6
 
 [node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_cgho1")
+stream = ExtResource("5_hf1jh")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

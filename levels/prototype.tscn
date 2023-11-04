@@ -1,5 +1,199 @@
-[gd_scene format=3 uid="uid://crnv1jnvepyxn"]
+[gd_scene load_steps=13 format=3 uid="uid://crnv1jnvepyxn"]
+
+[ext_resource type="Texture2D" uid="uid://b3y35pe78dlwa" path="res://assets/Art Folder/backgrounds/background op4.jpg" id="1_0g5qd"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_cvwoe"]
+[ext_resource type="PackedScene" uid="uid://gbvopuoe0kt8" path="res://game_objects/folding_minigame.tscn" id="2_04l87"]
+[ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_dyisa"]
+[ext_resource type="Script" path="res://scripts/player_manager.gd" id="3_8bg8t"]
+[ext_resource type="PackedScene" uid="uid://dsenqsyvi5a6o" path="res://test_scenes/bird-launcher.tscn" id="4_kol10"]
+[ext_resource type="PackedScene" uid="uid://7a3oyt2rsyhf" path="res://game_objects/blocks/block_base.tscn" id="5_awdwr"]
+[ext_resource type="PackedScene" uid="uid://ci03oqour7ioh" path="res://test_scenes/build_scene.tscn" id="7_rvvj6"]
+[ext_resource type="PackedScene" uid="uid://ct7132vh51c8q" path="res://test_scenes/check_height.tscn" id="8_vxukx"]
+[ext_resource type="Texture2D" uid="uid://c2gg54ubl74np" path="res://assets/Art Folder/backgrounds/ground bkgrnd 1.png" id="9_4vfnx"]
+[ext_resource type="AudioStream" uid="uid://d27epe28m0ait" path="res://assets/Music/October_14th_-_101423_3.37_PM.mp3" id="9_xqolm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utvaf"]
+size = Vector2(3836, 1090)
 
 [node name="Root" type="Node2D"]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(712, 413)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_0g5qd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(712, 408)
+zoom = Vector2(0.25, 0.25)
+
+[node name="Controllers" type="Node2D" parent="."]
+
+[node name="Player1" type="Node2D" parent="Controllers" node_paths=PackedStringArray("player_manager")]
+script = ExtResource("2_dyisa")
+pc_launch = "player1_launch"
+pc_fold_left = "player1_fold_left"
+pc_fold_right = "player1_fold_right"
+build = "player1_build"
+player_manager = NodePath("../../Game/Player1")
+
+[node name="Player2" type="Node2D" parent="Controllers" node_paths=PackedStringArray("player_manager")]
+script = ExtResource("2_dyisa")
+pc_launch = "player2_launch"
+pc_fold_left = "player2_fold_left"
+pc_fold_right = "player2_fold_right"
+build = "player2_build"
+player_manager = NodePath("../../Game/Player2")
+
 [node name="Game" type="Node2D" parent="."]
+position = Vector2(-1128, 0)
+script = ExtResource("1_cvwoe")
+
+[node name="Timer" type="Timer" parent="Game"]
+wait_time = 2.0
+
+[node name="Player1" type="Node2D" parent="Game"]
+position = Vector2(459, 272)
+script = ExtResource("3_8bg8t")
+
+[node name="CheckHeight" parent="Game/Player1" instance=ExtResource("8_vxukx")]
+position = Vector2(-459, -272)
+
+[node name="FoldingMinigame" parent="Game/Player1" instance=ExtResource("2_04l87")]
+position = Vector2(-300, 1062)
+scale = Vector2(2.5, 2.5)
+
+[node name="Firing" parent="Game/Player1" instance=ExtResource("4_kol10")]
+position = Vector2(341, 544)
+
+[node name="firing" parent="Game/Player1/Firing" index="1"]
+position = Vector2(-128, 112)
+
+[node name="Building" parent="Game/Player1" node_paths=PackedStringArray("to_parent", "spawn_pos") instance=ExtResource("7_rvvj6")]
+position = Vector2(-900, -700)
+to_parent = NodePath("../../../World")
+spawn_pos = NodePath("../../../World/SpawnPos1")
+
+[node name="Player2" type="Node2D" parent="Game"]
+position = Vector2(2464, 272)
+script = ExtResource("3_8bg8t")
+
+[node name="CheckHeight" parent="Game/Player2" instance=ExtResource("8_vxukx")]
+position = Vector2(-2464, -272)
+
+[node name="FoldingMinigame" parent="Game/Player2" instance=ExtResource("2_04l87")]
+position = Vector2(992, 1056)
+scale = Vector2(2.5, 2.5)
+
+[node name="Firing" parent="Game/Player2" instance=ExtResource("4_kol10")]
+position = Vector2(168, 548)
+scale = Vector2(-1, 1)
+direction_multi = -1
+
+[node name="firing" parent="Game/Player2/Firing" index="1"]
+position = Vector2(-128, 112)
+
+[node name="Building" parent="Game/Player2" node_paths=PackedStringArray("to_parent", "spawn_pos") instance=ExtResource("7_rvvj6")]
+position = Vector2(352, -700)
+to_parent = NodePath("../../../World")
+spawn_pos = NodePath("../../../World/SpawnPos2")
+
+[node name="World" type="Node2D" parent="."]
+position = Vector2(656, 704)
+
+[node name="Structure" type="Node2D" parent="World"]
+visible = false
+position = Vector2(144.648, 10000)
+scale = Vector2(0.0630001, 1)
+
+[node name="BlockBase" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(5.68, 0.360002)
+freeze = true
+
+[node name="BlockBase2" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(8, -88)
+
+[node name="BlockBase3" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(136, -88)
+
+[node name="BlockBase4" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(72, -216)
+
+[node name="BlockBase5" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(72, -344)
+
+[node name="BlockBase6" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(72, -472)
+
+[node name="BlockBase7" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(-120, -88)
+
+[node name="BlockBase8" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(-56, -216)
+
+[node name="BlockBase9" parent="World/Structure" instance=ExtResource("5_awdwr")]
+position = Vector2(264, -88)
+
+[node name="Structure2" type="Node2D" parent="World"]
+visible = false
+position = Vector2(-69.552, 100000)
+scale = Vector2(0.0630001, 1)
+
+[node name="BlockBase" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(5.68, 0.360002)
+freeze = true
+
+[node name="BlockBase2" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(8, -88)
+
+[node name="BlockBase3" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(136, -88)
+
+[node name="BlockBase4" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(72, -216)
+
+[node name="BlockBase5" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(72, -344)
+
+[node name="BlockBase6" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(72, -472)
+
+[node name="BlockBase7" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(-120, -88)
+
+[node name="BlockBase8" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(-56, -216)
+
+[node name="BlockBase9" parent="World/Structure2" instance=ExtResource("5_awdwr")]
+position = Vector2(264, -88)
+
+[node name="SpawnPos1" type="Node2D" parent="World"]
+position = Vector2(-1643, -584)
+
+[node name="SpawnPos2" type="Node2D" parent="World"]
+position = Vector2(1614, -592)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="World"]
+z_index = -5
+position = Vector2(0, 1320)
+rotation = 3.14159
+scale = Vector2(2, 1)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/RigidBody2D"]
+position = Vector2(2.00003, 535)
+shape = SubResource("RectangleShape2D_utvaf")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/RigidBody2D"]
+texture = ExtResource("9_4vfnx")
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("9_xqolm")
+autoplay = true
+
+[editable path="Game/Player1/Firing"]
+[editable path="Game/Player2/Firing"]

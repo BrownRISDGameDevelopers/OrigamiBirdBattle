@@ -8,7 +8,7 @@ class_name Builder
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if (to_parent == null):
-		to_parent = get_parent()
+		to_parent = self #get_parent()
 	
 	pass # Replace with function body.
 

@@ -66,7 +66,7 @@ func goto_next_state():
 		for player in player_managers:
 			player.set_build_mode()
 		cur_stage = Stage.BUILDING
-		timer.wait_time = 2
+		timer.wait_time = 20
 		timer.start()
 		
 	# Go to battle mode
@@ -76,7 +76,7 @@ func goto_next_state():
 			player.set_battle_mode()
 		# enable battle stuff
 		cur_stage = Stage.BATTLING
-		timer.wait_time = 120
+		timer.wait_time = 40
 		timer.start()
 		
 	elif cur_stage == Stage.BATTLING:
@@ -85,6 +85,7 @@ func goto_next_state():
 		# Begin end game condition
 		for player in player_managers:
 			player.connect("end_game_height", get_new_winner)
+			player.set_end_game()
 		
 		
 		# Show ending screen
@@ -100,6 +101,7 @@ func get_new_winner(pos, player_num):
 	if players_finished == player_managers.size():
 		# end game
 		game_complete.emit(best_player)
+		print("WINNER: " + str(best_player))
 	
 	
 	

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cls4p6r4uyhl6"]
 
 [ext_resource type="Script" path="res://scripts/base_bird.gd" id="1_7165y"]
-[ext_resource type="PackedScene" uid="uid://c5hfmi635v4qw" path="res://test_scenes/temp_explosion.tscn" id="2_gw3la"]
+[ext_resource type="PackedScene" path="res://test_scenes/temp_explosion.tscn" id="2_gw3la"]
 [ext_resource type="Texture2D" uid="uid://0qstetax0x6o" path="res://assets/Art Folder/spritesheets for animation/swansheet_300x364.png" id="2_proxx"]
 [ext_resource type="Texture2D" uid="uid://cdl2e60gfkes3" path="res://assets/Art Folder/spritesheets for animation/explosionALTsheet_532x506.png" id="4_a8u8u"]
 [ext_resource type="AudioStream" uid="uid://ctc8u7b20lxuu" path="res://assets/sound/pop_1.mp3" id="5_hf1jh"]
@@ -66,6 +66,7 @@ _data = {
 
 [node name="BaseBird" type="RigidBody2D"]
 position = Vector2(0, 1)
+mass = 5.0
 script = ExtResource("1_7165y")
 deathParticle = ExtResource("2_gw3la")
 

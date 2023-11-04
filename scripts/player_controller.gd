@@ -23,9 +23,9 @@ func _process(delta):
 		if Input.is_action_just_pressed(build):
 			player_manager.try_drop_block()
 		
-		if Input.is_action_just_pressed(pc_fold_left):
+		if Input.is_action_pressed(pc_fold_left):
 			player_manager.move_block_left()
-		elif Input.is_action_just_pressed(pc_fold_right):
+		elif Input.is_action_pressed(pc_fold_right):
 			player_manager.move_block_right()
 		
 	if player_manager.state == player_manager.GenState.FOLD:

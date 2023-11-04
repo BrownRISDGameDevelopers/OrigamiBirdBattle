@@ -1,15 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://dsenqsyvi5a6o"]
+[gd_scene load_steps=11 format=3 uid="uid://dsenqsyvi5a6o"]
 
 [ext_resource type="PackedScene" uid="uid://02pf6twkqab8" path="res://test_scenes/temp_bird.tscn" id="1_d7d6s"]
 [ext_resource type="Script" path="res://scripts/bird-launcher.gd" id="1_p457b"]
+[ext_resource type="Texture2D" path="res://assets/Art Folder/Untitled_Artwork 30.png" id="2_t03q7"]
+[ext_resource type="Texture2D" path="res://assets/Art Folder/Untitled_Artwork 33.png" id="3_wkpan"]
 [ext_resource type="Texture2D" uid="uid://yre5lupnchus" path="res://assets/Art Folder/spritesheets for animation/purpleswansheet_269x433.png" id="5_5i8pw"]
-[ext_resource type="Texture2D" uid="uid://ckhp65ujtcflc" path="res://assets/temporary/dotted_line.png" id="5_06en1"]
-[ext_resource type="Texture2D" uid="uid://cnj6ie4ggfn2t" path="res://assets/Art Folder/catqpult hand flicking animation frames/1.png" id="5_j3q1r"]
 [ext_resource type="PackedScene" uid="uid://jaeggyic56rb" path="res://test_scenes/firing.tscn" id="5_w6xiv"]
-[ext_resource type="Texture2D" uid="uid://dni26cnceipn" path="res://assets/Art Folder/catqpult hand flicking animation frames/2.png" id="6_b0oei"]
-[ext_resource type="Texture2D" uid="uid://4ttmihtj1ovj" path="res://assets/Art Folder/catqpult hand flicking animation frames/3.png" id="7_wq05e"]
-[ext_resource type="Texture2D" uid="uid://bk7q2xrj6etmf" path="res://assets/Art Folder/catqpult hand flicking animation frames/4.png" id="8_tmx8d"]
-[ext_resource type="Texture2D" uid="uid://6qxyhs1wxdvt" path="res://assets/Art Folder/catqpult hand flicking animation frames/5.png" id="9_ncyl1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pnhd6"]
 atlas = ExtResource("5_5i8pw")
@@ -40,60 +36,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="GDScript" id="GDScript_vtckx"]
-script/source = "extends Line2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-"
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_sv7eq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_j3q1r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_b0oei")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_wq05e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_tmx8d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_ncyl1")
-}],
-"loop": true,
-"name": &"flick",
-"speed": 5.0
-}]
-
 [node name="bird-launcher" type="Node2D"]
-position = Vector2(293, 221)
+position = Vector2(397, 1040)
 script = ExtResource("1_p457b")
 bird_scene = ExtResource("1_d7d6s")
 
-[node name="fake_bird" type="AnimatedSprite2D" parent="."]
-position = Vector2(4.00006, 39)
-scale = Vector2(0.45, 0.45)
-sprite_frames = SubResource("SpriteFrames_wpj6m")
-animation = &"flying"
-
 [node name="arm" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(8, 71)
+position = Vector2(12, 66)
 scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_t03q7")
 centered = false
 offset = Vector2(-1000, -50)
 
@@ -101,25 +52,18 @@ offset = Vector2(-1000, -50)
 z_index = 1
 position = Vector2(-930, -5)
 scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_wkpan")
+
+[node name="fake_bird" type="AnimatedSprite2D" parent="arm"]
+position = Vector2(-973.333, -100)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_wpj6m")
+animation = &"flying"
 
 [node name="firing" parent="." instance=ExtResource("5_w6xiv")]
-visible = false
-position = Vector2(13, 71)
+position = Vector2(203, 351)
 
 [node name="launch_reset_timer" type="Timer" parent="."]
-
-[node name="trajectory_line" type="Line2D" parent="."]
-texture_repeat = 2
-points = PackedVector2Array(13, 70)
-texture = ExtResource("5_06en1")
-texture_mode = 1
-script = SubResource("GDScript_vtckx")
-
-[node name="hand" type="AnimatedSprite2D" parent="."]
-position = Vector2(-212, 55)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_sv7eq")
-animation = &"flick"
 
 [connection signal="start_launch" from="firing" to="." method="_on_firing_start_launch"]
 [connection signal="timeout" from="launch_reset_timer" to="." method="_on_launch_reset_timer_timeout"]

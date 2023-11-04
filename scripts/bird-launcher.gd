@@ -23,6 +23,7 @@ signal launched()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	_trajectory_line.set_begin_cap_mode(Line2D.LINE_CAP_ROUND)
 	_trajectory_line.set_end_cap_mode(Line2D.LINE_CAP_ROUND)
 

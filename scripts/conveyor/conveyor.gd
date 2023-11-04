@@ -36,9 +36,9 @@ func pop_block():
 				conveyor_display[i].update(queue[i])
 			else:
 				conveyor_display[i].update(null)
-		$BlockDropSound.play()
+#		$BlockDropSound.play()
 		await get_tree().create_timer(0.40).timeout
-		$BlockDropSound.stop()
+#		$BlockDropSound.stop()
 		drop_block.emit(blockdata)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

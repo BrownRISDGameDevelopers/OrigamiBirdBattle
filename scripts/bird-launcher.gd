@@ -53,7 +53,7 @@ func play_idle_anim(delta):
 func play_launch_anim(delta):
 	_hand.show()
 	if launch_delta_acc < launch_anim_duration:
-		_hand.play()
+		_hand.play("flick")
 		launch_delta_acc += delta
 		
 

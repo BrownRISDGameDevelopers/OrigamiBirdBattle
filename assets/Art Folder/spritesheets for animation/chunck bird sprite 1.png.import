@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn6hvq28e3xx5"
-path="res://.godot/imported/Untitled_Artwork 32.png-6c0b63965886e2a623e094d220f265b8.ctex"
+uid="uid://ho4vn0cl7v2a"
+path="res://.godot/imported/chunck bird sprite 1.png-a243c999a211914e5959c1eaf81522c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Art Folder/Untitled_Artwork 32.png"
-dest_files=["res://.godot/imported/Untitled_Artwork 32.png-6c0b63965886e2a623e094d220f265b8.ctex"]
+source_file="res://assets/Art Folder/spritesheets for animation/chunck bird sprite 1.png"
+dest_files=["res://.godot/imported/chunck bird sprite 1.png-a243c999a211914e5959c1eaf81522c0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coronpbktychg"
-path="res://.godot/imported/Untitled_Artwork 29.png-6f271422db677c262f0f079c5ba1695e.ctex"
+uid="uid://dwvpn8385m141"
+path="res://.godot/imported/chunck bird sprite 2.png-031b5970480d69364268ed3c05115c23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Art Folder/Untitled_Artwork 29.png"
-dest_files=["res://.godot/imported/Untitled_Artwork 29.png-6f271422db677c262f0f079c5ba1695e.ctex"]
+source_file="res://assets/Art Folder/spritesheets for animation/chunck bird sprite 2.png"
+dest_files=["res://.godot/imported/chunck bird sprite 2.png-031b5970480d69364268ed3c05115c23.ctex"]
 
 [params]
 

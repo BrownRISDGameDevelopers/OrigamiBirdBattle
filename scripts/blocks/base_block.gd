@@ -7,6 +7,9 @@ class_name BlockBase extends RigidBody2D
 @onready var health_node: Health = $Health
 @onready var sprite: Sprite2D = $Sprite
 @onready var active = true
+@onready var speed = 500
+
+signal next_block()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mass = sturdiness
@@ -17,16 +20,24 @@ func _physics_process(delta):
 	if active:
 		if Input.is_action_pressed("fold_left"):
 
-			self.linear_velocity.x = -1000
+			left()
 		elif Input.is_action_pressed("fold_right"):
 
-			self.linear_velocity.x = 1000
+			right()
 		else:
-			self.linear_velocity.x = 0
+			stop()
 		
 	
-	
-	
+func left():
+	if active:
+		self.linear_velocity.x = -speed
+
+func right():
+	if active:		
+		self.linear_velocity.x = speed	
+func stop():
+	if active:
+		self.linear_velocity.x = 0
 func deactivate():
 	set_process(false)
 	freeze = true
@@ -40,8 +51,9 @@ func activate():
 
 
 func _on_body_entered(body):
-	
-	print("hi")
-	active = false
-	self.linear_velocity.x = 0
+	if active:
+		print("hi")
+		active = false
+		self.linear_velocity.x = 0
+		next_block.emit()
 

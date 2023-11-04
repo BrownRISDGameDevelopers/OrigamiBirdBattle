@@ -4,12 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://5c2ihm2ompp" path="res://assets/Art Folder/blocks/L block 2x3.png" id="2_pkanq"]
 
 [node name="L_block" instance=ExtResource("1_jhyno")]
+inertia = 0.0
 
 [node name="Sprite" parent="." index="1"]
-scale = Vector2(0.51, 0.51)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_pkanq")
 
 [node name="CollisionPolygon2D" parent="." index="2"]
 position = Vector2(1.5, -1.49999)
 scale = Vector2(1.88942, 1.90918)
-polygon = PackedVector2Array(-98.1783, -65.2112, -99.7661, 64.1637, 97.649, 64.6874, 97.649, -0.261898, -30.9619, -0.785683, -32.5497, -64.6875)
+polygon = PackedVector2Array(-19.8474, -11.7852, -19.8474, 13.8803, 18.7888, 13.8803, 19.3181, 0.261887, -7.14505, 0.785672, -7.14505, -11.7852)

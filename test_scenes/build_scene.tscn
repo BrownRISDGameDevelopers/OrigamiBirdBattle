@@ -1,16 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci03oqour7ioh"]
+[gd_scene load_steps=5 format=3 uid="uid://ci03oqour7ioh"]
 
 [ext_resource type="PackedScene" uid="uid://cncnwhk65yfbx" path="res://test_scenes/conveyor/conveyor.tscn" id="1_i60ja"]
 [ext_resource type="Script" path="res://test_scenes/build_scene.gd" id="1_kg2ge"]
+[ext_resource type="Texture2D" uid="uid://bs2htkux1g2kl" path="res://assets/Art Folder/blocks/large square 2x2.png" id="3_75ll3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elnsg"]
+size = Vector2(484, 20)
 
 [node name="build_scene" type="Node2D"]
 script = ExtResource("1_kg2ge")
 
 [node name="conveyor" parent="." instance=ExtResource("1_i60ja")]
-offset_left = 584.0
-offset_top = 9.0
-offset_right = 584.0
-offset_bottom = 9.0
-item_num = 5
+offset_left = 254.0
+offset_top = 4.0
+offset_right = 254.0
+offset_bottom = 4.0
+item_num = 30
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(246, 570)
+inertia = 100.0
+gravity_scale = 65.0
+max_contacts_reported = 1
+contact_monitor = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_elnsg")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(0, 0.499992)
+scale = Vector2(1, 0.0466531)
+texture = ExtResource("3_75ll3")
 
 [connection signal="drop_block" from="conveyor" to="." method="_on_conveyor_drop_block"]

@@ -27,6 +27,7 @@ func drop_block():
 func _on_conveyor_drop_block(blockdata):
 	var block_drop: Node2D = blockdata.block_shape.instantiate()
 	to_parent.add_child(block_drop)
-	block_drop.global_position = spawn_pos.global_position
-#	block_drop.position = Vector2(462, 225)
+	block_drop.next_block.connect(conveyor._setActive);
+	#block_drop.global_pojsition = spawn_pos.global_position
+	block_drop.position = Vector2(conveyor.position.x, 150)
 	pass # Replace with function body.

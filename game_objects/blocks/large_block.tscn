@@ -4,13 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://c7s8jek6xoyj3" path="res://assets/Art Folder/blocks textured version/large square 2x2 textured.png" id="2_ma51q"]
 
 [node name="LargeBlock" instance=ExtResource("1_7sscj")]
-health = 5
-sturdiness = 3
+inertia = 0.0
 
 [node name="Sprite" parent="." index="1"]
-scale = Vector2(0.51, 0.51)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_ma51q")
 
 [node name="CollisionPolygon2D" parent="." index="2"]
 position = Vector2(1.5, -1.49999)
 scale = Vector2(1.88942, 1.90918)
+polygon = PackedVector2Array(-14.0255, -12.309, 11.3792, -11.7852, 11.9084, 13.3565, -14.0255, 12.8327)

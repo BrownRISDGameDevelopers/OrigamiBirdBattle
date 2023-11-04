@@ -28,9 +28,14 @@ var cur_state: Globals.Stage = gs.BATTLING
 var cur_build_state: BuildState = BuildState.SELECT
 var cur_battle_state: BattleState = BattleState.SELECT
 
+var num: int = -1
+
 @onready var folding_game: FoldingMinigame = $FoldingMinigame
 @onready var bird_launcher: BirdLauncher = $Firing
 @onready var building_game: Builder = $Building
+@onready var check_height: CheckHeight = $CheckHeight
+
+signal end_game_height(height, player_num)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -58,6 +63,18 @@ func set_build_mode():
 	building_game.show()
 	# show build stuff
 	pass
+
+func set_end_game():
+	bird_launcher.hide()
+	folding_game.hide()
+	building_game.hide()
+	
+	if (check_height != null):
+		check_height.game_end()
+		check_height.connect("height_found", on_height_obtained)
+
+func on_height_obtained(pos: float):
+	end_game_height.emit(pos, num)
 
 
 func battle_goto_launch():

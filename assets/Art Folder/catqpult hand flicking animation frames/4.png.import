@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm3mvjj4k2uai"
-path="res://.godot/imported/Untitled_Artwork 33.png-a7b933a340b75ed52f9e4bc377c32433.ctex"
+uid="uid://bk7q2xrj6etmf"
+path="res://.godot/imported/4.png-f0780a1b95633de1d46f9cc3789148d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Art Folder/Untitled_Artwork 33.png"
-dest_files=["res://.godot/imported/Untitled_Artwork 33.png-a7b933a340b75ed52f9e4bc377c32433.ctex"]
+source_file="res://assets/Art Folder/catqpult hand flicking animation frames/4.png"
+dest_files=["res://.godot/imported/4.png-f0780a1b95633de1d46f9cc3789148d9.ctex"]
 
 [params]
 

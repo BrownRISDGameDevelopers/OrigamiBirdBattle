@@ -3,6 +3,7 @@
 class_name GameManager
 extends Node2D
 
+@export var game_timer:Timer
 
 
 enum Stage {

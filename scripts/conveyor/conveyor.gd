@@ -39,10 +39,15 @@ func pop_block():
 		drop_block.emit(blockdata)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if Input.is_action_just_released("queuePop") and block_free:
+#func _process(delta):
+#	if Input.is_action_just_released("queuePop") and block_free:
+#
+
+func try_pop():
+	if block_free:
 		block_free = false
-		pop_block();
+		pop_block()
+	
 		
 func _setActive():
 	block_free = true

@@ -73,7 +73,7 @@ func _process(delta):
 #			_timing_press(3)
 			
 		if miss_flag:
-			print("miss")
+#			print("miss")
 			miss_time = miss_time + 1
 			if miss_time > miss_punish:
 				miss_flag = false

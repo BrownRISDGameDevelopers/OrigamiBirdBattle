@@ -17,22 +17,37 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	# ===== Build Inputs =====
-	if Input.is_action_just_pressed(build):
-		player_manager.try_drop_block()
 	
-	# ===== Launching Inputs =====
-	if Input.is_action_just_pressed(pc_launch):
-		if launch_flag == 0:
-			player_manager.submit_launch(PlayerManager.LaunchingState.SETANGLE)
-			launch_flag = 1
-		else:
-			player_manager.submit_launch(PlayerManager.LaunchingState.LAUNCH)
-			launch_flag = 0
+	if player_manager.state == player_manager.GenState.BUILD:
+		# ===== Build Inputs =====
+		if Input.is_action_just_pressed(build):
+			player_manager.try_drop_block()
+		
+		if Input.is_action_just_pressed(pc_fold_left):
+			player_manager.move_block_left()
+		elif Input.is_action_just_pressed(pc_fold_right):
+			player_manager.move_block_right()
+		
+	if player_manager.state == player_manager.GenState.FOLD:
+		# ===== Folding Inputs =====
+		if Input.is_action_just_pressed(pc_fold_left):
+			player_manager.submit_fold(PlayerManager.FoldingState.LEFT)
+		elif Input.is_action_just_pressed(pc_fold_right):
+			player_manager.submit_fold(PlayerManager.FoldingState.RIGHT)
 	
-	# ===== Folding Inputs =====
-	if Input.is_action_just_pressed(pc_fold_left):
-		player_manager.submit_fold(PlayerManager.FoldingState.LEFT)
-	if Input.is_action_just_pressed(pc_fold_right):
-		player_manager.submit_fold(PlayerManager.FoldingState.RIGHT)
+	
+	
+	if player_manager.state == player_manager.GenState.FIRE:
+		# ===== Launching Inputs =====
+		if Input.is_action_just_pressed(pc_launch):
+			if launch_flag == 0:
+				print("launch")
+				player_manager.submit_launch(PlayerManager.LaunchingState.SETANGLE)
+				launch_flag = 1
+			else:
+				player_manager.submit_launch(PlayerManager.LaunchingState.LAUNCH)
+				launch_flag = 0
+			
+	
+	
 		

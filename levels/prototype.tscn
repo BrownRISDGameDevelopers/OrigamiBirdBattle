@@ -56,12 +56,18 @@ wait_time = 2.0
 position = Vector2(459, 272)
 script = ExtResource("3_8bg8t")
 
+[node name="Building" parent="Game/Player1" node_paths=PackedStringArray("to_parent", "spawn_pos") instance=ExtResource("7_rvvj6")]
+position = Vector2(-1099, -1120)
+scale = Vector2(4, 4)
+to_parent = NodePath("../../../World")
+spawn_pos = NodePath("../../../World/SpawnPos1")
+
 [node name="CheckHeight" parent="Game/Player1" instance=ExtResource("8_vxukx")]
 position = Vector2(-459, -272)
 
 [node name="FoldingMinigame" parent="Game/Player1" instance=ExtResource("2_04l87")]
 position = Vector2(-300, 1062)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(1.5, 1.5)
 
 [node name="Firing" parent="Game/Player1" instance=ExtResource("4_kol10")]
 position = Vector2(341, 544)
@@ -69,21 +75,22 @@ position = Vector2(341, 544)
 [node name="firing" parent="Game/Player1/Firing" index="1"]
 position = Vector2(-128, 112)
 
-[node name="Building" parent="Game/Player1" node_paths=PackedStringArray("to_parent", "spawn_pos") instance=ExtResource("7_rvvj6")]
-position = Vector2(-900, -700)
-to_parent = NodePath("../../../World")
-spawn_pos = NodePath("../../../World/SpawnPos1")
-
 [node name="Player2" type="Node2D" parent="Game"]
 position = Vector2(2464, 272)
 script = ExtResource("3_8bg8t")
+
+[node name="Building" parent="Game/Player2" node_paths=PackedStringArray("to_parent", "spawn_pos") instance=ExtResource("7_rvvj6")]
+position = Vector2(-144, -1136)
+scale = Vector2(4, 4)
+to_parent = NodePath("../../../World")
+spawn_pos = NodePath("../../../World/SpawnPos2")
 
 [node name="CheckHeight" parent="Game/Player2" instance=ExtResource("8_vxukx")]
 position = Vector2(-2464, -272)
 
 [node name="FoldingMinigame" parent="Game/Player2" instance=ExtResource("2_04l87")]
 position = Vector2(992, 1056)
-scale = Vector2(2.5, 2.5)
+scale = Vector2(1.5, 1.5)
 
 [node name="Firing" parent="Game/Player2" instance=ExtResource("4_kol10")]
 position = Vector2(168, 548)
@@ -92,11 +99,6 @@ direction_multi = -1
 
 [node name="firing" parent="Game/Player2/Firing" index="1"]
 position = Vector2(-128, 112)
-
-[node name="Building" parent="Game/Player2" node_paths=PackedStringArray("to_parent", "spawn_pos") instance=ExtResource("7_rvvj6")]
-position = Vector2(352, -700)
-to_parent = NodePath("../../../World")
-spawn_pos = NodePath("../../../World/SpawnPos2")
 
 [node name="World" type="Node2D" parent="."]
 position = Vector2(656, 704)
@@ -170,10 +172,12 @@ position = Vector2(-56, -216)
 position = Vector2(264, -88)
 
 [node name="SpawnPos1" type="Node2D" parent="World"]
-position = Vector2(-1643, -584)
+position = Vector2(-1432, -1224)
+scale = Vector2(5, 5)
 
 [node name="SpawnPos2" type="Node2D" parent="World"]
-position = Vector2(1614, -592)
+position = Vector2(1634, -1256)
+scale = Vector2(5, 5)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="World"]
 z_index = -5

@@ -5,6 +5,8 @@ class_name Builder
 @export var to_parent: Node2D
 @export var spawn_pos: Node2D
 
+var current_block = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if (to_parent == null):
@@ -20,14 +22,25 @@ func _process(delta):
 	
 
 func drop_block():
-	conveyor.pop_block()
+	conveyor.try_pop()
+#	conveyor.pop_block()
 	pass
+
+
+func _on_block_hit():
+	current_block = null
+	conveyor._setActive()
+	
 
 
 func _on_conveyor_drop_block(blockdata):
 	var block_drop: Node2D = blockdata.block_shape.instantiate()
 	to_parent.add_child(block_drop)
-	block_drop.next_block.connect(conveyor._setActive);
-	#block_drop.global_pojsition = spawn_pos.global_position
-	block_drop.position = Vector2(conveyor.position.x, 150)
+	
+
+	block_drop.next_block.connect(_on_block_hit);
+	block_drop.global_position = spawn_pos.global_position
+#	block_drop.position = spawn_pos.position#Vector2(conveyor.position.x, 150)
+	
+	current_block = block_drop
 	pass # Replace with function body.

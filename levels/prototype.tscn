@@ -50,8 +50,8 @@ position = Vector2(459, 272)
 script = ExtResource("3_8bg8t")
 
 [node name="FoldingMinigame" parent="Game/Player1" instance=ExtResource("2_04l87")]
-position = Vector2(216, 256)
-scale = Vector2(0.95913, 0.99913)
+position = Vector2(-403, 1208)
+scale = Vector2(3, 3)
 
 [node name="Firing" parent="Game/Player1" instance=ExtResource("4_kol10")]
 position = Vector2(341, 544)

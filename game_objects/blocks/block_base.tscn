@@ -7,7 +7,11 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8sg70"]
 
 [node name="BlockBase" type="RigidBody2D"]
+inertia = 1.0
 physics_material_override = SubResource("PhysicsMaterial_8sg70")
+gravity_scale = 0.3
+max_contacts_reported = 1
+contact_monitor = true
 script = ExtResource("1_8jlb4")
 
 [node name="Health" type="Node2D" parent="."]
@@ -18,3 +22,5 @@ texture = ExtResource("3_3i4tn")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-65, -64, 65, -64, 65, 64, -65, 64)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

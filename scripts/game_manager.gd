@@ -37,7 +37,7 @@ signal game_complete()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	timer.wait_time = 2
+	timer.wait_time = 20
 	timer.connect("timeout", goto_next_state)
 	timer.start()
 	
@@ -65,7 +65,7 @@ func goto_next_state():
 		for player in player_managers:
 			player.set_build_mode()
 		cur_stage = Stage.BUILDING
-		timer.wait_time = 20
+		timer.wait_time = 2
 		timer.start()
 		
 	# Go to battle mode

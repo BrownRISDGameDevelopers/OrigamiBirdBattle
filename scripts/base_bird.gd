@@ -32,9 +32,12 @@ func _on_body_entered(body):
 	$Explosion.set_visible(true)
 	$ExplosionAnimationPlayer.play("cartoon_explosion")
 	$Sprite2D.set_visible(false)
+	$ExplosionSound.play()
 	self.set_sleeping(true)
 	on_col.emit()
-	await get_tree().create_timer(0.6).timeout
+	await get_tree().create_timer(0.40).timeout
+	$ExplosionSound.stop()
+	await get_tree().create_timer(0.13).timeout
 	$Explosion.set_visible(false)
 	kill()
 	#pass # Replace with function body.

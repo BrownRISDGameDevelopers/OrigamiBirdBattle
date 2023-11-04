@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1j4p431bom2"]
+[gd_scene load_steps=3 format=3 uid="uid://bq8khwhujsxw1"]
 
 [ext_resource type="PackedScene" uid="uid://cls4p6r4uyhl6" path="res://game_objects/base_bird.tscn" id="1_ev35v"]
 [ext_resource type="Texture2D" uid="uid://cssn6b5cwokg6" path="res://assets/Art Folder/spritesheets for animation/swanALT1sheet_300x364.png" id="2_rw7o0"]

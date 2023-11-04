@@ -72,7 +72,7 @@ scale = Vector2(1.5, 1.5)
 [node name="Firing" parent="Game/Player1" instance=ExtResource("4_kol10")]
 position = Vector2(341, 544)
 
-[node name="firing" parent="Game/Player1/Firing" index="1"]
+[node name="firing" parent="Game/Player1/Firing" index="2"]
 position = Vector2(-128, 112)
 
 [node name="Player2" type="Node2D" parent="Game"]
@@ -97,7 +97,7 @@ position = Vector2(168, 548)
 scale = Vector2(-1, 1)
 direction_multi = -1
 
-[node name="firing" parent="Game/Player2/Firing" index="1"]
+[node name="firing" parent="Game/Player2/Firing" index="2"]
 position = Vector2(-128, 112)
 
 [node name="World" type="Node2D" parent="."]

@@ -33,7 +33,7 @@ var player_managers: Array[PlayerManager] = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	timer.wait_time = 2
+	timer.wait_time = 20
 	timer.connect("timeout", goto_next_state)
 	timer.start()
 	

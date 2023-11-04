@@ -80,7 +80,8 @@ func update_trajectory(pos, dir, speed, delta):
 	var max_points = 30
 	var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 	_trajectory_line.clear_points()
-	var vel = direction_multi * dir * speed
+	var vel = dir * speed
+	vel.y *= direction_multi
 	for i in range(max_points):
 		_trajectory_line.add_point(pos)
 		vel.y += gravity * delta

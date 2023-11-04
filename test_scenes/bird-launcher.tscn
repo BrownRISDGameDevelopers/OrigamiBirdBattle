@@ -103,6 +103,7 @@ position = Vector2(-930, -5)
 scale = Vector2(0.5, 0.5)
 
 [node name="firing" parent="." instance=ExtResource("5_w6xiv")]
+visible = false
 position = Vector2(13, 71)
 
 [node name="launch_reset_timer" type="Timer" parent="."]

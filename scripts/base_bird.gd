@@ -12,6 +12,7 @@ var collided = false
 func _ready():
 	mass = rb_mass
 	$Explosion.set_visible(false)	
+	#$ExplosionAnimationPlayer.play("cartoon_explosion")
 	pass # Replace with function body.
 
 func tap():
@@ -19,18 +20,21 @@ func tap():
 	
 	
 func kill():
-	var _particle = deathParticle.instantiate()
-	_particle.position = position
-	_particle.rotation - rotation
-	_particle.emitting = true
-	get_tree().current_scene.add_child(_particle)
+	#var _particle = deathParticle.instantiate()
+	#_particle.position = position
+	#_particle.rotation - rotation
+	#_particle.emitting = true
+	#get_tree().current_scene.add_child(_particle)
 	queue_free()
 
 func _on_body_entered(body):
 	collided = true
 	$Explosion.set_visible(true)
-	$AnimationPlayer.play("explode")
-	$Explosion.set_visible(false)
+	$ExplosionAnimationPlayer.play("cartoon_explosion")
+	$Sprite2D.set_visible(false)
+	self.set_sleeping(true)
 	on_col.emit()
+	await get_tree().create_timer(0.6).timeout
+	$Explosion.set_visible(false)
 	kill()
 	#pass # Replace with function body.

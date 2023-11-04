@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dsenqsyvi5a6o"]
+[gd_scene load_steps=13 format=3 uid="uid://dsenqsyvi5a6o"]
 
 [ext_resource type="PackedScene" uid="uid://02pf6twkqab8" path="res://test_scenes/temp_bird.tscn" id="1_d7d6s"]
 [ext_resource type="Script" path="res://scripts/bird-launcher.gd" id="1_p457b"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bm3mvjj4k2uai" path="res://assets/Art Folder/Untitled_Artwork 33.png" id="3_wkpan"]
 [ext_resource type="Texture2D" uid="uid://d0d1tn33rh3pp" path="res://assets/Art Folder/spritesheets for animation/purpleswansheet_269x433.png" id="5_5i8pw"]
 [ext_resource type="PackedScene" uid="uid://jaeggyic56rb" path="res://test_scenes/firing.tscn" id="5_w6xiv"]
+[ext_resource type="Texture2D" uid="uid://d2yrrkjowifsa" path="res://assets/temporary/dotted_line.png" id="7_s1wd8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pnhd6"]
 atlas = ExtResource("5_5i8pw")
@@ -36,13 +37,36 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_vtckx"]
+script/source = "extends Line2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+"
+
 [node name="bird-launcher" type="Node2D"]
-position = Vector2(397, 1040)
+position = Vector2(293, 221)
 script = ExtResource("1_p457b")
 bird_scene = ExtResource("1_d7d6s")
 
+[node name="fake_bird" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.00006, 39)
+scale = Vector2(0.45, 0.45)
+sprite_frames = SubResource("SpriteFrames_wpj6m")
+animation = &"flying"
+
 [node name="arm" type="Sprite2D" parent="."]
-position = Vector2(12, 66)
+visible = false
+position = Vector2(8, 71)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_t03q7")
 centered = false
@@ -54,16 +78,18 @@ position = Vector2(-930, -5)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_wkpan")
 
-[node name="fake_bird" type="AnimatedSprite2D" parent="arm"]
-position = Vector2(-973.333, -100)
-scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_wpj6m")
-animation = &"flying"
-
 [node name="firing" parent="." instance=ExtResource("5_w6xiv")]
-position = Vector2(203, 351)
+visible = false
+position = Vector2(13, 71)
 
 [node name="launch_reset_timer" type="Timer" parent="."]
+
+[node name="trajectory_line" type="Line2D" parent="."]
+texture_repeat = 2
+points = PackedVector2Array(13, 70)
+texture = ExtResource("7_s1wd8")
+texture_mode = 1
+script = SubResource("GDScript_vtckx")
 
 [connection signal="start_launch" from="firing" to="." method="_on_firing_start_launch"]
 [connection signal="timeout" from="launch_reset_timer" to="." method="_on_launch_reset_timer_timeout"]

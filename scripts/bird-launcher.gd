@@ -9,7 +9,7 @@ extends Node2D
 
 @export var bird_scene: PackedScene
 @export var force_magnitude = 2000
-@export var launch_anim_duration_max = 0.2
+@export var launch_anim_duration_max = 0.4
 #@export var right_side: bool = false
 @export var direction_multi: int = 1
 
@@ -80,7 +80,7 @@ func update_trajectory(pos, dir, speed, delta):
 	var max_points = 30
 	var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 	_trajectory_line.clear_points()
-	var vel = dir * speed
+	var vel = direction_multi * dir * speed
 	for i in range(max_points):
 		_trajectory_line.add_point(pos)
 		vel.y += gravity * delta

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://crnv1jnvepyxn"]
+[gd_scene load_steps=10 format=3 uid="uid://crnv1jnvepyxn"]
 
 [ext_resource type="Texture2D" uid="uid://b3y35pe78dlwa" path="res://assets/Art Folder/backgrounds/background op4.jpg" id="1_0g5qd"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_cvwoe"]
@@ -8,10 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://dsenqsyvi5a6o" path="res://test_scenes/bird-launcher.tscn" id="4_kol10"]
 [ext_resource type="PackedScene" uid="uid://7a3oyt2rsyhf" path="res://game_objects/blocks/block_base.tscn" id="5_awdwr"]
 [ext_resource type="PackedScene" uid="uid://ci03oqour7ioh" path="res://test_scenes/build_scene.tscn" id="7_rvvj6"]
+[ext_resource type="AudioStream" uid="uid://d27epe28m0ait" path="res://assets/Music/October_14th_-_101423_3.37_PM.mp3" id="9_xqolm"]
 
 [node name="Root" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -5
 position = Vector2(712, 413)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_0g5qd")
@@ -50,8 +52,8 @@ position = Vector2(459, 272)
 script = ExtResource("3_8bg8t")
 
 [node name="FoldingMinigame" parent="Game/Player1" instance=ExtResource("2_04l87")]
-position = Vector2(-403, 1208)
-scale = Vector2(3, 3)
+position = Vector2(-300, 1200)
+scale = Vector2(2.5, 2.5)
 
 [node name="Firing" parent="Game/Player1" instance=ExtResource("4_kol10")]
 position = Vector2(341, 544)
@@ -60,7 +62,7 @@ position = Vector2(341, 544)
 position = Vector2(-128, 112)
 
 [node name="Building" parent="Game/Player1" node_paths=PackedStringArray("to_parent", "spawn_pos") instance=ExtResource("7_rvvj6")]
-position = Vector2(-907, 147)
+position = Vector2(-900, -300)
 to_parent = NodePath("../../../World")
 spawn_pos = NodePath("../../../World/SpawnPos1")
 
@@ -69,8 +71,8 @@ position = Vector2(2464, 272)
 script = ExtResource("3_8bg8t")
 
 [node name="FoldingMinigame" parent="Game/Player2" instance=ExtResource("2_04l87")]
-position = Vector2(216, 256)
-scale = Vector2(0.95913, 0.99913)
+position = Vector2(992, 1200)
+scale = Vector2(2.5, 2.5)
 
 [node name="Firing" parent="Game/Player2" instance=ExtResource("4_kol10")]
 position = Vector2(168, 548)
@@ -81,7 +83,7 @@ direction_multi = -1
 position = Vector2(-128, 112)
 
 [node name="Building" parent="Game/Player2" node_paths=PackedStringArray("to_parent", "spawn_pos") instance=ExtResource("7_rvvj6")]
-position = Vector2(384, 112)
+position = Vector2(352, -300)
 to_parent = NodePath("../../../World")
 spawn_pos = NodePath("../../../World/SpawnPos2")
 
@@ -157,8 +159,9 @@ position = Vector2(-56, -216)
 position = Vector2(264, -88)
 
 [node name="BlockBase10" parent="World" instance=ExtResource("5_awdwr")]
-position = Vector2(0, 1080)
-scale = Vector2(10, 1)
+z_index = -1
+position = Vector2(1.008, 1736)
+scale = Vector2(10, 12.16)
 freeze = true
 
 [node name="SpawnPos1" type="Node2D" parent="World"]
@@ -166,6 +169,12 @@ position = Vector2(-61.4881, 488)
 
 [node name="SpawnPos2" type="Node2D" parent="World"]
 position = Vector2(145.656, 468)
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("9_xqolm")
+autoplay = true
 
 [editable path="Game/Player1/Firing"]
 [editable path="Game/Player2/Firing"]

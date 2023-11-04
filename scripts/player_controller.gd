@@ -8,6 +8,7 @@ extends Node
 
 var launch_flag = 0 # 0 = set angle, 1 = launch
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -17,11 +18,11 @@ func _ready():
 func _process(delta):
 	
 	# ===== Build Inputs =====
-	if Input.is_action_just_released(build):
+	if Input.is_action_just_pressed(build):
 		player_manager.try_drop_block()
 	
 	# ===== Launching Inputs =====
-	if Input.is_action_just_released(pc_launch):
+	if Input.is_action_just_pressed(pc_launch):
 		if launch_flag == 0:
 			player_manager.submit_launch(PlayerManager.LaunchingState.SETANGLE)
 			launch_flag = 1
@@ -30,8 +31,8 @@ func _process(delta):
 			launch_flag = 0
 	
 	# ===== Folding Inputs =====
-	if Input.is_action_just_released(pc_fold_left):
+	if Input.is_action_just_pressed(pc_fold_left):
 		player_manager.submit_fold(PlayerManager.FoldingState.LEFT)
-	if Input.is_action_just_released(pc_fold_right):
+	if Input.is_action_just_pressed(pc_fold_right):
 		player_manager.submit_fold(PlayerManager.FoldingState.RIGHT)
 		

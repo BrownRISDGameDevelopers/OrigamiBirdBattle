@@ -57,7 +57,7 @@ func goto_next_state():
 		for player in player_managers:
 			player.set_build_mode()
 		cur_stage = Stage.BUILDING
-		timer.wait_time = 20
+		timer.wait_time = 2
 		timer.start()
 		
 	# Go to battle mode

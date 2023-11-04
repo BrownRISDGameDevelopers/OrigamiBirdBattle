@@ -12,8 +12,8 @@
 [node name="Root" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(708, 412)
-scale = Vector2(1.2125, 1.25185)
+position = Vector2(712, 413)
+scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_0g5qd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -162,7 +162,7 @@ scale = Vector2(10, 1)
 freeze = true
 
 [node name="SpawnPos1" type="Node2D" parent="World"]
-position = Vector2(145.656, 468)
+position = Vector2(-61.4881, 488)
 
 [node name="SpawnPos2" type="Node2D" parent="World"]
 position = Vector2(145.656, 468)

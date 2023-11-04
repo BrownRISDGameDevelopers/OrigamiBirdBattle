@@ -40,7 +40,6 @@ animations = [{
 position = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("1_xgeqg")
 bird_scene = ExtResource("2_lyg4h")
-right_side = true
 
 [node name="arm" type="Sprite2D" parent="."]
 position = Vector2(350, 66)

@@ -20,7 +20,8 @@ var loop_dir
 var goal
 var goal_y
 var goal_range
-@export var kindness = float(80)
+var kindness
+@export var base_kindness = float(80)
 var goal_limit_up
 var goal_limit_down
 
@@ -50,7 +51,7 @@ func _ready():
 	
 	rng = RandomNumberGenerator.new()
 	
-	distance = texture.get_height()
+	distance = texture.get_height() - 70
 	indicator = $IndicatorSprite
 	indicator_pos = indicator.get_position()
 	
@@ -99,13 +100,15 @@ func _start_game():
 	loop_time = rng.randf_range(loop_time_down,loop_time_up)
 	print(loop_time)
 	
+	kindness = base_kindness - (loop_time / 8)
+	
 	for i in steps:
 		i.visible = false
 	
 	steps[repeat_count].visible = true
 	
-	current_time = float(0)
-	loop_percent = float(0)
+	current_time = randf_range(0, 50)
+	loop_percent = randf_range(0, 50)
 	loop_dir = 1 # 1 is down, -1 is up
 	
 	goal_y = goal.get_position().y

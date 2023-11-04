@@ -28,20 +28,28 @@ var cur_stage: Stage = Stage.START
 # - launch 
 
 var player_managers: Array[PlayerManager] = []
+var players_finished = 0
+var best_player = 0
+var best_height = 0
 
+signal game_complete()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	timer.wait_time = 2
+	timer.wait_time = 20
 	timer.connect("timeout", goto_next_state)
 	timer.start()
 	
+	var i = 0
 	# Add player managers in children 
 	for child in get_children():
 		if child is PlayerManager:
+			child.num = i
 			player_managers.append(child)
 			child.hide_all()
+			i += 1
+		
 	
 #	minigame.start_rounds(3)
 	print("minigame s")
@@ -57,7 +65,7 @@ func goto_next_state():
 		for player in player_managers:
 			player.set_build_mode()
 		cur_stage = Stage.BUILDING
-		timer.wait_time = 20
+		timer.wait_time = 2
 		timer.start()
 		
 	# Go to battle mode
@@ -71,8 +79,29 @@ func goto_next_state():
 		timer.start()
 		
 	elif cur_stage == Stage.BATTLING:
+		
+		
+		# Begin end game condition
+		for player in player_managers:
+			player.connect("end_game_height", get_new_winner)
+		
+		
 		# Show ending screen
 		cur_stage = Stage.COMPLETE
+
+
+func get_new_winner(pos, player_num):
+	players_finished += 1
+	
+	if pos > best_height:
+		best_player = player_num
+		
+	if players_finished == player_managers.size():
+		# end game
+		game_complete.emit(best_player)
+	
+	
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

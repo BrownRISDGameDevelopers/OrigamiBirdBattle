@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0oxjiliwqgts"
-path="res://.godot/imported/background-floor-textured.png-d38da8eb1eef653ae9fdff25e7894c91.ctex"
+uid="uid://d37qq2rvw5b8"
+path="res://.godot/imported/collision_pow_310x278.png-cf18c71bf027c0565e66a0ac873825a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Art Folder/backgrounds/background-floor-textured.png"
-dest_files=["res://.godot/imported/background-floor-textured.png-d38da8eb1eef653ae9fdff25e7894c91.ctex"]
+source_file="res://assets/Art Folder/particle effects/collision_pow_310x278.png"
+dest_files=["res://.godot/imported/collision_pow_310x278.png-cf18c71bf027c0565e66a0ac873825a3.ctex"]
 
 [params]
 

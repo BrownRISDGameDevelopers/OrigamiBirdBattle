@@ -39,6 +39,8 @@ var arrows_position: Transform2D
 
 var steps
 
+@onready var shake_animation: AnimationPlayer = $ShakePlayer
+
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
@@ -133,18 +135,24 @@ func _timing_press(press):
 #	and press == next_press:
 		for i in arrows_array:
 			i.visible = false
-		$FoldSound.play()
-		await get_tree().create_timer(0.40).timeout
-		$FoldSound.stop()
+		_play_win_sound()
 		if repeat_count > 0:
 			repeat_count = repeat_count - 1
 			_start_game()
 		else:
 			finish.emit()
 	else:
-		$WrongSound.play()
-		await get_tree().create_timer(0.40).timeout
-		$WrongSound.stop()
+		shake_animation.play("FoldShake")
+		_play_lose_sound()
 		miss_flag = true
 		
+
+func _play_win_sound():
+	$FoldSound.play()
+	await get_tree().create_timer(0.40).timeout
+	$FoldSound.stop()
 	
+func _play_lose_sound():
+	$WrongSound.play()
+	await get_tree().create_timer(0.40).timeout
+	$WrongSound.stop()

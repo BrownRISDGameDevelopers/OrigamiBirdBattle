@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0oxjiliwqgts"
-path="res://.godot/imported/background-floor-textured.png-d38da8eb1eef653ae9fdff25e7894c91.ctex"
+uid="uid://bs37m2sdcpov6"
+path="res://.godot/imported/foldbang_2.png-ddaef5376f4921cb77bce2e971c0e1c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Art Folder/backgrounds/background-floor-textured.png"
-dest_files=["res://.godot/imported/background-floor-textured.png-d38da8eb1eef653ae9fdff25e7894c91.ctex"]
+source_file="res://assets/Art Folder/particle effects/foldbang_2.png"
+dest_files=["res://.godot/imported/foldbang_2.png-ddaef5376f4921cb77bce2e971c0e1c5.ctex"]
 
 [params]
 

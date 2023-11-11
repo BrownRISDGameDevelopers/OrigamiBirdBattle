@@ -27,15 +27,15 @@ func _physics_process(delta):
 	just_clicked = false 
 
 	
-	if active:
-		if Input.is_action_pressed("player1_fold_left"):
-
-			left()
-		elif Input.is_action_pressed("player1_fold_right"):
-
-			right()
-		else:
-			stop()
+#	if active:
+#		if Input.is_action_pressed("player1_fold_left"):
+#
+#			left()
+#		elif Input.is_action_pressed("player1_fold_right"):
+#
+#			right()
+#		else:
+#			stop()
 		
 	
 func left():

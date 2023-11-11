@@ -9,8 +9,9 @@ inertia = 0.0
 gravity_scale = 1.0
 
 [node name="Sprite" parent="." index="1"]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_nhwcl")
 
 [node name="CollisionPolygon2D" parent="." index="2"]
+scale = Vector2(3, 3)
 polygon = PackedVector2Array(-11, -11, 11, -11, 11, 11, -11, 11)

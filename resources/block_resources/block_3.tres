@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="Droppable_Block" load_steps=4 format=3 uid="uid://djqih30yl00r8"]
+[gd_resource type="Resource" script_class="Droppable_Block" load_steps=4 format=3 uid="uid://d3c7fvbisn6pc"]
 
 [ext_resource type="Script" path="res://scripts/droppable.gd" id="1_3xypc"]
 [ext_resource type="PackedScene" uid="uid://do1hqpw0saynb" path="res://game_objects/blocks/normal_block.tscn" id="1_hvgey"]
-[ext_resource type="Texture2D" uid="uid://bitb60irc6uxj" path="res://assets/Art Folder/blocks/large square 2x2.png" id="2_e1u2r"]
+[ext_resource type="Texture2D" uid="uid://txeou7pjhllf" path="res://assets/Art Folder/blocks/large square 2x2.png" id="2_e1u2r"]
 
 [resource]
 script = ExtResource("1_3xypc")

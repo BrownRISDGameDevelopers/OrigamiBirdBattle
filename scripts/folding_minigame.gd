@@ -73,7 +73,7 @@ func _process(delta):
 #			_timing_press(3)
 			
 		if miss_flag:
-			print("miss")
+#			print("miss")
 			miss_time = miss_time + 1
 			if miss_time > miss_punish:
 				miss_flag = false
@@ -133,11 +133,18 @@ func _timing_press(press):
 #	and press == next_press:
 		for i in arrows_array:
 			i.visible = false
+		$FoldSound.play()
+		await get_tree().create_timer(0.40).timeout
+		$FoldSound.stop()
 		if repeat_count > 0:
 			repeat_count = repeat_count - 1
 			_start_game()
 		else:
 			finish.emit()
 	else:
+		$WrongSound.play()
+		await get_tree().create_timer(0.40).timeout
+		$WrongSound.stop()
 		miss_flag = true
+		
 	

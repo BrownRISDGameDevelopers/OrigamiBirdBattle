@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://jaeggyic56rb"]
+[gd_scene load_steps=5 format=3 uid="uid://jaeggyic56rb"]
 
 [ext_resource type="Script" path="res://scripts/firing.gd" id="1_crr5r"]
 [ext_resource type="Texture2D" uid="uid://cr7qvtqv4gk2m" path="res://assets/temporary/protractortemp.png" id="2_hpmm0"]
 [ext_resource type="Texture2D" uid="uid://blf4hbcirqd70" path="res://assets/temporary/firingneedletemp.png" id="2_mh6mu"]
+[ext_resource type="AudioStream" uid="uid://ctc8u7b20lxuu" path="res://assets/sound/pop_1.mp3" id="4_ocg6v"]
 
 [node name="firing" type="Node2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)
@@ -37,6 +38,9 @@ offset_right = -67.0
 offset_bottom = 89.0
 text = "Start Firing..."
 metadata/_edit_use_anchors_ = true
+
+[node name="FiringSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ocg6v")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

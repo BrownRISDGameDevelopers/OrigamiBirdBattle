@@ -37,6 +37,9 @@ func _process(delta):
 func launch_bird():
 	if start_firing:
 		start_launch.emit(launch_angle)
+		$FiringSound.play()
+		await get_tree().create_timer(0.40).timeout
+		$FiringSound.stop()
 		start_firing = false
 
 func set_angle():

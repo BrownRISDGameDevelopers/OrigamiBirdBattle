@@ -1,15 +1,22 @@
 class_name PlayerManager
 extends Node2D
 
-enum BattleState {
-	SELECT,
-	FOLD,
-	FIRE,
-}
+#enum BattleState {
+#	SELECT,
+#	FOLD,
+#	FIRE,
+#}
+#
+#enum BuildState {
+#	SELECT,
+#	DROP,
+#}
 
-enum BuildState {
-	SELECT,
-	DROP,
+enum GenState {
+	FIRE,
+	FOLD,
+	COMPLETE,
+	BUILD,
 }
 
 enum FoldingState {
@@ -25,8 +32,8 @@ enum LaunchingState {
 # global states variable, a short hand for the global stage enum
 var gs = Globals.Stage
 var cur_state: Globals.Stage = gs.BATTLING
-var cur_build_state: BuildState = BuildState.SELECT
-var cur_battle_state: BattleState = BattleState.SELECT
+#var cur_build_state: BuildState = BuildState.SELECT
+#var cur_battle_state: BattleState = BattleState.SELECT
 
 var num: int = -1
 
@@ -34,6 +41,9 @@ var num: int = -1
 @onready var bird_launcher: BirdLauncher = $Firing
 @onready var building_game: Builder = $Building
 @onready var check_height: CheckHeight = $CheckHeight
+
+
+var state: GenState = GenState.BUILD
 
 signal end_game_height(height, player_num)
 
@@ -55,8 +65,10 @@ func set_battle_mode():
 	building_game.hide()
 	# show battle stuff
 	battle_goto_fold()
+	
 
 func set_build_mode():
+	state = GenState.BUILD
 	# hide battle stuff
 	bird_launcher.hide()
 	folding_game.hide()
@@ -65,6 +77,7 @@ func set_build_mode():
 	pass
 
 func set_end_game():
+	state = GenState.COMPLETE
 	bird_launcher.hide()
 	folding_game.hide()
 	building_game.hide()
@@ -78,10 +91,11 @@ func on_height_obtained(pos: float):
 
 
 func battle_goto_launch():
+	state = GenState.FIRE
 	if (folding_game):
 		folding_game.hide()
 	bird_launcher.show()
-	bird_launcher.connect("launched", battle_goto_fold, CONNECT_ONE_SHOT)
+	bird_launcher.launched.connect(battle_goto_fold, CONNECT_ONE_SHOT)
 	
 
 func battle_goto_fold_wrap(angle):
@@ -95,6 +109,7 @@ func try_drop_block():
 #	folding_game.hide()
 
 func battle_goto_fold():
+	state = GenState.FOLD
 	folding_game.show()
 	folding_game.connect("finish", battle_goto_launch, CONNECT_ONE_SHOT)
 	folding_game.start_rounds(3)
@@ -117,9 +132,15 @@ func _manage_battle_state():
 
 func _manage_build_state():
 	pass
-
-
-
+	
+func move_block_left():
+	if building_game.current_block != null:
+		building_game.current_block.left()
+	
+func move_block_right():
+	if building_game.current_block != null:
+		building_game.current_block.right()
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	

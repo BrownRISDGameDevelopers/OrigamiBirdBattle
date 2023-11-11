@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mff76s12xeos"
-path="res://.godot/imported/controls_empty-arrows.png-052644d0cf908bafbe7ea096e4a281c6.ctex"
+uid="uid://oeiews48mlqu"
+path="res://.godot/imported/hummingbird2.png-e5b545b80f4e0f7eecafa816b41fa0a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Art Folder/arrow-controls/controls_empty-arrows.png"
-dest_files=["res://.godot/imported/controls_empty-arrows.png-052644d0cf908bafbe7ea096e4a281c6.ctex"]
+source_file="res://assets/Art Folder/spritesheets for animation/hummingbird2.png"
+dest_files=["res://.godot/imported/hummingbird2.png-e5b545b80f4e0f7eecafa816b41fa0a4.ctex"]
 
 [params]
 

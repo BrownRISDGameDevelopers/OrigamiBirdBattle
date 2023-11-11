@@ -138,10 +138,12 @@ func _manage_build_state():
 	
 func move_block_left():
 	if building_game.current_block != null:
+		print("current block not null left")
 		building_game.current_block.left()
 	
 func move_block_right():
 	if building_game.current_block != null:
+		print("current block not null right")
 		building_game.current_block.right()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

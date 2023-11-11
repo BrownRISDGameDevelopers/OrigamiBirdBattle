@@ -5,7 +5,7 @@ class_name Builder
 @export var to_parent: Node2D
 @export var spawn_pos: Node2D
 
-var current_block = null
+var current_block: BlockBase = null
 
 @export_flags_2d_physics var block_layer_mask: int = 0
 @export_flags_2d_physics var block_collision_mask: int = 0
@@ -46,10 +46,10 @@ func _on_conveyor_drop_block(blockdata):
 	to_parent.add_child(block_drop)
 
 	block_drop.next_block.connect(_on_block_hit);
-	#block_drop.global_position = spawn_pos.global_position
+	block_drop.global_position = spawn_pos.global_position
 #	block_drop.global_scale = spawn_pos.global_scale
 #	block_drop.scale = spawn_pos.scale
-	block_drop.position = Vector2(conveyor.position.x, 150)
+#	block_drop.position = Vector2(conveyor.position.x, 150)
 	
 	current_block = block_drop
 	pass # Replace with function body.

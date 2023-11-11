@@ -66,7 +66,7 @@ func goto_next_state():
 		for player in player_managers:
 			player.set_battle_mode()
 		cur_stage = Stage.BATTLING
-		timer.wait_time = 100
+		timer.wait_time = 30
 		timer.start()
 		
 	# Go to battle mode

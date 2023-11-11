@@ -1,10 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dh3wt3g14tfa2"]
+[gd_scene load_steps=9 format=3 uid="uid://dh3wt3g14tfa2"]
 
 [ext_resource type="Script" path="res://scripts/bird-launcher.gd" id="1_xgeqg"]
 [ext_resource type="PackedScene" uid="uid://02pf6twkqab8" path="res://test_scenes/temp_bird.tscn" id="2_lyg4h"]
-[ext_resource type="Texture2D" uid="uid://ddv7x7jrvqihh" path="res://assets/Art Folder/Untitled_Artwork 30.png" id="3_1ho2q"]
-[ext_resource type="Texture2D" uid="uid://bm3mvjj4k2uai" path="res://assets/Art Folder/Untitled_Artwork 33.png" id="4_5y3nn"]
-[ext_resource type="Texture2D" uid="uid://d0d1tn33rh3pp" path="res://assets/Art Folder/spritesheets for animation/purpleswansheet_269x433.png" id="5_v1kko"]
+[ext_resource type="Texture2D" uid="uid://yre5lupnchus" path="res://assets/Art Folder/spritesheets for animation/purpleswansheet_269x433.png" id="5_v1kko"]
 [ext_resource type="PackedScene" uid="uid://rd5ltgrkj4fg" path="res://test_scenes/firing-mirrored.tscn" id="6_lmgry"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pnhd6"]
@@ -44,7 +42,6 @@ bird_scene = ExtResource("2_lyg4h")
 [node name="arm" type="Sprite2D" parent="."]
 position = Vector2(350, 66)
 scale = Vector2(-0.3, 0.3)
-texture = ExtResource("3_1ho2q")
 centered = false
 offset = Vector2(-1000, -50)
 
@@ -52,7 +49,6 @@ offset = Vector2(-1000, -50)
 z_index = 1
 position = Vector2(-930, -5)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_5y3nn")
 
 [node name="fake_bird" type="AnimatedSprite2D" parent="arm"]
 position = Vector2(-973.333, -100)

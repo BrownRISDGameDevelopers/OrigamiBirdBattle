@@ -78,7 +78,7 @@ scale = Vector2(0.75, 0.75)
 
 [node name="Firing" parent="Game/Player1" instance=ExtResource("8_jd12v")]
 z_index = 1
-position = Vector2(-403, 432)
+position = Vector2(-403, 528)
 bird_collision_layer = 4
 bird_collision_mask = 6
 
@@ -106,7 +106,7 @@ scale = Vector2(0.75, 0.75)
 
 [node name="Firing" parent="Game/Player2" instance=ExtResource("8_jd12v")]
 z_index = 1
-position = Vector2(824, 392)
+position = Vector2(824, 528)
 scale = Vector2(-1, 1)
 direction_multi = -1
 bird_collision_layer = 4

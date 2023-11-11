@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dsenqsyvi5a6o"]
 
-[ext_resource type="PackedScene" uid="uid://02pf6twkqab8" path="res://test_scenes/temp_bird.tscn" id="1_d7d6s"]
 [ext_resource type="Script" path="res://scripts/bird-launcher.gd" id="1_p457b"]
+[ext_resource type="PackedScene" uid="uid://cls4p6r4uyhl6" path="res://game_objects/base_bird.tscn" id="2_mxxw2"]
 [ext_resource type="Texture2D" uid="uid://yre5lupnchus" path="res://assets/Art Folder/spritesheets for animation/purpleswansheet_269x433.png" id="5_5i8pw"]
 [ext_resource type="PackedScene" uid="uid://jaeggyic56rb" path="res://test_scenes/firing.tscn" id="5_w6xiv"]
 
@@ -37,10 +37,10 @@ animations = [{
 [node name="bird-launcher" type="Node2D"]
 position = Vector2(397, 1040)
 script = ExtResource("1_p457b")
-bird_scene = ExtResource("1_d7d6s")
+bird_scene = ExtResource("2_mxxw2")
 
 [node name="arm" type="Sprite2D" parent="."]
-position = Vector2(12, 66)
+position = Vector2(275, -48)
 scale = Vector2(0.3, 0.3)
 centered = false
 offset = Vector2(-1000, -50)
@@ -57,7 +57,7 @@ sprite_frames = SubResource("SpriteFrames_wpj6m")
 animation = &"flying"
 
 [node name="firing" parent="." instance=ExtResource("5_w6xiv")]
-position = Vector2(203, 351)
+position = Vector2(3, 8)
 
 [node name="launch_reset_timer" type="Timer" parent="."]
 

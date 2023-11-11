@@ -1,0 +1,230 @@
+[gd_scene load_steps=15 format=3 uid="uid://dlel4wfarjd1c"]
+
+[ext_resource type="Texture2D" uid="uid://b3y35pe78dlwa" path="res://assets/Art Folder/backgrounds/background op4.jpg" id="1_83t5i"]
+[ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_nsr2b"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_mjl51"]
+[ext_resource type="Script" path="res://scripts/player_manager.gd" id="4_cvtrv"]
+[ext_resource type="PackedScene" uid="uid://ci03oqour7ioh" path="res://test_scenes/build_scene.tscn" id="5_n0oa0"]
+[ext_resource type="PackedScene" uid="uid://ct7132vh51c8q" path="res://test_scenes/check_height.tscn" id="6_r0jvv"]
+[ext_resource type="PackedScene" uid="uid://gbvopuoe0kt8" path="res://game_objects/folding_minigame.tscn" id="7_vbw40"]
+[ext_resource type="PackedScene" uid="uid://dsenqsyvi5a6o" path="res://test_scenes/bird-launcher.tscn" id="8_jd12v"]
+[ext_resource type="PackedScene" uid="uid://7a3oyt2rsyhf" path="res://game_objects/blocks/block_base.tscn" id="9_tnn66"]
+[ext_resource type="Texture2D" uid="uid://c2gg54ubl74np" path="res://assets/Art Folder/backgrounds/ground bkgrnd 1.png" id="10_xunef"]
+[ext_resource type="AudioStream" uid="uid://d27epe28m0ait" path="res://assets/Music/October_14th_-_101423_3.37_PM.mp3" id="11_2xosb"]
+[ext_resource type="Script" path="res://levels/Label.gd" id="12_q87wk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utvaf"]
+size = Vector2(3836, 1090)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o74n6"]
+font_size = 96
+font_color = Color(0, 0, 0, 1)
+
+[node name="Root" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(752, 416)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_83t5i")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(760, 568)
+zoom = Vector2(0.4, 0.4)
+
+[node name="Controllers" type="Node2D" parent="."]
+
+[node name="Player1" type="Node2D" parent="Controllers" node_paths=PackedStringArray("player_manager")]
+script = ExtResource("2_nsr2b")
+pc_launch = "player1_launch"
+pc_fold_left = "player1_fold_left"
+pc_fold_right = "player1_fold_right"
+build = "player1_build"
+player_manager = NodePath("../../Game/Player1")
+
+[node name="Player2" type="Node2D" parent="Controllers" node_paths=PackedStringArray("player_manager")]
+script = ExtResource("2_nsr2b")
+pc_launch = "player2_launch"
+pc_fold_left = "player2_fold_left"
+pc_fold_right = "player2_fold_right"
+build = "player2_build"
+player_manager = NodePath("../../Game/Player2")
+
+[node name="Game" type="Node2D" parent="."]
+position = Vector2(-1128, 0)
+script = ExtResource("3_mjl51")
+
+[node name="Timer" type="Timer" parent="Game"]
+wait_time = 2.0
+
+[node name="Player1" type="Node2D" parent="Game"]
+position = Vector2(1224, 280)
+script = ExtResource("4_cvtrv")
+
+[node name="Building" parent="Game/Player1" node_paths=PackedStringArray("to_parent", "spawn_pos") instance=ExtResource("5_n0oa0")]
+position = Vector2(-776, -536)
+scale = Vector2(2, 2)
+to_parent = NodePath("../../../World")
+spawn_pos = NodePath("../../../World/SpawnPos1")
+block_layer_mask = 1
+block_collision_mask = 3
+
+[node name="CheckHeight" parent="Game/Player1" instance=ExtResource("6_r0jvv")]
+position = Vector2(-96, -496)
+
+[node name="FoldingMinigame" parent="Game/Player1" instance=ExtResource("7_vbw40")]
+position = Vector2(24, 890)
+scale = Vector2(0.75, 0.75)
+
+[node name="Firing" parent="Game/Player1" instance=ExtResource("8_jd12v")]
+z_index = 1
+position = Vector2(-403, 432)
+bird_collision_layer = 4
+bird_collision_mask = 6
+
+[node name="firing" parent="Game/Player1/Firing" index="1"]
+position = Vector2(-128, 112)
+
+[node name="Player2" type="Node2D" parent="Game"]
+position = Vector2(2144, 280)
+script = ExtResource("4_cvtrv")
+
+[node name="Building" parent="Game/Player2" node_paths=PackedStringArray("to_parent", "spawn_pos") instance=ExtResource("5_n0oa0")]
+position = Vector2(128, -524)
+scale = Vector2(2, 2)
+to_parent = NodePath("../../../World")
+spawn_pos = NodePath("../../../World/SpawnPos2")
+block_layer_mask = 2
+block_collision_mask = 3
+
+[node name="CheckHeight" parent="Game/Player2" instance=ExtResource("6_r0jvv")]
+position = Vector2(-2464, -272)
+
+[node name="FoldingMinigame" parent="Game/Player2" instance=ExtResource("7_vbw40")]
+position = Vector2(328, 888)
+scale = Vector2(0.75, 0.75)
+
+[node name="Firing" parent="Game/Player2" instance=ExtResource("8_jd12v")]
+z_index = 1
+position = Vector2(824, 392)
+scale = Vector2(-1, 1)
+direction_multi = -1
+bird_collision_layer = 4
+bird_collision_mask = 5
+
+[node name="firing" parent="Game/Player2/Firing" index="1"]
+position = Vector2(-128, 112)
+
+[node name="World" type="Node2D" parent="."]
+position = Vector2(656, 704)
+
+[node name="Structure" type="Node2D" parent="World"]
+visible = false
+position = Vector2(144.648, 10000)
+scale = Vector2(0.0630001, 1)
+
+[node name="BlockBase" parent="World/Structure" instance=ExtResource("9_tnn66")]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(5.68, 0.360002)
+freeze = true
+
+[node name="BlockBase2" parent="World/Structure" instance=ExtResource("9_tnn66")]
+position = Vector2(8, -88)
+
+[node name="BlockBase3" parent="World/Structure" instance=ExtResource("9_tnn66")]
+position = Vector2(136, -88)
+
+[node name="BlockBase4" parent="World/Structure" instance=ExtResource("9_tnn66")]
+position = Vector2(72, -216)
+
+[node name="BlockBase5" parent="World/Structure" instance=ExtResource("9_tnn66")]
+position = Vector2(72, -344)
+
+[node name="BlockBase6" parent="World/Structure" instance=ExtResource("9_tnn66")]
+position = Vector2(72, -472)
+
+[node name="BlockBase7" parent="World/Structure" instance=ExtResource("9_tnn66")]
+position = Vector2(-120, -88)
+
+[node name="BlockBase8" parent="World/Structure" instance=ExtResource("9_tnn66")]
+position = Vector2(-56, -216)
+
+[node name="BlockBase9" parent="World/Structure" instance=ExtResource("9_tnn66")]
+position = Vector2(264, -88)
+
+[node name="Structure2" type="Node2D" parent="World"]
+visible = false
+position = Vector2(-69.552, 100000)
+scale = Vector2(0.0630001, 1)
+
+[node name="BlockBase" parent="World/Structure2" instance=ExtResource("9_tnn66")]
+position = Vector2(-0.00012207, 0)
+scale = Vector2(5.68, 0.360002)
+freeze = true
+
+[node name="BlockBase2" parent="World/Structure2" instance=ExtResource("9_tnn66")]
+position = Vector2(8, -88)
+
+[node name="BlockBase3" parent="World/Structure2" instance=ExtResource("9_tnn66")]
+position = Vector2(136, -88)
+
+[node name="BlockBase4" parent="World/Structure2" instance=ExtResource("9_tnn66")]
+position = Vector2(72, -216)
+
+[node name="BlockBase5" parent="World/Structure2" instance=ExtResource("9_tnn66")]
+position = Vector2(72, -344)
+
+[node name="BlockBase6" parent="World/Structure2" instance=ExtResource("9_tnn66")]
+position = Vector2(72, -472)
+
+[node name="BlockBase7" parent="World/Structure2" instance=ExtResource("9_tnn66")]
+position = Vector2(-120, -88)
+
+[node name="BlockBase8" parent="World/Structure2" instance=ExtResource("9_tnn66")]
+position = Vector2(-56, -216)
+
+[node name="BlockBase9" parent="World/Structure2" instance=ExtResource("9_tnn66")]
+position = Vector2(264, -88)
+
+[node name="SpawnPos1" type="Node2D" parent="World"]
+position = Vector2(-835, -936)
+scale = Vector2(5, 5)
+
+[node name="SpawnPos2" type="Node2D" parent="World"]
+position = Vector2(1045, -940)
+scale = Vector2(5, 5)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="World"]
+z_index = -5
+position = Vector2(0, 1320)
+rotation = 3.14159
+scale = Vector2(2, 1)
+collision_layer = 3
+collision_mask = 3
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/RigidBody2D"]
+position = Vector2(2.00003, 535)
+shape = SubResource("RectangleShape2D_utvaf")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/RigidBody2D"]
+texture = ExtResource("10_xunef")
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("11_2xosb")
+autoplay = true
+
+[node name="Label" type="Label" parent="." node_paths=PackedStringArray("timer")]
+offset_left = 656.0
+offset_top = 1086.0
+offset_right = 1279.0
+offset_bottom = 1221.0
+text = "alkdjflkasdjfa"
+label_settings = SubResource("LabelSettings_o74n6")
+script = ExtResource("12_q87wk")
+timer = NodePath("../Game/Timer")
+
+[editable path="Game/Player1/Firing"]
+[editable path="Game/Player2/Firing"]

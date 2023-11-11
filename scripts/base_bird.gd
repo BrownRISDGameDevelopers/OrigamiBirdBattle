@@ -1,3 +1,4 @@
+class_name BirdBase
 extends RigidBody2D
 
 signal on_tap()

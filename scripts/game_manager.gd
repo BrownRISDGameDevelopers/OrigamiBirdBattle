@@ -64,20 +64,20 @@ func goto_next_state():
 	# Go to build mode
 	if cur_stage == Stage.START:
 		for player in player_managers:
-			player.set_build_mode()
-		cur_stage = Stage.BUILDING
-		timer.wait_time = 20
+			player.set_battle_mode()
+		cur_stage = Stage.BATTLING
+		timer.wait_time = 100
 		timer.start()
 		
 	# Go to battle mode
-	elif cur_stage == Stage.BUILDING:
-		
-		for player in player_managers:
-			player.set_battle_mode()
-		# enable battle stuff
-		cur_stage = Stage.BATTLING
-		timer.wait_time = 40
-		timer.start()
+#	elif cur_stage == Stage.BUILDING:
+#
+#		for player in player_managers:
+#			player.set_battle_mode()
+#		# enable battle stuff
+#		cur_stage = Stage.BATTLING
+#		timer.wait_time = 40
+#		timer.start()
 		
 	elif cur_stage == Stage.BATTLING:
 		

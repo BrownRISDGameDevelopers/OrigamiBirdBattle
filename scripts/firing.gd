@@ -8,6 +8,8 @@ extends Node2D
 var launch_angle = 0
 var start_firing = false
 
+
+
 signal start_launch(angle)
 
 func get_launch_angle():

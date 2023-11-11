@@ -7,6 +7,9 @@ class_name Builder
 
 var current_block = null
 
+@export_flags_2d_physics var block_layer_mask: int = 0
+@export_flags_2d_physics var block_collision_mask: int = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if (to_parent == null):
@@ -34,7 +37,10 @@ func _on_block_hit():
 
 
 func _on_conveyor_drop_block(blockdata):
-	var block_drop: Node2D = blockdata.block_shape.instantiate()
+	var block_drop: BlockBase = blockdata.block_shape.instantiate() as BlockBase
+	block_drop.collision_layer = block_layer_mask
+	block_drop.collision_mask = block_collision_mask
+	
 #	to_parent.add_child(block_drop)
 	to_parent.add_child(block_drop)
 

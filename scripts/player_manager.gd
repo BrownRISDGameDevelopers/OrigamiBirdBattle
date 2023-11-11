@@ -35,6 +35,8 @@ var cur_state: Globals.Stage = gs.BATTLING
 #var cur_build_state: BuildState = BuildState.SELECT
 #var cur_battle_state: BattleState = BattleState.SELECT
 
+
+
 var num: int = -1
 
 @onready var folding_game: FoldingMinigame = $FoldingMinigame
@@ -62,7 +64,8 @@ func hide_all():
 
 func set_battle_mode():
 	# hide build stuff
-	building_game.hide()
+	building_game.show()
+#	building_game.hide()
 	# show battle stuff
 	battle_goto_fold()
 	

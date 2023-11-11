@@ -13,11 +13,16 @@ extends Node2D
 #@export var right_side: bool = false
 @export var direction_multi: int = 1
 
+@export_flags_2d_physics var bird_collision_layer: int = 0
+@export_flags_2d_physics var bird_collision_mask: int = 0
+
 var launch_delta_acc = 0
 var launch_anim_duration = 0
 var is_ready = false
 var is_setting_angle = false
 var is_launching = false
+
+var p_2_collisions: bool = false
 
 signal launched()
 
@@ -67,16 +72,23 @@ func finish_launch():
 	_fake_bird.hide()
 	var bird = bird_scene.instantiate()
 	var bird_position = _fake_bird.global_position
-	bird.position = Vector2(bird_position.x, bird_position.y)
-	var bird_sprite = bird.get_node("AnimatedSprite2D")
-	bird_sprite.scale.x *= sign(direction_multi)
-	var launch_angle = _firing.get_launch_angle()
-	var force_direction = Vector2(cos(launch_angle), direction_multi * sin(launch_angle))
-	var force_vector = direction_multi * force_direction * force_magnitude
-	bird.apply_central_impulse(force_vector)
-	get_tree().get_root().add_child(bird)
-	_launch_reset_timer.start()
 	
+	bird = bird as BirdBase
+	if bird != null:
+		bird.collision_mask = bird_collision_mask
+		bird.collision_layer = bird_collision_layer
+	
+		bird.global_position = Vector2(bird_position.x, bird_position.y)
+		var bird_sprite = bird.get_node("AnimatedSprite2D")
+		bird_sprite.scale.x *= sign(direction_multi)
+		var launch_angle = _firing.get_launch_angle()
+		var force_direction = Vector2(cos(launch_angle), direction_multi * sin(launch_angle))
+		var force_vector = direction_multi * force_direction * force_magnitude
+		bird.apply_central_impulse(force_vector)
+		get_tree().get_root().add_child(bird)
+		_launch_reset_timer.start()
+	else:
+		print("null bird")
 func update_trajectory(pos, dir, speed, delta):
 	var max_points = 30
 	var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

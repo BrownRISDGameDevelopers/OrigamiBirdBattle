@@ -18,24 +18,23 @@ func _ready():
 func _process(delta):
 	
 	
-	if player_manager.state == player_manager.GenState.BUILD:
+#	if player_manager.state == player_manager.GenState.BUILD:
 		# ===== Build Inputs =====
-		if Input.is_action_just_pressed(build):
-			player_manager.try_drop_block()
-		
-		if Input.is_action_pressed(pc_fold_left):
-			player_manager.move_block_left()
-		elif Input.is_action_pressed(pc_fold_right):
-			player_manager.move_block_right()
+	if Input.is_action_just_pressed(build):
+		player_manager.try_drop_block()
+	
+	# Its not folding controls! We're lying its just for build movement
+	if Input.is_action_pressed(pc_fold_left):
+		player_manager.move_block_left()
+	elif Input.is_action_pressed(pc_fold_right):
+		player_manager.move_block_right()
 		
 	if player_manager.state == player_manager.GenState.FOLD:
 		# ===== Folding Inputs =====
-		if Input.is_action_just_pressed(pc_fold_left):
+		if Input.is_action_just_pressed(pc_launch):
 			player_manager.submit_fold(PlayerManager.FoldingState.LEFT)
-		elif Input.is_action_just_pressed(pc_fold_right):
-			player_manager.submit_fold(PlayerManager.FoldingState.RIGHT)
-	
-	
+#		elif Input.is_action_just_pressed(pc_fold_right):
+#			player_manager.submit_fold(PlayerManager.FoldingState.RIGHT)
 	
 	if player_manager.state == player_manager.GenState.FIRE:
 		# ===== Launching Inputs =====

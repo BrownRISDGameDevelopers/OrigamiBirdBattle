@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bruvru3b3d7yv"
-path="res://.godot/imported/controls_down-arrow.png-8186ac184cf9becc55388dea9e07f174.ctex"
+uid="uid://b5wp8ydkrfqor"
+path="res://.godot/imported/control_empty-arrows.png-f87d82c317cc9c55e4c3dc2ef4938d7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Art Folder/arrow-controls/old drafts/controls_down-arrow.png"
-dest_files=["res://.godot/imported/controls_down-arrow.png-8186ac184cf9becc55388dea9e07f174.ctex"]
+source_file="res://assets/Art Folder/arrow-controls/control_empty-arrows.png"
+dest_files=["res://.godot/imported/control_empty-arrows.png-f87d82c317cc9c55e4c3dc2ef4938d7f.ctex"]
 
 [params]
 

@@ -1,11 +1,11 @@
 class_name BirdLauncher
 extends Node2D
 @onready var _arm = $arm
-@onready var _fake_bird = $fake_bird
+@onready var _fake_bird = $arm/fake_bird
 @onready var _firing = $firing
 @onready var _launch_reset_timer = $launch_reset_timer
 @onready var _trajectory_line = $trajectory_line
-@onready var _hand = $hand
+#@onready var _hand = $hand
 
 @export var bird_scene: PackedScene
 @export var force_magnitude = 2000
@@ -37,7 +37,7 @@ func _process(delta):
 	else:
 		_trajectory_line.hide()
 	
-	_hand.hide()
+#	_hand.hide()
 	
 	if is_ready && !is_launching:
 		play_idle_anim(delta)		
@@ -52,9 +52,9 @@ func play_idle_anim(delta):
 	pass
 
 func play_launch_anim(delta):
-	_hand.show()
+#	_hand.show()
 	if launch_delta_acc < launch_anim_duration:
-		_hand.play("flick")
+#		_hand.play("flick")
 		launch_delta_acc += delta
 		
 

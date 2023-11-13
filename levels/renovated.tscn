@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://dlel4wfarjd1c"]
 
-[ext_resource type="Texture2D" uid="uid://b3y35pe78dlwa" path="res://assets/Art Folder/backgrounds/background op4.jpg" id="1_83t5i"]
+[ext_resource type="Texture2D" uid="uid://d05i7w0eynl6o" path="res://assets/Art Folder/backgrounds/playground-background-revised.png" id="1_2fitt"]
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_nsr2b"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_mjl51"]
 [ext_resource type="Script" path="res://scripts/player_manager.gd" id="4_cvtrv"]
@@ -9,12 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://gbvopuoe0kt8" path="res://game_objects/folding_minigame.tscn" id="7_vbw40"]
 [ext_resource type="PackedScene" uid="uid://dsenqsyvi5a6o" path="res://test_scenes/bird-launcher.tscn" id="8_jd12v"]
 [ext_resource type="PackedScene" uid="uid://7a3oyt2rsyhf" path="res://game_objects/blocks/block_base.tscn" id="9_tnn66"]
-[ext_resource type="Texture2D" uid="uid://c2gg54ubl74np" path="res://assets/Art Folder/backgrounds/ground bkgrnd 1.png" id="10_xunef"]
+[ext_resource type="Texture2D" uid="uid://dt5ivmfvsc58v" path="res://assets/Art Folder/backgrounds/background-floor-tex-2.png" id="10_sqtde"]
 [ext_resource type="AudioStream" uid="uid://d27epe28m0ait" path="res://assets/Music/October_14th_-_101423_3.37_PM.mp3" id="11_2xosb"]
 [ext_resource type="Script" path="res://levels/Label.gd" id="12_q87wk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utvaf"]
-size = Vector2(3836, 1090)
+size = Vector2(3836, 1084)
 
 [sub_resource type="LabelSettings" id="LabelSettings_o74n6"]
 font_size = 96
@@ -24,9 +24,9 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -5
-position = Vector2(752, 416)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_83t5i")
+position = Vector2(752, 550)
+scale = Vector2(0.745, 0.745)
+texture = ExtResource("1_2fitt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(760, 568)
@@ -204,11 +204,14 @@ collision_mask = 3
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/RigidBody2D"]
-position = Vector2(2.00003, 535)
+position = Vector2(2.00003, 538)
 shape = SubResource("RectangleShape2D_utvaf")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/RigidBody2D"]
-texture = ExtResource("10_xunef")
+position = Vector2(-52.5012, 868)
+scale = Vector2(0.391226, 0.794269)
+texture = ExtResource("10_sqtde")
+flip_v = true
 
 [node name="Audio" type="Node2D" parent="."]
 

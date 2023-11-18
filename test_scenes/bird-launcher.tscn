@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsenqsyvi5a6o"]
+[gd_scene load_steps=10 format=3 uid="uid://dsenqsyvi5a6o"]
 
 [ext_resource type="Script" path="res://scripts/bird-launcher.gd" id="1_p457b"]
 [ext_resource type="PackedScene" uid="uid://cls4p6r4uyhl6" path="res://game_objects/base_bird.tscn" id="2_mxxw2"]
+[ext_resource type="Texture2D" uid="uid://dx5crnjiv502f" path="res://test_scenes/dotted_line.png" id="4_pyf2o"]
 [ext_resource type="Texture2D" uid="uid://yre5lupnchus" path="res://assets/Art Folder/spritesheets for animation/purpleswansheet_269x433.png" id="5_5i8pw"]
 [ext_resource type="PackedScene" uid="uid://jaeggyic56rb" path="res://test_scenes/firing.tscn" id="5_w6xiv"]
 
@@ -39,29 +40,21 @@ position = Vector2(397, 1040)
 script = ExtResource("1_p457b")
 bird_scene = ExtResource("2_mxxw2")
 
-[node name="arm" type="Sprite2D" parent="."]
-position = Vector2(275, -48)
-scale = Vector2(0.3, 0.3)
-centered = false
-offset = Vector2(-1000, -50)
-
-[node name="nest" type="Sprite2D" parent="arm"]
-z_index = 1
-position = Vector2(-930, -5)
-scale = Vector2(0.5, 0.5)
-
-[node name="fake_bird" type="AnimatedSprite2D" parent="arm"]
-position = Vector2(-973.333, -100)
-scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_wpj6m")
-animation = &"flying"
-
 [node name="firing" parent="." instance=ExtResource("5_w6xiv")]
 position = Vector2(3, 8)
 
 [node name="launch_reset_timer" type="Timer" parent="."]
 
 [node name="trajectory_line" type="Line2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("4_pyf2o")
+texture_mode = 1
+
+[node name="fake_bird" type="AnimatedSprite2D" parent="."]
+position = Vector2(-16.9999, -78)
+scale = Vector2(0.45, 0.45)
+sprite_frames = SubResource("SpriteFrames_wpj6m")
+animation = &"flying"
 
 [connection signal="start_launch" from="firing" to="." method="_on_firing_start_launch"]
 [connection signal="timeout" from="launch_reset_timer" to="." method="_on_launch_reset_timer_timeout"]

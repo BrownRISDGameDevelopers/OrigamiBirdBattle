@@ -1,11 +1,9 @@
 class_name BirdLauncher
 extends Node2D
-@onready var _arm = $arm
-@onready var _fake_bird = $arm/fake_bird
+@onready var _fake_bird = $fake_bird
 @onready var _firing = $firing
 @onready var _launch_reset_timer = $launch_reset_timer
 @onready var _trajectory_line = $trajectory_line
-#@onready var _hand = $hand
 
 @export var bird_scene: PackedScene
 @export var force_magnitude = 2000
@@ -34,18 +32,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if is_setting_angle:
-		_trajectory_line.show()
-		var launch_angle = _firing.get_launch_angle()
-		var force_direction = Vector2(cos(launch_angle), direction_multi * sin(launch_angle))
-		update_trajectory(_fake_bird.position, force_direction, force_magnitude, 0.01)
-	else:
-		_trajectory_line.hide()
-	
-#	_hand.hide()
+	var launch_angle = _firing.get_launch_angle()
+	var force_direction = Vector2(cos(launch_angle), direction_multi * sin(launch_angle))
+	update_trajectory(_fake_bird.position, force_direction, force_magnitude, 0.01)
 	
 	if is_ready && !is_launching:
-		play_idle_anim(delta)		
+		play_idle_anim(delta)
 	elif is_launching:
 		play_launch_anim(delta)
 		if (launch_delta_acc >= launch_anim_duration):
@@ -57,9 +49,7 @@ func play_idle_anim(delta):
 	pass
 
 func play_launch_anim(delta):
-#	_hand.show()
 	if launch_delta_acc < launch_anim_duration:
-#		_hand.play("flick")
 		launch_delta_acc += delta
 		
 
@@ -89,6 +79,7 @@ func finish_launch():
 		_launch_reset_timer.start()
 	else:
 		print("null bird")
+
 func update_trajectory(pos, dir, speed, delta):
 	var max_points = 30
 	var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

@@ -66,9 +66,8 @@ _data = {
 
 [node name="BaseBird" type="RigidBody2D"]
 position = Vector2(0, 1)
-mass = 100.0
 script = ExtResource("1_7165y")
-rb_mass = 100.0
+rb_mass = 3.0
 deathParticle = ExtResource("2_gw3la")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

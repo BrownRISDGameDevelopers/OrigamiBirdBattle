@@ -37,7 +37,7 @@ func pop_block():
 			else:
 				conveyor_display[i].update(null)
 #		$BlockDropSound.play()
-		await get_tree().create_timer(0.40).timeout
+#		await get_tree().create_timer(0.40).timeout
 #		$BlockDropSound.stop()
 		drop_block.emit(blockdata)
 

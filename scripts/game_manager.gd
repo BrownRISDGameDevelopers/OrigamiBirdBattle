@@ -97,7 +97,7 @@ func get_new_winner(pos, player_num):
 	
 	if pos > best_height:
 		best_player = player_num
-		
+	
 	if players_finished == player_managers.size():
 		# end game
 		game_complete.emit(best_player)

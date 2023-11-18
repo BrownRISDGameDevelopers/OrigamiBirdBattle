@@ -70,12 +70,13 @@ block_layer_mask = 1
 block_collision_mask = 3
 
 [node name="CheckHeight" parent="Game/Player1" instance=ExtResource("6_r0jvv")]
-position = Vector2(-96, -496)
+position = Vector2(-776, -528)
+scale = Vector2(2, 1)
 
 [node name="Fold" type="Node2D" parent="Game/Player1"]
+position = Vector2(-268, 857)
 
 [node name="FoldingMinigame" parent="Game/Player1/Fold" instance=ExtResource("7_vbw40")]
-position = Vector2(-99, 884)
 scale = Vector2(0.75, 0.75)
 
 [node name="Firing" parent="Game/Player1" instance=ExtResource("8_jd12v")]
@@ -100,12 +101,13 @@ block_layer_mask = 2
 block_collision_mask = 3
 
 [node name="CheckHeight" parent="Game/Player2" instance=ExtResource("6_r0jvv")]
-position = Vector2(-2464, -272)
+position = Vector2(16, -524)
+scale = Vector2(2, 2)
 
 [node name="Fold" type="Node2D" parent="Game/Player2"]
+position = Vector2(685, 860)
 
 [node name="FoldingMinigame" parent="Game/Player2/Fold" instance=ExtResource("7_vbw40")]
-position = Vector2(600, 887)
 scale = Vector2(0.75, 0.75)
 
 [node name="Firing" parent="Game/Player2" instance=ExtResource("8_jd12v")]

@@ -5,6 +5,7 @@ extends Node2D
 @export var rotation_max: float = 0
 @export var rotation_dir: int = -1
 @onready var needle = $needle
+@onready var hand = $hand
 var launch_angle = 0
 var start_firing = false
 
@@ -39,9 +40,8 @@ func _process(delta):
 func launch_bird():
 	if start_firing:
 		start_launch.emit(launch_angle)
-		$FiringSound.play()
-		await get_tree().create_timer(0.40).timeout
-		$FiringSound.stop()
+		_play_firing_sound()
+		_play_flick_anim()
 		start_firing = false
 
 func set_angle():
@@ -53,4 +53,16 @@ func _on_button_pressed():
 	
 func _on_button_2_pressed():
 	set_angle()
+	
+func _play_firing_sound():
+	$FiringSound.play()
+	await get_tree().create_timer(0.40).timeout
+	$FiringSound.stop()
+	
+func _play_flick_anim():
+	hand.play("flick")
+	await get_tree().create_timer(0.45).timeout
+	hand.stop()
+	
+	
 	

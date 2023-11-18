@@ -44,6 +44,8 @@ var num: int = -1
 @onready var building_game: Builder = $Building
 @onready var check_height: CheckHeight = $CheckHeight
 
+var is_launcher_being_hidden: bool = false
+
 
 var state: GenState = GenState.BUILD
 
@@ -95,6 +97,7 @@ func on_height_obtained(pos: float):
 
 func battle_goto_launch():
 	state = GenState.FIRE
+	is_launcher_being_hidden = false 
 	if (folding_game):
 		folding_game.hide()
 	bird_launcher.show()
@@ -127,10 +130,11 @@ func submit_fold(fold_state):
 #	folding_game.process_folding_input(fold_state)
 
 func submit_launch(launch_state):
-	if (bird_launcher.visible):
+	if (!is_launcher_being_hidden):
 		bird_launcher.process_launching_input(launch_state)
 		
 func hide_launch():
+	is_launcher_being_hidden = true
 	await get_tree().create_timer(0.45).timeout
 	bird_launcher.hide()
 	

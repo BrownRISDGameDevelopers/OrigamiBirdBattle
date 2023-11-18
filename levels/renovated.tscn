@@ -264,5 +264,10 @@ offset_right = -184.704
 offset_bottom = -343.552
 script = ExtResource("13_uxu28")
 
+[node name="StartMessage" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("13_uxu28")
+
 [editable path="Game/Player1/Firing"]
 [editable path="Game/Player2/Firing"]

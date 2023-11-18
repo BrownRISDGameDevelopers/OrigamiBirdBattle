@@ -116,7 +116,8 @@ func battle_goto_fold():
 	folding_game.show()
 	folding_game.connect("finish", battle_goto_launch, CONNECT_ONE_SHOT)
 	folding_game.start_rounds(3)
-	bird_launcher.hide()
+	hide_launch()
+	# bird_launcher.hide()
 
 func submit_fold(fold_state):
 	if (folding_game.visible):
@@ -126,6 +127,11 @@ func submit_fold(fold_state):
 func submit_launch(launch_state):
 	if (bird_launcher.visible):
 		bird_launcher.process_launching_input(launch_state)
+		
+func hide_launch():
+	await get_tree().create_timer(0.45).timeout
+	bird_launcher.hide()
+	
 
 #func build_goto
 

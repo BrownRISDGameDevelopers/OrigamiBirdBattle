@@ -1,9 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://jaeggyic56rb"]
+[gd_scene load_steps=11 format=3 uid="uid://jaeggyic56rb"]
 
 [ext_resource type="Script" path="res://scripts/firing.gd" id="1_crr5r"]
 [ext_resource type="Texture2D" uid="uid://cr7qvtqv4gk2m" path="res://assets/temporary/protractortemp.png" id="2_hpmm0"]
 [ext_resource type="Texture2D" uid="uid://blf4hbcirqd70" path="res://assets/temporary/firingneedletemp.png" id="2_mh6mu"]
 [ext_resource type="AudioStream" uid="uid://ctc8u7b20lxuu" path="res://assets/sound/pop_1.mp3" id="4_ocg6v"]
+[ext_resource type="Texture2D" uid="uid://cnj6ie4ggfn2t" path="res://assets/Art Folder/catqpult hand flicking animation frames/1.png" id="5_1megx"]
+[ext_resource type="Texture2D" uid="uid://dni26cnceipn" path="res://assets/Art Folder/catqpult hand flicking animation frames/2.png" id="6_tg206"]
+[ext_resource type="Texture2D" uid="uid://4ttmihtj1ovj" path="res://assets/Art Folder/catqpult hand flicking animation frames/3.png" id="7_jgkqs"]
+[ext_resource type="Texture2D" uid="uid://bk7q2xrj6etmf" path="res://assets/Art Folder/catqpult hand flicking animation frames/4.png" id="8_p738r"]
+[ext_resource type="Texture2D" uid="uid://6qxyhs1wxdvt" path="res://assets/Art Folder/catqpult hand flicking animation frames/5.png" id="9_8iwe0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0mga2"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1megx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tg206")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jgkqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p738r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8iwe0")
+}],
+"loop": true,
+"name": &"flick",
+"speed": 5.0
+}]
 
 [node name="firing" type="Node2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)
@@ -41,6 +74,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="FiringSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ocg6v")
+
+[node name="hand" type="AnimatedSprite2D" parent="."]
+position = Vector2(-68, -100)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_0mga2")
+animation = &"flick"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

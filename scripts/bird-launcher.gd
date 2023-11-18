@@ -10,6 +10,7 @@ extends Node2D
 @export var launch_anim_duration_max = 0.4
 #@export var right_side: bool = false
 @export var direction_multi: int = 1
+@export var trajectory_line_points: int = 30
 
 @export_flags_2d_physics var bird_collision_layer: int = 0
 @export_flags_2d_physics var bird_collision_mask: int = 0
@@ -81,7 +82,7 @@ func finish_launch():
 		print("null bird")
 
 func update_trajectory(pos, dir, speed, delta):
-	var max_points = 30
+	var max_points = trajectory_line_points
 	var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 	_trajectory_line.clear_points()
 	var vel = dir * speed

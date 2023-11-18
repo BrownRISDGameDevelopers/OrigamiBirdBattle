@@ -1,20 +1,20 @@
 [gd_scene load_steps=19 format=3 uid="uid://gbvopuoe0kt8"]
 
-[ext_resource type="Texture2D" uid="uid://cnad8hvc2ns25" path="res://frame.png" id="1_gylwc"]
+[ext_resource type="Texture2D" uid="uid://casy00t0eukw1" path="res://assets/Art Folder/transparent square.png" id="1_0eqfn"]
 [ext_resource type="Script" path="res://scripts/folding_minigame.gd" id="2_r2kfw"]
-[ext_resource type="Texture2D" uid="uid://db5u5h6klxp2a" path="res://assets/Art Folder/test indicator.png" id="4_qcdyg"]
-[ext_resource type="Texture2D" uid="uid://oukb5vqnb3k5" path="res://assets/Art Folder/test goal.png" id="5_7k83o"]
-[ext_resource type="Texture2D" uid="uid://bruvru3b3d7yv" path="res://assets/Art Folder/arrow-controls/old drafts/controls_down-arrow.png" id="5_7vjkd"]
-[ext_resource type="Texture2D" uid="uid://q4r58fei1bhj" path="res://assets/Art Folder/arrow-controls/old drafts/controls_up-arrow.png" id="6_hjdd8"]
-[ext_resource type="Texture2D" uid="uid://by5aex2kknoad" path="res://assets/Art Folder/arrow-controls/old drafts/controls_left-arrow.png" id="7_0y2cy"]
-[ext_resource type="Texture2D" uid="uid://bts0dscnxfj2x" path="res://assets/Art Folder/arrow-controls/old drafts/controls_right-arrow.png" id="8_rgpko"]
+[ext_resource type="Texture2D" uid="uid://ffsm2ri2md1i" path="res://assets/Art Folder/new hands.png" id="3_ra6pn"]
+[ext_resource type="Texture2D" uid="uid://cvupiuxjmn274" path="res://assets/Art Folder/goal_dottedline.png" id="4_j2hqs"]
+[ext_resource type="Texture2D" uid="uid://clbiapxskd6y8" path="res://assets/Art Folder/arrow-controls/old drafts/controls_down-arrow.png" id="5_7vjkd"]
+[ext_resource type="Texture2D" uid="uid://dqet3cttsv6mq" path="res://assets/Art Folder/arrow-controls/old drafts/controls_up-arrow.png" id="6_hjdd8"]
+[ext_resource type="Texture2D" uid="uid://d1n1fv4cdny7q" path="res://assets/Art Folder/arrow-controls/old drafts/controls_left-arrow.png" id="7_0y2cy"]
+[ext_resource type="Texture2D" uid="uid://cr3uiqhd07qxb" path="res://assets/Art Folder/arrow-controls/old drafts/controls_right-arrow.png" id="8_rgpko"]
 [ext_resource type="Script" path="res://game_objects/steps.gd" id="9_asjb5"]
-[ext_resource type="Texture2D" uid="uid://dwyatv46acvl1" path="res://assets/Art Folder/bird1-instructions/folding game/old drafts/origami bird ui_1-step4.png" id="10_8m5cb"]
-[ext_resource type="Texture2D" uid="uid://d07rv8suqaxh" path="res://assets/Art Folder/bird1-instructions/folding game/old drafts/origami bird ui_1-step3.png" id="11_7xq6t"]
-[ext_resource type="Texture2D" uid="uid://d4dsy6g3si6pi" path="res://assets/Art Folder/bird1-instructions/folding game/old drafts/origami bird ui_1-step2.png" id="12_2rgqk"]
-[ext_resource type="Texture2D" uid="uid://kijcm5w3fw2s" path="res://assets/Art Folder/bird1-instructions/folding game/old drafts/origami bird ui_1-step1.png" id="13_v4yxp"]
-[ext_resource type="AudioStream" uid="uid://bm5am8mjg8dev" path="res://assets/sound/paper_foley.mp3" id="14_83mrg"]
-[ext_resource type="AudioStream" uid="uid://7toxqe44qecc" path="res://assets/sound/error_2.mp3" id="15_l5mvu"]
+[ext_resource type="Texture2D" uid="uid://btyunivyvweq2" path="res://assets/Art Folder/bird1-instructions/folding game/bird_1-step4.png" id="10_2noyo"]
+[ext_resource type="Texture2D" uid="uid://gio7ijc5xjuq" path="res://assets/Art Folder/bird1-instructions/folding game/bird_1-step3.png" id="11_csu2t"]
+[ext_resource type="Texture2D" uid="uid://dfbbkrp3awahj" path="res://assets/Art Folder/bird1-instructions/folding game/bird_1-step2.png" id="12_q5xw1"]
+[ext_resource type="Texture2D" uid="uid://dw2xkfamm51tb" path="res://assets/Art Folder/bird1-instructions/folding game/bird_1-step1.png" id="13_e4305"]
+[ext_resource type="AudioStream" uid="uid://ddqlj3aqu1ygx" path="res://assets/sound/paper_foley.mp3" id="14_83mrg"]
+[ext_resource type="AudioStream" uid="uid://cmlfab4jyydcm" path="res://assets/sound/error_2.mp3" id="15_l5mvu"]
 
 [sub_resource type="Animation" id="Animation_who2y"]
 resource_name = "FoldShake"
@@ -56,8 +56,8 @@ _data = {
 [node name="FoldingMinigame" type="Sprite2D"]
 z_index = -1
 position = Vector2(-10, 5)
-scale = Vector2(2.07826, 2.07826)
-texture = ExtResource("1_gylwc")
+scale = Vector2(4, 4)
+texture = ExtResource("1_0eqfn")
 script = ExtResource("2_r2kfw")
 loop_time_up = 110.0
 loop_time_down = 80.0
@@ -65,15 +65,17 @@ base_kindness = 50.0
 miss_punish = 80
 
 [node name="IndicatorSprite" type="Sprite2D" parent="."]
+z_as_relative = false
 position = Vector2(-3.36818, -0.47702)
-scale = Vector2(2.21339, 0.336402)
-texture = ExtResource("4_qcdyg")
+scale = Vector2(0.2, 0.155)
+texture = ExtResource("3_ra6pn")
 
 [node name="GoalSprite" type="Sprite2D" parent="."]
 z_index = -1
+z_as_relative = false
 position = Vector2(-2, 0)
-scale = Vector2(2.1, 10)
-texture = ExtResource("5_7k83o")
+scale = Vector2(2.1, 5)
+texture = ExtResource("4_j2hqs")
 
 [node name="arrows" type="Node2D" parent="."]
 visible = false
@@ -108,30 +110,29 @@ script = ExtResource("9_asjb5")
 
 [node name="step4" type="Sprite2D" parent="steps"]
 visible = false
-position = Vector2(20.0954, -11.7961)
-rotation = 0.073549
-scale = Vector2(0.45096, 0.45096)
-texture = ExtResource("10_8m5cb")
+position = Vector2(20.095, 0)
+rotation = 0.453786
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("10_2noyo")
 
 [node name="step3" type="Sprite2D" parent="steps"]
 visible = false
 position = Vector2(3.05176e-05, 0)
-rotation = 1.57079
-scale = Vector2(0.421806, 0.421806)
-texture = ExtResource("11_7xq6t")
+rotation = 0.0471239
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("11_csu2t")
 
 [node name="step2" type="Sprite2D" parent="steps"]
 visible = false
-position = Vector2(26.4644, 0)
-rotation = 1.57079
-scale = Vector2(0.487198, 0.487198)
-texture = ExtResource("12_2rgqk")
+position = Vector2(0, -85)
+rotation = 3.14159
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("12_q5xw1")
 
 [node name="step1" type="Sprite2D" parent="steps"]
-position = Vector2(-17.8033, -43.7866)
-rotation = -1.19955
-scale = Vector2(0.44426, 0.44426)
-texture = ExtResource("13_v4yxp")
+position = Vector2(-17.803, 0)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("13_e4305")
 
 [node name="FoldSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_83mrg")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://gbvopuoe0kt8"]
+[gd_scene load_steps=19 format=3 uid="uid://gbvopuoe0kt8"]
 
 [ext_resource type="Texture2D" uid="uid://cnad8hvc2ns25" path="res://frame.png" id="1_gylwc"]
 [ext_resource type="Script" path="res://scripts/folding_minigame.gd" id="2_r2kfw"]
@@ -18,6 +18,7 @@
 
 [sub_resource type="Animation" id="Animation_who2y"]
 resource_name = "FoldShake"
+step = 0.03
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -25,24 +26,42 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.18, 0.21, 0.24, 0.27, 0.3, 0.39),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(10, 5), Vector2(-10, 5), Vector2(6, -3), Vector2(-2, 6), Vector2(8, -3), Vector2(-10, -8), Vector2(8, -1), Vector2(0, 10), Vector2(-5, 2), Vector2(-10, 5), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h8go5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10, 5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2n3oe"]
 _data = {
-"FoldShake": SubResource("Animation_who2y")
+"FoldShake": SubResource("Animation_who2y"),
+"RESET": SubResource("Animation_h8go5")
 }
 
 [node name="FoldingMinigame" type="Sprite2D"]
+z_index = -1
+position = Vector2(-10, 5)
 scale = Vector2(2.07826, 2.07826)
 texture = ExtResource("1_gylwc")
 script = ExtResource("2_r2kfw")
-loop_time_up = 150.0
-loop_time_down = 40.0
-base_kindness = 35.0
+loop_time_up = 110.0
+loop_time_down = 80.0
+base_kindness = 50.0
 miss_punish = 80
 
 [node name="IndicatorSprite" type="Sprite2D" parent="."]
@@ -51,8 +70,9 @@ scale = Vector2(2.21339, 0.336402)
 texture = ExtResource("4_qcdyg")
 
 [node name="GoalSprite" type="Sprite2D" parent="."]
-position = Vector2(-2.88704, 0)
-scale = Vector2(2.21339, 1.53975)
+z_index = -1
+position = Vector2(-2, 0)
+scale = Vector2(2.1, 10)
 texture = ExtResource("5_7k83o")
 
 [node name="arrows" type="Node2D" parent="."]
@@ -83,6 +103,7 @@ scale = Vector2(0.182154, 0.182154)
 texture = ExtResource("8_rgpko")
 
 [node name="steps" type="Node2D" parent="."]
+z_index = -1
 script = ExtResource("9_asjb5")
 
 [node name="step4" type="Sprite2D" parent="steps"]

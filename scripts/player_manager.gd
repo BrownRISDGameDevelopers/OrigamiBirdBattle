@@ -115,9 +115,11 @@ func battle_goto_fold():
 	state = GenState.FOLD
 	folding_game.show()
 	folding_game.connect("finish", battle_goto_launch, CONNECT_ONE_SHOT)
-	folding_game.start_rounds(3)
+
+	folding_game.start_rounds(0)
 	hide_launch()
 	# bird_launcher.hide()
+
 
 func submit_fold(fold_state):
 	if (folding_game.visible):

@@ -64,7 +64,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if go_flag:
+	if go_flag and visible:
 #		if Input.is_action_just_released("fold_down"):
 #			_timing_press(0)
 #		elif Input.is_action_just_released("fold_up"):
@@ -99,6 +99,9 @@ func start_rounds(num):
 	_start_game()
 	
 func _start_game():
+	if !visible:
+		return
+	
 	loop_time = rng.randf_range(loop_time_down,loop_time_up)
 	print(loop_time)
 	
@@ -131,6 +134,10 @@ func _start_game():
 	arrows.set_global_transform(arrows_position)
 	
 func _timing_press(press):
+	if !visible:
+		return
+	
+	
 	if indicator_pos.y > goal_limit_down and indicator_pos.y < goal_limit_up: 
 #	and press == next_press:
 		for i in arrows_array:

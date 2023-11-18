@@ -14,4 +14,7 @@ func update(bdata: Droppable_Block):
 		return 
 	
 	item_sprite.texture = bdata.block_thumb
+	
+	item_sprite.scale = Vector2(30 / item_sprite.texture.get_size().x, 30 / item_sprite.texture.get_size().y)
+	item_sprite.position = Vector2(-15, -15)
 	blockdata = bdata

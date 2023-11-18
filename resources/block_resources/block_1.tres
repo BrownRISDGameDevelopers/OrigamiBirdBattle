@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Droppable_Block" load_steps=4 format=3 uid="uid://vvukcj224pnq"]
 
-[ext_resource type="PackedScene" path="res://game_objects/blocks/l_block.tscn" id="1_8om72"]
+[ext_resource type="PackedScene" uid="uid://sg1fa6xhqijw" path="res://game_objects/blocks/l_block.tscn" id="1_8om72"]
 [ext_resource type="Script" path="res://scripts/droppable.gd" id="1_678ms"]
 [ext_resource type="Texture2D" uid="uid://dflo6jvgkdyv0" path="res://assets/Art Folder/blocks textured version/Lblock 2x3 textured_.png" id="2_1lqrr"]
 

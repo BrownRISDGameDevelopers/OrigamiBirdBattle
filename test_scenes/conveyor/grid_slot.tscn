@@ -26,6 +26,5 @@ offset_bottom = 40.0
 layout_mode = 2
 
 [node name="item" type="Sprite2D" parent="CenterContainer/Panel"]
-position = Vector2(-20, -10)
 scale = Vector2(0.1, 0.1)
 centered = false

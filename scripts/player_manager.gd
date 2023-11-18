@@ -39,7 +39,7 @@ var cur_state: Globals.Stage = gs.BATTLING
 
 var num: int = -1
 
-@onready var folding_game: FoldingMinigame = $FoldingMinigame
+@onready var folding_game: FoldingMinigame = $Fold/FoldingMinigame
 @onready var bird_launcher: BirdLauncher = $Firing
 @onready var building_game: Builder = $Building
 @onready var check_height: CheckHeight = $CheckHeight

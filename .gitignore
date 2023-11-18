@@ -1,3 +1,5 @@
 # Godot 4+ specific ignores
-.godot/
+.godot/x
 .DS_Store
+assets/Art Folder/bird1-instructions/folding game/bird_1-step2.png.import
+*.import

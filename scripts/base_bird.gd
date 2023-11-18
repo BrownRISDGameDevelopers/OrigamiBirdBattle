@@ -30,6 +30,7 @@ func kill():
 
 func _on_body_entered(body):
 	collided = true
+	print("BODY ENTERED BIRD LKSDJFKLSDJFLSKFS")
 	$Explosion.set_visible(true)
 	$ExplosionAnimationPlayer.play("cartoon_explosion")
 	$Sprite2D.set_visible(false)

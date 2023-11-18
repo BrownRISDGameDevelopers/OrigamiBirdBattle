@@ -61,8 +61,10 @@ func activate():
 
 func _on_body_entered(body):
 	if active:
-#		print("hi")
+		print("BLOCK DONE")
 		active = false
 		self.linear_velocity.x = 0
 		next_block.emit()
+	else:
+		print("BODY ENTERED " + str(body.name))
 

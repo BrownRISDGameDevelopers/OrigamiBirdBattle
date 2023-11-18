@@ -32,6 +32,7 @@ func drop_block():
 
 
 func _on_block_hit():
+	current_block.activate()
 	current_block = null
 	conveyor._setActive()
 	

@@ -1,6 +1,5 @@
-[gd_scene load_steps=16 format=3 uid="uid://dlel4wfarjd1c"]
+[gd_scene load_steps=14 format=3 uid="uid://dlel4wfarjd1c"]
 
-[ext_resource type="Texture2D" uid="uid://d05i7w0eynl6o" path="res://assets/Art Folder/backgrounds/playground-background-revised.png" id="1_2fitt"]
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_nsr2b"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_mjl51"]
 [ext_resource type="Script" path="res://scripts/player_manager.gd" id="4_cvtrv"]
@@ -9,8 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://gbvopuoe0kt8" path="res://game_objects/folding_minigame.tscn" id="7_vbw40"]
 [ext_resource type="PackedScene" uid="uid://dsenqsyvi5a6o" path="res://test_scenes/bird-launcher.tscn" id="8_jd12v"]
 [ext_resource type="PackedScene" uid="uid://7a3oyt2rsyhf" path="res://game_objects/blocks/block_base.tscn" id="9_tnn66"]
-[ext_resource type="Texture2D" uid="uid://dt5ivmfvsc58v" path="res://assets/Art Folder/backgrounds/background-floor-tex-2.png" id="10_sqtde"]
-[ext_resource type="AudioStream" uid="uid://d27epe28m0ait" path="res://assets/Music/October_14th_-_101423_3.37_PM.mp3" id="11_2xosb"]
+[ext_resource type="Texture2D" uid="uid://c2hf4wu0d1pxb" path="res://assets/Art Folder/backgrounds/background-floor-tex-2.png" id="10_sqtde"]
 [ext_resource type="Script" path="res://levels/Label.gd" id="12_q87wk"]
 [ext_resource type="Script" path="res://game_objects/start_message.gd" id="13_uxu28"]
 
@@ -27,7 +25,6 @@ font_color = Color(0, 0, 0, 1)
 z_index = -5
 position = Vector2(752, 550)
 scale = Vector2(0.745, 0.745)
-texture = ExtResource("1_2fitt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(760, 568)
@@ -223,7 +220,6 @@ flip_v = true
 [node name="Audio" type="Node2D" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("11_2xosb")
 autoplay = true
 
 [node name="TimerLabel" type="Label" parent="." node_paths=PackedStringArray("timer")]

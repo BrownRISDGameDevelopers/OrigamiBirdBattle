@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://casy00t0eukw1" path="res://assets/Art Folder/transparent square.png" id="1_0eqfn"]
 [ext_resource type="Script" path="res://scripts/folding_minigame.gd" id="2_r2kfw"]
-[ext_resource type="Texture2D" uid="uid://c0v1jyjcvbmau" path="res://assets/Art Folder/hands pointing.png" id="3_4k113"]
+[ext_resource type="Texture2D" uid="uid://ffsm2ri2md1i" path="res://assets/Art Folder/new hands.png" id="3_ra6pn"]
 [ext_resource type="Texture2D" uid="uid://cvupiuxjmn274" path="res://assets/Art Folder/goal_dottedline.png" id="4_j2hqs"]
 [ext_resource type="Texture2D" uid="uid://clbiapxskd6y8" path="res://assets/Art Folder/arrow-controls/old drafts/controls_down-arrow.png" id="5_7vjkd"]
 [ext_resource type="Texture2D" uid="uid://dqet3cttsv6mq" path="res://assets/Art Folder/arrow-controls/old drafts/controls_up-arrow.png" id="6_hjdd8"]
@@ -65,12 +65,14 @@ base_kindness = 50.0
 miss_punish = 80
 
 [node name="IndicatorSprite" type="Sprite2D" parent="."]
+z_as_relative = false
 position = Vector2(-3.36818, -0.47702)
-scale = Vector2(0.45, 0.35)
-texture = ExtResource("3_4k113")
+scale = Vector2(0.2, 0.155)
+texture = ExtResource("3_ra6pn")
 
 [node name="GoalSprite" type="Sprite2D" parent="."]
 z_index = -1
+z_as_relative = false
 position = Vector2(-2, 0)
 scale = Vector2(2.1, 5)
 texture = ExtResource("4_j2hqs")

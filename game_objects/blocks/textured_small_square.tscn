@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="1_h2edy"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_54mb4"]
-[ext_resource type="Texture2D" uid="uid://c3hsfgqbvdbg8" path="res://assets/Art Folder/blocks textured version/square 1 x 1 textured.png" id="3_uergc"]
+[ext_resource type="Texture2D" uid="uid://c3o1excb35wga" path="res://assets/Art Folder/blocks text textured version/square 1x1 text textured.png" id="3_v8ayl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hfjh"]
 size = Vector2(250, 250)
@@ -14,7 +14,7 @@ script = ExtResource("1_h2edy")
 script = ExtResource("2_54mb4")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("3_uergc")
+texture = ExtResource("3_v8ayl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_2hfjh")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://8ynvw7iccrpx"]
 
 [ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="1_mqb6s"]
-[ext_resource type="Texture2D" uid="uid://07miqlqu7qec" path="res://assets/Art Folder/blocks textured version/shorter long rectangle 1x4 textured.png" id="2_o1ia2"]
+[ext_resource type="Texture2D" uid="uid://bgfnabsl4ffb" path="res://assets/Art Folder/blocks text textured version/shorter long rectangle 1x4 text textured.png" id="2_3ufgp"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="3_x3e3x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aw6yt"]
@@ -11,7 +11,7 @@ size = Vector2(250, 950)
 script = ExtResource("1_mqb6s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_o1ia2")
+texture = ExtResource("2_3ufgp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_aw6yt")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="1_rad4w"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_o6oe5"]
-[ext_resource type="Texture2D" uid="uid://gpn3k1g8viv2" path="res://assets/Art Folder/blocks textured version/t block 1x3 textured.png" id="3_cy8qa"]
+[ext_resource type="Texture2D" uid="uid://ce4xopfsux8lr" path="res://assets/Art Folder/blocks text textured version/t block 1x3 text textured.png" id="3_eaddi"]
 
 [node name="TBlock" type="RigidBody2D"]
 script = ExtResource("1_rad4w")
@@ -11,7 +11,7 @@ script = ExtResource("1_rad4w")
 script = ExtResource("2_o6oe5")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("3_cy8qa")
+texture = ExtResource("3_eaddi")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-360, -240, 360, -240, 360, 5, 125, 5, 125, 240, -120, 240, -120, 5, -360, 5)

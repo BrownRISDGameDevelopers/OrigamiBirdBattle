@@ -16,29 +16,27 @@
 [ext_resource type="AudioStream" uid="uid://bm5am8mjg8dev" path="res://assets/sound/paper_foley.mp3" id="14_83mrg"]
 [ext_resource type="AudioStream" uid="uid://7toxqe44qecc" path="res://assets/sound/error_2.mp3" id="15_l5mvu"]
 
-[sub_resource type="Animation" id="Animation_wan2c"]
+[sub_resource type="Animation" id="Animation_who2y"]
 resource_name = "FoldShake"
-length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:offset")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(50, 0), Vector2(-50, 0), Vector2(50, 0), Vector2(-50, 0), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5xaxu"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2n3oe"]
 _data = {
-"FoldShake": SubResource("Animation_wan2c")
+"FoldShake": SubResource("Animation_who2y")
 }
 
 [node name="FoldingMinigame" type="Sprite2D"]
-position = Vector2(587, 338)
 scale = Vector2(2.07826, 2.07826)
 texture = ExtResource("1_gylwc")
 script = ExtResource("2_r2kfw")
@@ -122,5 +120,5 @@ stream = ExtResource("15_l5mvu")
 
 [node name="ShakePlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_5xaxu")
+"": SubResource("AnimationLibrary_2n3oe")
 }

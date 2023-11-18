@@ -9,7 +9,8 @@ class_name BlockBase extends RigidBody2D
 @onready var active = true
 @onready var speed = 500
 
-
+var origin_pos: Vector2
+var x_range: float = 300
 var just_clicked: bool = false 
 
 signal next_block()
@@ -40,13 +41,20 @@ func _physics_process(delta):
 	
 func left():
 	if active:
-		self.linear_velocity.x = -speed
-		just_clicked = true
+		if ((global_position.x - (speed * (1/60))) > (origin_pos.x - x_range)): 
+			self.linear_velocity.x = -speed
+			just_clicked = true
+		else:
+			self.linear_velocity.x = 0
 
 func right():
-	if active:		
-		self.linear_velocity.x = speed	
-		just_clicked = true
+	if active:	
+		if ((global_position.x + (speed * (1/60))) < (origin_pos.x + x_range)): 	
+			self.linear_velocity.x = speed	
+			just_clicked = true
+		else: 
+			self.linear_velocity.x = 0
+			
 func stop():
 	if active:
 		self.linear_velocity.x = 0
@@ -66,5 +74,6 @@ func _on_body_entered(body):
 		self.linear_velocity.x = 0
 		next_block.emit()
 	else:
-		print("BODY ENTERED " + str(body.name))
+		pass
+#		print("BODY ENTERED " + str(body.name))
 

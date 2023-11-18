@@ -1,17 +1,15 @@
 class_name StartMessage
 extends Label
 
-var messages = ["Ready...", "  Set...", "  Go!"]
-var num_frames
-var message_num
-var last_num_frames
+@export var messages: Array[String] = ["Ready...", "  Set...", "  Go!"]
+var num_frames: int = 0
+var message_num: int = 0
+var last_num_frames: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	num_frames = 0
-	last_num_frames = 0
-	message_num = 0
 	visible = true
+	text = messages[message_num]
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

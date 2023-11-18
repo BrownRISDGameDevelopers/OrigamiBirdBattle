@@ -30,15 +30,15 @@ var cur_stage: Stage = Stage.START
 
 var player_managers: Array[PlayerManager] = []
 var players_finished = 0
-var best_player = 0
-var best_height = 0
+var best_player = -1
+var best_height = INF
 
 signal game_complete()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	timer.wait_time = 2
+	timer.wait_time = 4
 	timer.connect("timeout", goto_next_state)
 	timer.start()
 	
@@ -66,7 +66,7 @@ func goto_next_state():
 		for player in player_managers:
 			player.set_battle_mode()
 		cur_stage = Stage.BATTLING
-		timer.wait_time = 30
+		timer.wait_time = 5
 		timer.start()
 		
 	# Go to battle mode
@@ -95,12 +95,15 @@ func goto_next_state():
 func get_new_winner(pos, player_num):
 	players_finished += 1
 	
-	if pos > best_height:
+	print("new winner " + str(pos) + " " + str(player_num) + " " + player_managers[player_num].player_name)
+	
+	if pos < best_height:
+		best_height = pos
 		best_player = player_num
 	
 	if players_finished == player_managers.size():
 		# end game
-		game_complete.emit(best_player)
+		game_complete.emit(player_managers[best_player].player_name)
 		print("WINNER: " + str(best_player))
 	
 	

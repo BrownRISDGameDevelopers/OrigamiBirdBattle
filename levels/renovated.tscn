@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dlel4wfarjd1c"]
+[gd_scene load_steps=19 format=3 uid="uid://dlel4wfarjd1c"]
 
 [ext_resource type="Texture2D" uid="uid://d05i7w0eynl6o" path="res://assets/Art Folder/backgrounds/playground-background-revised.png" id="1_2fitt"]
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_nsr2b"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dt5ivmfvsc58v" path="res://assets/Art Folder/backgrounds/background-floor-tex-2.png" id="10_sqtde"]
 [ext_resource type="AudioStream" uid="uid://d27epe28m0ait" path="res://assets/Music/October_14th_-_101423_3.37_PM.mp3" id="11_2xosb"]
 [ext_resource type="Script" path="res://levels/Label.gd" id="12_q87wk"]
+[ext_resource type="FontFile" uid="uid://7dwv3y0hrkox" path="res://assets/Art Folder/Dekko-Regular.ttf" id="13_i8qtn"]
+[ext_resource type="Script" path="res://levels/MainUI.gd" id="13_rj3vm"]
 [ext_resource type="Script" path="res://game_objects/start_message.gd" id="13_uxu28"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utvaf"]
@@ -20,6 +22,11 @@ size = Vector2(3836, 1084)
 [sub_resource type="LabelSettings" id="LabelSettings_o74n6"]
 font_size = 96
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ejtdr"]
+line_spacing = 0.0
+font = ExtResource("13_i8qtn")
+font_size = 200
 
 [node name="Root" type="Node2D"]
 
@@ -61,14 +68,15 @@ wait_time = 2.0
 [node name="Player1" type="Node2D" parent="Game"]
 position = Vector2(1224, 280)
 script = ExtResource("4_cvtrv")
+player_name = "Player 1"
 
 [node name="Building" parent="Game/Player1" node_paths=PackedStringArray("to_parent", "spawn_pos") instance=ExtResource("5_n0oa0")]
 position = Vector2(-776, -536)
 scale = Vector2(2, 2)
 to_parent = NodePath("../../../World")
 spawn_pos = NodePath("../../../World/SpawnPos1")
-block_layer_mask = 9
-block_collision_mask = 9
+block_layer_mask = 1
+block_collision_mask = 1
 
 [node name="CheckHeight" parent="Game/Player1" instance=ExtResource("6_r0jvv")]
 position = Vector2(-776, -528)
@@ -92,6 +100,7 @@ position = Vector2(-128, 112)
 [node name="Player2" type="Node2D" parent="Game"]
 position = Vector2(2144, 280)
 script = ExtResource("4_cvtrv")
+player_name = "Player 2"
 
 [node name="Building" parent="Game/Player2" node_paths=PackedStringArray("to_parent", "spawn_pos") instance=ExtResource("5_n0oa0")]
 position = Vector2(128, -524)
@@ -236,11 +245,13 @@ label_settings = SubResource("LabelSettings_o74n6")
 script = ExtResource("12_q87wk")
 timer = NodePath("../Game/Timer")
 
-[node name="UI" type="Control" parent="."]
+[node name="UI" type="Control" parent="." node_paths=PackedStringArray("game_manager")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1504.0
 offset_bottom = 944.0
+script = ExtResource("13_rj3vm")
+game_manager = NodePath("../Game")
 
 [node name="OnGameStart" type="Control" parent="UI"]
 layout_mode = 1
@@ -258,16 +269,41 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.904
 anchor_bottom = 1.034
-offset_left = 328.0
-offset_top = 256.0
-offset_right = -184.704
+offset_left = -675.0
+offset_top = 272.0
+offset_right = 751.296
 offset_bottom = -343.552
+text = "
+"
+label_settings = SubResource("LabelSettings_ejtdr")
+horizontal_alignment = 1
 script = ExtResource("13_uxu28")
 
-[node name="StartMessage" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-script = ExtResource("13_uxu28")
+[node name="GameEnd" type="Control" parent="UI"]
+layout_mode = 1
+anchor_left = -0.426
+anchor_top = -0.22
+anchor_right = 1.441
+anchor_bottom = 1.475
+offset_left = 640.704
+offset_top = 207.68
+offset_right = -591.264
+offset_bottom = -464.4
+
+[node name="EndLabel" type="Label" parent="UI/GameEnd"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.904
+anchor_bottom = 1.034
+offset_left = -688.0
+offset_top = 256.0
+offset_right = 751.296
+offset_bottom = -343.552
+text = "
+"
+label_settings = SubResource("LabelSettings_ejtdr")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [editable path="Game/Player1/Firing"]
 [editable path="Game/Player2/Firing"]

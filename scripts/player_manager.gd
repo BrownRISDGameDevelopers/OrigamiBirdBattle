@@ -36,6 +36,7 @@ var cur_state: Globals.Stage = gs.BATTLING
 #var cur_battle_state: BattleState = BattleState.SELECT
 
 
+@export var player_name: String = "Player"
 
 var num: int = -1
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4dsy6g3si6pi"
-path="res://.godot/imported/origami bird ui_1-step2.png-870d82c0539481850bcff9da80235aec.ctex"
+uid="uid://1wc8idxynxug"
+path="res://.godot/imported/timer sign.png-0653d3141e4077e758f5a5cb2b822977.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Art Folder/bird1-instructions/folding game/old drafts/origami bird ui_1-step2.png"
-dest_files=["res://.godot/imported/origami bird ui_1-step2.png-870d82c0539481850bcff9da80235aec.ctex"]
+source_file="res://assets/Art Folder/timer sign.png"
+dest_files=["res://.godot/imported/timer sign.png-0653d3141e4077e758f5a5cb2b822977.ctex"]
 
 [params]
 

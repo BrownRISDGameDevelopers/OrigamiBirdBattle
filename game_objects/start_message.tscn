@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh5ml0l5fc4dq"]
+[gd_scene load_steps=2 format=3 uid="uid://fil6a0h125b8"]
 
 [ext_resource type="Script" path="res://game_objects/start_message.gd" id="1_m0kay"]
 

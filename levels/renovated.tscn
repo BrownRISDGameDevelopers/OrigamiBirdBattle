@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dlel4wfarjd1c"]
+[gd_scene load_steps=16 format=3 uid="uid://dlel4wfarjd1c"]
 
 [ext_resource type="Texture2D" uid="uid://d05i7w0eynl6o" path="res://assets/Art Folder/backgrounds/playground-background-revised.png" id="1_2fitt"]
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_nsr2b"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dt5ivmfvsc58v" path="res://assets/Art Folder/backgrounds/background-floor-tex-2.png" id="10_sqtde"]
 [ext_resource type="AudioStream" uid="uid://d27epe28m0ait" path="res://assets/Music/October_14th_-_101423_3.37_PM.mp3" id="11_2xosb"]
 [ext_resource type="Script" path="res://levels/Label.gd" id="12_q87wk"]
+[ext_resource type="Script" path="res://game_objects/start_message.gd" id="13_uxu28"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utvaf"]
 size = Vector2(3836, 1084)
@@ -225,7 +226,7 @@ flip_v = true
 stream = ExtResource("11_2xosb")
 autoplay = true
 
-[node name="Label" type="Label" parent="." node_paths=PackedStringArray("timer")]
+[node name="TimerLabel" type="Label" parent="." node_paths=PackedStringArray("timer")]
 offset_left = 656.0
 offset_top = 1086.0
 offset_right = 1279.0
@@ -234,6 +235,34 @@ text = "alkdjflkasdjfa"
 label_settings = SubResource("LabelSettings_o74n6")
 script = ExtResource("12_q87wk")
 timer = NodePath("../Game/Timer")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1504.0
+offset_bottom = 944.0
+
+[node name="OnGameStart" type="Control" parent="UI"]
+layout_mode = 1
+anchor_left = -0.426
+anchor_top = -0.22
+anchor_right = 1.441
+anchor_bottom = 1.475
+offset_left = 640.704
+offset_top = 207.68
+offset_right = -591.264
+offset_bottom = -464.4
+
+[node name="Label" type="Label" parent="UI/OnGameStart"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.904
+anchor_bottom = 1.034
+offset_left = 328.0
+offset_top = 256.0
+offset_right = -184.704
+offset_bottom = -343.552
+script = ExtResource("13_uxu28")
 
 [editable path="Game/Player1/Firing"]
 [editable path="Game/Player2/Firing"]

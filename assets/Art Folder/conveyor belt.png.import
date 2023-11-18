@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4dsy6g3si6pi"
-path="res://.godot/imported/origami bird ui_1-step2.png-870d82c0539481850bcff9da80235aec.ctex"
+uid="uid://dy3p1l7ksebqg"
+path="res://.godot/imported/conveyor belt.png-468572cae3711ee095bf6f1bb3b806d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Art Folder/bird1-instructions/folding game/old drafts/origami bird ui_1-step2.png"
-dest_files=["res://.godot/imported/origami bird ui_1-step2.png-870d82c0539481850bcff9da80235aec.ctex"]
+source_file="res://assets/Art Folder/conveyor belt.png"
+dest_files=["res://.godot/imported/conveyor belt.png-468572cae3711ee095bf6f1bb3b806d6.ctex"]
 
 [params]
 

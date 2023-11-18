@@ -12,7 +12,7 @@ func _ready():
 		if child is BlockBase:
 			print("CHILD")
 			blocks.append(child)
-			(child as BlockBase).deactivate()
+#			(child as BlockBase).deactivate()
 	
 	if timer != null:
 		timer.timeout.connect(activate)

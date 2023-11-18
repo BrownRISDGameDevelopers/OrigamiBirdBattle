@@ -67,8 +67,8 @@ position = Vector2(-776, -536)
 scale = Vector2(2, 2)
 to_parent = NodePath("../../../World")
 spawn_pos = NodePath("../../../World/SpawnPos1")
-block_layer_mask = 1
-block_collision_mask = 3
+block_layer_mask = 9
+block_collision_mask = 9
 
 [node name="CheckHeight" parent="Game/Player1" instance=ExtResource("6_r0jvv")]
 position = Vector2(-776, -528)
@@ -83,10 +83,10 @@ scale = Vector2(0.75, 0.75)
 [node name="Firing" parent="Game/Player1" instance=ExtResource("8_jd12v")]
 z_index = 1
 position = Vector2(-403, 528)
-bird_collision_layer = 4
-bird_collision_mask = 6
+bird_collision_layer = 2
+bird_collision_mask = 2
 
-[node name="firing" parent="Game/Player1/Firing" index="1"]
+[node name="firing" parent="Game/Player1/Firing" index="0"]
 position = Vector2(-128, 112)
 
 [node name="Player2" type="Node2D" parent="Game"]
@@ -99,7 +99,7 @@ scale = Vector2(2, 2)
 to_parent = NodePath("../../../World")
 spawn_pos = NodePath("../../../World/SpawnPos2")
 block_layer_mask = 2
-block_collision_mask = 3
+block_collision_mask = 2
 
 [node name="CheckHeight" parent="Game/Player2" instance=ExtResource("6_r0jvv")]
 position = Vector2(16, -524)
@@ -116,10 +116,10 @@ z_index = 1
 position = Vector2(824, 528)
 scale = Vector2(-1, 1)
 direction_multi = -1
-bird_collision_layer = 4
-bird_collision_mask = 5
+bird_collision_layer = 1
+bird_collision_mask = 1
 
-[node name="firing" parent="Game/Player2/Firing" index="1"]
+[node name="firing" parent="Game/Player2/Firing" index="0"]
 position = Vector2(-128, 112)
 
 [node name="World" type="Node2D" parent="."]
@@ -206,8 +206,8 @@ z_index = -5
 position = Vector2(0, 1320)
 rotation = 3.14159
 scale = Vector2(2, 1)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 15
+collision_mask = 15
 freeze = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/RigidBody2D"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://gbvopuoe0kt8"]
 
-[ext_resource type="Texture2D" uid="uid://casy00t0eukw1" path="res://assets/Art Folder/transparent square.png" id="1_0eqfn"]
+[ext_resource type="Texture2D" uid="uid://crulccn8lkciy" path="res://frame.png" id="1_vicy2"]
 [ext_resource type="Script" path="res://scripts/folding_minigame.gd" id="2_r2kfw"]
 [ext_resource type="Texture2D" uid="uid://ffsm2ri2md1i" path="res://assets/Art Folder/new hands.png" id="3_ra6pn"]
 [ext_resource type="Texture2D" uid="uid://cvupiuxjmn274" path="res://assets/Art Folder/goal_dottedline.png" id="4_j2hqs"]
@@ -57,7 +57,7 @@ _data = {
 z_index = -1
 position = Vector2(-10, 5)
 scale = Vector2(4, 4)
-texture = ExtResource("1_0eqfn")
+texture = ExtResource("1_vicy2")
 script = ExtResource("2_r2kfw")
 loop_time_up = 110.0
 loop_time_down = 80.0

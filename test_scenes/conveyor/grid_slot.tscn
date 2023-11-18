@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8nnoqkygx18a"]
+[gd_scene load_steps=3 format=3 uid="uid://c8nnoqkygx18a"]
 
 [ext_resource type="Script" path="res://scripts/conveyor/conveyorPanel.gd" id="1_jrtkj"]
-[ext_resource type="Texture2D" uid="uid://24i1r61rrf8d" path="res://assets/Art Folder/test paper.png" id="2_77x57"]
-[ext_resource type="Texture2D" uid="uid://dy3p1l7ksebqg" path="res://assets/Art Folder/conveyor belt.png" id="3_hw1yp"]
+[ext_resource type="Texture2D" uid="uid://c8l2oqx3ip8ub" path="res://assets/Art Folder/test paper.png" id="2_77x57"]
 
 [node name="slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -29,5 +28,4 @@ layout_mode = 2
 [node name="item" type="Sprite2D" parent="CenterContainer/Panel"]
 position = Vector2(-20, -20)
 scale = Vector2(0.0195312, 0.0195312)
-texture = ExtResource("3_hw1yp")
 centered = false

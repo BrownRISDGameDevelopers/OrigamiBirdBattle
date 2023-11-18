@@ -3,3 +3,12 @@
 .DS_Store
 assets/Art Folder/bird1-instructions/folding game/bird_1-step2.png.import
 *.import
+*.cache
+*.md5
+*.ctex
+*.fontdata
+*.mp3str
+*.cfg
+.godot/editor/filesystem_cache8
+.godot/editor/filesystem_update4
+.godot/uid_cache.bin

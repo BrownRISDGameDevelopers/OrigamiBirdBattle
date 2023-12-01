@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://7a3oyt2rsyhf"]
+[gd_scene load_steps=7 format=3 uid="uid://7a3oyt2rsyhf"]
 
 [ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="1_8jlb4"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_7msrj"]
 [ext_resource type="Texture2D" uid="uid://3uvofq3c6sy5" path="res://icon.svg" id="3_3i4tn"]
+[ext_resource type="Script" path="res://scripts/audio_manager.gd" id="4_c0fga"]
+[ext_resource type="AudioStream" uid="uid://dnljqrfy4lggn" path="res://assets/sound/Recorded SFX/Crumples/Crumple#02.wav" id="5_anind"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8sg70"]
 
@@ -26,5 +28,11 @@ texture = ExtResource("3_3i4tn")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-65, -64, 65, -64, 65, 64, -65, 64)
+
+[node name="Audio" type="Node2D" parent="."]
+script = ExtResource("4_c0fga")
+tracks = Array[AudioStream]([ExtResource("5_anind")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

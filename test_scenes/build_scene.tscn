@@ -7,10 +7,10 @@
 script = ExtResource("1_kg2ge")
 
 [node name="conveyor" parent="." instance=ExtResource("1_i60ja")]
-offset_left = 254.0
-offset_top = 4.0
-offset_right = 254.0
-offset_bottom = 4.0
+visible = false
+offset_left = 216.0
+offset_right = 216.0
+offset_bottom = 0.0
 item_num = 30
 
 [connection signal="drop_block" from="conveyor" to="." method="_on_conveyor_drop_block"]

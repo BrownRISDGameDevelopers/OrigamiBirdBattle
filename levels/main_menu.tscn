@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvx56heuihmeh"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_5lls4"]
+[ext_resource type="Script" path="res://scripts/audio_manager.gd" id="5_tgi12"]
+[ext_resource type="AudioStream" uid="uid://b31bg7gygupgx" path="res://assets/Music/background music 1.mp3" id="6_plmjh"]
+[ext_resource type="AudioStream" uid="uid://3f72ujoq2ht" path="res://assets/Music/background music 2.mp3" id="7_060ya"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="MainMenu" type="CanvasLayer" parent="."]
+script = ExtResource("1_5lls4")
+start_to = "renovated"
+credits_to = "credit_sceen"
+tutorial_to = "tutorial"
+
+[node name="MainMessage" type="Label" parent="MainMenu"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -228.0
+offset_top = 70.0
+offset_right = -75.0
+offset_bottom = 96.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+text = "Origami Bird Battle!"
+horizontal_alignment = 1
+
+[node name="NormalGame" type="Button" parent="MainMenu"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 496.0
+offset_top = -52.0
+offset_right = 542.0
+offset_bottom = -21.0
+grow_vertical = 2
+scale = Vector2(3, 3)
+text = "Start"
+
+[node name="Tutorial" type="Button" parent="MainMenu"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 464.0
+offset_top = -164.0
+offset_right = 533.0
+offset_bottom = -133.0
+grow_vertical = 2
+scale = Vector2(3, 3)
+text = "Tutorial
+"
+
+[node name="Credits" type="Button" parent="MainMenu"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -680.0
+offset_top = 68.0
+offset_right = -617.0
+offset_bottom = 99.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(3, 3)
+text = "Credits"
+
+[node name="Quit" type="Button" parent="MainMenu"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -136.0
+offset_right = -30.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3, 3)
+text = "Quit"
+
+[node name="Audio" type="Node2D" parent="MainMenu"]
+script = ExtResource("5_tgi12")
+tracks = Array[AudioStream]([ExtResource("6_plmjh"), ExtResource("7_060ya")])
+play_on_ready = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MainMenu/Audio"]

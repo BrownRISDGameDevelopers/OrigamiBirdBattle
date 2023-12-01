@@ -9,6 +9,8 @@ class_name BlockBase extends RigidBody2D
 @onready var active = true
 @onready var speed = 500
 
+@onready var audio: RandomAudio = $Audio
+
 var origin_pos: Vector2
 var x_range: float = 300
 var just_clicked: bool = false 
@@ -71,6 +73,9 @@ func _on_body_entered(body):
 	if active:
 		print("BLOCK DONE")
 		active = false
+		
+		audio.play(randf_range(.9, 1.1))
+		
 		self.linear_velocity.x = 0
 		next_block.emit()
 	else:

@@ -6,7 +6,7 @@ extends CanvasLayer
 @export var start_to: String
 @export var credits_to: String
 @export var tutorial_to: String
-@onready var start_game_button = $NormalGame
+@onready var start_game_button = $Start
 @onready var tutorial_button = $Tutorial
 @onready var credits_button = $Credits
 @onready var quit_button = $Quit

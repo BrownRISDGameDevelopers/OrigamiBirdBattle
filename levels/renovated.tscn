@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dlel4wfarjd1c"]
+[gd_scene load_steps=19 format=3 uid="uid://dlel4wfarjd1c"]
 
 [ext_resource type="Texture2D" uid="uid://f071wxs70l3v" path="res://assets/Art Folder/backgrounds/playground-background-revised.png" id="1_yw4wk"]
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_nsr2b"]
@@ -12,23 +12,14 @@
 [ext_resource type="Script" path="res://scripts/audio_manager.gd" id="11_bf1fp"]
 [ext_resource type="AudioStream" uid="uid://b31bg7gygupgx" path="res://assets/Music/background music 1.mp3" id="12_m2nlu"]
 [ext_resource type="Script" path="res://levels/Label.gd" id="12_q87wk"]
-[ext_resource type="FontFile" uid="uid://7dwv3y0hrkox" path="res://assets/Art Folder/Dekko-Regular.ttf" id="13_i8qtn"]
 [ext_resource type="Script" path="res://levels/MainUI.gd" id="13_rj3vm"]
+[ext_resource type="LabelSettings" uid="uid://csv4pvy2jn3pd" path="res://default_label.tres" id="13_tbsy6"]
 [ext_resource type="Script" path="res://game_objects/start_message.gd" id="13_uxu28"]
 [ext_resource type="AudioStream" uid="uid://3f72ujoq2ht" path="res://assets/Music/background music 2.mp3" id="13_y5ye8"]
 [ext_resource type="PackedScene" uid="uid://dvx56heuihmeh" path="res://levels/main_menu.tscn" id="15_0chs3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utvaf"]
 size = Vector2(3836, 1084)
-
-[sub_resource type="LabelSettings" id="LabelSettings_o74n6"]
-font_size = 96
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_ejtdr"]
-line_spacing = 0.0
-font = ExtResource("13_i8qtn")
-font_size = 200
 
 [node name="Root" type="Node2D"]
 
@@ -75,7 +66,7 @@ block_layer_mask = 1
 block_collision_mask = 1
 
 [node name="CheckHeight" parent="Game/Player1" instance=ExtResource("6_r0jvv")]
-position = Vector2(-776, -528)
+position = Vector2(-776, -800)
 scale = Vector2(2, 1)
 
 [node name="Fold" type="Node2D" parent="Game/Player1"]
@@ -107,7 +98,7 @@ block_layer_mask = 2
 block_collision_mask = 2
 
 [node name="CheckHeight" parent="Game/Player2" instance=ExtResource("6_r0jvv")]
-position = Vector2(16, -524)
+position = Vector2(16, -800)
 scale = Vector2(2, 2)
 
 [node name="Fold" type="Node2D" parent="Game/Player2"]
@@ -137,11 +128,11 @@ texture = ExtResource("1_yw4wk")
 position = Vector2(656, 704)
 
 [node name="SpawnPos1" type="Node2D" parent="World"]
-position = Vector2(-835, -936)
+position = Vector2(-832, -1096)
 scale = Vector2(5, 5)
 
 [node name="SpawnPos2" type="Node2D" parent="World"]
-position = Vector2(1045, -940)
+position = Vector2(1048, -1096)
 scale = Vector2(5, 5)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="World"]
@@ -176,7 +167,7 @@ offset_top = 1086.0
 offset_right = 1279.0
 offset_bottom = 1221.0
 text = "alkdjflkasdjfa"
-label_settings = SubResource("LabelSettings_o74n6")
+label_settings = ExtResource("13_tbsy6")
 script = ExtResource("12_q87wk")
 timer = NodePath("../Game/Timer")
 
@@ -211,7 +202,7 @@ offset_right = 751.296
 offset_bottom = -343.552
 text = "
 "
-label_settings = SubResource("LabelSettings_ejtdr")
+label_settings = ExtResource("13_tbsy6")
 horizontal_alignment = 1
 script = ExtResource("13_uxu28")
 
@@ -250,7 +241,7 @@ offset_right = 751.296
 offset_bottom = -343.552
 text = "
 "
-label_settings = SubResource("LabelSettings_ejtdr")
+label_settings = ExtResource("13_tbsy6")
 horizontal_alignment = 1
 vertical_alignment = 1
 

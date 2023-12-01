@@ -137,7 +137,6 @@ func _timing_press(press):
 	if !visible:
 		return
 	
-	
 	if indicator_pos.y > goal_limit_down and indicator_pos.y < goal_limit_up: 
 #	and press == next_press:
 		for i in arrows_array:

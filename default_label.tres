@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://csv4pvy2jn3pd"]
+
+[ext_resource type="FontFile" uid="uid://7dwv3y0hrkox" path="res://assets/Art Folder/Dekko-Regular.ttf" id="1_11x0w"]
+
+[resource]
+font = ExtResource("1_11x0w")
+font_size = 96
+font_color = Color(0, 0, 0, 1)

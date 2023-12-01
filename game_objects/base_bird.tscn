@@ -70,7 +70,7 @@ _data = {
 
 [node name="BaseBird" type="RigidBody2D"]
 position = Vector2(0, 1)
-max_contacts_reported = 10
+max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_7165y")
 rb_mass = 10.0

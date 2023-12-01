@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var textures: Array[CompressedTexture2D]
-@export var goto_scene_on_end: PackedScene 
+@export var goto_scene_on_end: String
 @export var delay: float = .75
 
 @onready var text_rect: TextureRect = $TextureRect
@@ -29,7 +29,7 @@ func _unhandled_key_input(event):
 				cur_delay = delay
 				return
 			
-			get_tree().change_scene_to_packed(goto_scene_on_end)
+			get_tree().change_scene_to_file("res://levels/" + goto_scene_on_end + ".tscn")
 
 		
 		

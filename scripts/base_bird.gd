@@ -38,6 +38,9 @@ func _on_body_entered(body):
 	$ExplosionAnimationPlayer.play("cartoon_explosion")
 	$Sprite2D.set_visible(false)
 	audio.play(randf_range(1.25, 1.3))
+	# disable collisions
+	collision_mask = 0
+	collision_layer = 0
 #	$ExplosionSound.play(.23)
 	self.set_sleeping(true)
 	on_col.emit()
@@ -47,9 +50,7 @@ func _on_body_entered(body):
 	await get_tree().create_timer(0.13).timeout
 	$Explosion.set_visible(false)
 	
-	# disable collisions
-	collision_mask = 0
-	collision_layer = 0
+	
 	
 	# this timer will destroy bird
 	timer.start(3)

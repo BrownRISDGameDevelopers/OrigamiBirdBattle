@@ -49,6 +49,7 @@ func _on_conveyor_drop_block(blockdata):
 	block_drop.next_block.connect(_on_block_hit);
 	block_drop.global_position = spawn_pos.global_position
 	block_drop.origin_pos = spawn_pos.global_position
+	block_drop.linear_velocity.y = 100
 #	block_drop.global_scale = spawn_pos.global_scale
 #	block_drop.scale = spawn_pos.scale
 #	block_drop.position = Vector2(conveyor.position.x, 150)

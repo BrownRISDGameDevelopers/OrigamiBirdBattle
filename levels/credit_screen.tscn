@@ -1,8 +1,95 @@
-[gd_scene format=3 uid="uid://mgtnbkj8b0sm"]
+[gd_scene load_steps=6 format=3 uid="uid://mgtnbkj8b0sm"]
+
+[ext_resource type="Script" path="res://levels/credit_screen.gd" id="1_s8bi4"]
+[ext_resource type="FontFile" uid="uid://7dwv3y0hrkox" path="res://assets/Art Folder/Dekko-Regular.ttf" id="2_a8e40"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7rg46"]
+font = ExtResource("2_a8e40")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_50yup"]
+font = ExtResource("2_a8e40")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_03inj"]
+font = ExtResource("2_a8e40")
+font_size = 100
 
 [node name="CreditScreen" type="Node2D"]
+script = ExtResource("1_s8bi4")
 
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Credits go here."
+offset_left = 144.0
+offset_top = -120.0
+offset_right = 405.0
+offset_bottom = 776.0
+text = "Producers
+Cindy Li
+Max Guo
+Evan Mickelson
+
+Artists:
+Brianna Cheng
+Chase Burns
+Kailey Hu
+Nicole Sun
+Ut Tong (Grace) Zhao"
+label_settings = SubResource("LabelSettings_7rg46")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 480.0
+offset_top = -40.0
+offset_right = 741.0
+offset_bottom = 688.0
+text = "Programmers
+Aidan Prendergast
+Hannah Zhang
+Jeremy Fleming
+Johnny Kuehnis
+Max Guo
+Nathan Robbins
+Sam Weiss
+
+Lead programmer
+Evan Mickelson"
+label_settings = SubResource("LabelSettings_50yup")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 808.0
+offset_top = -176.0
+offset_right = 1069.0
+offset_bottom = 552.0
+text = "Composer:
+Henry Nieves
+
+Sound:
+Jeremy Fleming
+
+"
+label_settings = SubResource("LabelSettings_50yup")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenu" type="Button" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 78.0
+offset_bottom = 63.0
+grow_vertical = 2
+scale = Vector2(3, 3)
+
+[node name="Label" type="Label" parent="MainMenu"]
+layout_mode = 0
+offset_left = 5.33333
+offset_right = 192.333
+offset_bottom = 167.0
+scale = Vector2(0.2, 0.2)
+text = "Back"
+label_settings = SubResource("LabelSettings_03inj")

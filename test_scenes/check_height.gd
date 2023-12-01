@@ -1,7 +1,7 @@
 class_name CheckHeight
 extends Node2D
 var velocity
-var wait_time = .75
+var wait_time = 1.5
 @export var screen_height = 1080 
 
 var done: bool = false

@@ -70,7 +70,7 @@ func finish_launch():
 		bird.collision_layer = bird_collision_layer
 	
 		bird.global_position = Vector2(bird_position.x, bird_position.y)
-		var bird_sprite = bird.get_node("Sprite2D")
+		var bird_sprite = bird.get_node("AnimatedSprite2D")
 		bird_sprite.scale.x *= sign(direction_multi)
 		var launch_angle = _firing.get_launch_angle()
 		var force_direction = Vector2(cos(launch_angle), direction_multi * sin(launch_angle))

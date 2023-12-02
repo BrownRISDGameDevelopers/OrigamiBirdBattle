@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_5lls4"]
 [ext_resource type="Script" path="res://scripts/audio_manager.gd" id="5_tgi12"]
-[ext_resource type="AudioStream" uid="uid://b31bg7gygupgx" path="res://assets/Music/background music 1.mp3" id="6_plmjh"]
-[ext_resource type="AudioStream" uid="uid://3f72ujoq2ht" path="res://assets/Music/background music 2.mp3" id="7_060ya"]
+[ext_resource type="AudioStream" uid="uid://dqtu73xrq7d25" path="res://assets/Music/background music 1.mp3" id="6_plmjh"]
+[ext_resource type="AudioStream" uid="uid://c064gabqsptdh" path="res://assets/Music/background music 2.mp3" id="7_060ya"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
 script = ExtResource("1_5lls4")
 start_to = "renovated"
-credits_to = "credit_sceen"
+credits_to = "credit_screen"
 tutorial_to = "tutorial"
 
 [node name="MainMessage" type="Label" parent="MainMenu"]

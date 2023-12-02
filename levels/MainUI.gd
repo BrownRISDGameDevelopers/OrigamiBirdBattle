@@ -33,6 +33,7 @@ func _process(delta):
 		pause.visible = get_tree().paused
 	
 	if (get_tree().paused and Input.is_action_just_pressed("restart")):
+		get_tree().paused = false
 		get_tree().change_scene_to_file("res://levels/" + "main_menu" + ".tscn")
 		
 		

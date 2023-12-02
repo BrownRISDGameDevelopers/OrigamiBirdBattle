@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://jaeggyic56rb"]
+[gd_scene load_steps=11 format=3 uid="uid://jaeggyic56rb"]
 
 [ext_resource type="Script" path="res://scripts/firing.gd" id="1_crr5r"]
 [ext_resource type="Texture2D" uid="uid://cridl7u47f3jd" path="res://assets/temporary/protractortemp.png" id="2_hpmm0"]
 [ext_resource type="Texture2D" uid="uid://bmyga7ykstgt1" path="res://assets/temporary/firingneedletemp.png" id="2_mh6mu"]
 [ext_resource type="AudioStream" uid="uid://di64nstvkmo07" path="res://assets/sound/pop_1.mp3" id="4_ocg6v"]
-[ext_resource type="Texture2D" uid="uid://bgopfyo3sfwyc" path="res://assets/Art Folder/catqpult hand flicking animation frames/2.png" id="6_tg206"]
-[ext_resource type="Texture2D" uid="uid://ck1vk03rp6yg7" path="res://assets/Art Folder/catqpult hand flicking animation frames/3.png" id="7_jgkqs"]
-[ext_resource type="Texture2D" uid="uid://dq5mkyr2xq3m3" path="res://assets/Art Folder/catqpult hand flicking animation frames/4.png" id="8_p738r"]
-[ext_resource type="Texture2D" uid="uid://dgemoy4gh05tt" path="res://assets/Art Folder/catqpult hand flicking animation frames/5.png" id="9_8iwe0"]
+[ext_resource type="Texture2D" uid="uid://chxu4tlof3o4e" path="res://assets/Art Folder/catqpult hand flicking animation frames/contrast_1.png" id="5_vxeuf"]
+[ext_resource type="Texture2D" uid="uid://xgxsplbj8bgg" path="res://assets/Art Folder/catqpult hand flicking animation frames/contrast_2.png" id="6_fwt1t"]
+[ext_resource type="Texture2D" uid="uid://y3j4rb5f0vnj" path="res://assets/Art Folder/catqpult hand flicking animation frames/contrast_3.png" id="7_lchgo"]
+[ext_resource type="Texture2D" uid="uid://c0vbsgvf7d13l" path="res://assets/Art Folder/catqpult hand flicking animation frames/contrast_4.png" id="8_a8ngd"]
+[ext_resource type="Texture2D" uid="uid://p85vc50rehbj" path="res://assets/Art Folder/catqpult hand flicking animation frames/contrast_5.png" id="9_p28th"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0mga2"]
 animations = [{
@@ -18,16 +19,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_tg206")
+"texture": ExtResource("5_vxeuf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_jgkqs")
+"texture": ExtResource("6_fwt1t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_p738r")
+"texture": ExtResource("7_lchgo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_8iwe0")
+"texture": ExtResource("8_a8ngd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_p28th")
 }],
 "loop": true,
 "name": &"flick",
@@ -75,7 +79,7 @@ stream = ExtResource("4_ocg6v")
 
 [node name="hand" type="AnimatedSprite2D" parent="."]
 position = Vector2(-68, -100)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_0mga2")
 animation = &"flick"
 

@@ -141,6 +141,7 @@ tracks = Array[AudioStream]([ExtResource("6_vnajg"), ExtResource("7_62wot"), Ext
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_hqpmw")
 animation = &"flying"
+speed_scale = 1.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

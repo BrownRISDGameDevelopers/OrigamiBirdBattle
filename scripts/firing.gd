@@ -6,6 +6,17 @@ extends Node2D
 @export var rotation_dir: int = -1
 @onready var needle = $needle
 @onready var hand = $hand
+@onready var pew1 = $FiringSound
+@onready var pew2 = $FiringSound2
+@onready var pew3 = $FiringSound3
+@onready var pew4 = $FiringSound4
+@onready var pew5 = $FiringSound5
+@onready var pew6 = $FiringSound6
+@onready var pew7 = $FiringSound7
+@onready var pew8 = $FiringSound8
+@onready var pew9 = $FiringSound9
+@onready var pews = [pew1, pew2, pew3, pew4, pew5, pew6, pew7, pew8, pew9]
+
 var launch_angle = 0
 var start_firing = false
 
@@ -55,9 +66,11 @@ func _on_button_2_pressed():
 	set_angle()
 	
 func _play_firing_sound():
-	$FiringSound.play()
+	var pew_index = randi()%9
+	var pew = pews[pew_index]
+	pew.play()
 	await get_tree().create_timer(0.40).timeout
-	$FiringSound.stop()
+	pew.stop()
 	
 func _play_flick_anim():
 	hand.play("flick")

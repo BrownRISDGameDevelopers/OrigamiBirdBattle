@@ -12,3 +12,5 @@ enum Stage {
 	BATTLING,
 	COMPLETE,
 }
+
+var tutorial: bool = true

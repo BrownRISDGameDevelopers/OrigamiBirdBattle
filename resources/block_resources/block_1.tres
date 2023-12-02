@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://sg1fa6xhqijw" path="res://game_objects/blocks/l_block.tscn" id="1_8om72"]
 [ext_resource type="Script" path="res://scripts/droppable.gd" id="1_678ms"]
-[ext_resource type="Texture2D" uid="uid://dflo6jvgkdyv0" path="res://assets/Art Folder/blocks textured version/Lblock 2x3 textured_.png" id="2_1lqrr"]
+[ext_resource type="Texture2D" uid="uid://digdx8dbv52m1" path="res://assets/Art Folder/blocks text textured version/Lblock 2x3 text textured.png" id="2_5841r"]
 
 [resource]
 script = ExtResource("1_678ms")
 block_shape = ExtResource("1_8om72")
-block_thumb = ExtResource("2_1lqrr")
+block_thumb = ExtResource("2_5841r")
 name = ""

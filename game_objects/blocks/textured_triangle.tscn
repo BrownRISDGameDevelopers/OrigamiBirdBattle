@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="1_wbkni"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_dqkcn"]
-[ext_resource type="Texture2D" uid="uid://dqrgqjimemyf1" path="res://assets/Art Folder/blocks textured version/triangle 5x2 textured.png" id="3_wmbfv"]
+[ext_resource type="Texture2D" uid="uid://d1xbjau47rjny" path="res://assets/Art Folder/blocks textured version/triangle 5x2 textured.png" id="3_wmbfv"]
 
 [node name="Triangle" type="RigidBody2D"]
 max_contacts_reported = 1

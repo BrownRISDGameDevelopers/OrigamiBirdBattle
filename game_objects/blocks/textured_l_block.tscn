@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c4n1v601d3jak"]
 
 [ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="1_v4yvy"]
-[ext_resource type="Texture2D" uid="uid://dhcrga4ljjy7j" path="res://assets/Art Folder/blocks text textured version/Lblock 2x3 text textured.png" id="2_m88rb"]
+[ext_resource type="Texture2D" uid="uid://digdx8dbv52m1" path="res://assets/Art Folder/blocks text textured version/Lblock 2x3 text textured.png" id="2_m88rb"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="3_gl683"]
 
 [node name="LBlock" type="RigidBody2D"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/bird-launcher.gd" id="1_p457b"]
 [ext_resource type="PackedScene" uid="uid://cls4p6r4uyhl6" path="res://game_objects/base_bird.tscn" id="2_mxxw2"]
 [ext_resource type="Shader" path="res://test_scenes/scrollingtrajectoryindicator.gdshader" id="4_3rbrs"]
-[ext_resource type="Texture2D" uid="uid://d2nxmexepp5q8" path="res://test_scenes/dotted_line.png" id="4_pyf2o"]
+[ext_resource type="Texture2D" uid="uid://dj43a2cw40371" path="res://test_scenes/dotted_line.png" id="4_pyf2o"]
 [ext_resource type="PackedScene" uid="uid://jaeggyic56rb" path="res://test_scenes/firing.tscn" id="5_w6xiv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lbbgp"]

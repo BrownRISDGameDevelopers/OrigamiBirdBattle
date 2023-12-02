@@ -29,7 +29,12 @@ func on_tutorial_button_down():
 
 func on_start_button_down():
 #	scene_to = "prototype"
-	get_tree().change_scene_to_file("res://levels/" + start_to + ".tscn")
+	if(Globals.tutorial):
+		Globals.tutorial = false
+		get_tree().change_scene_to_file("res://levels/" + tutorial_to + ".tscn")
+		
+	else:
+		get_tree().change_scene_to_file("res://levels/" + start_to + ".tscn")
 #	get_tree().change_scene_to_packed(start_to)
 
 func on_credit_button_down():

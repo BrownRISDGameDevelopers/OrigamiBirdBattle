@@ -15,6 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_3cf7x")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+z_index = -1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

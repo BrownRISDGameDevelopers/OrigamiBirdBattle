@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpxwq6pd1oxm5"]
+[gd_scene load_steps=7 format=3 uid="uid://cpxwq6pd1oxm5"]
 
 [ext_resource type="Script" path="res://tutorial.gd" id="1_4t6en"]
 [ext_resource type="Texture2D" uid="uid://dpj5me35fwcfq" path="res://assets/Art Folder/placeholder_sketches/placeholder_tut_1.png" id="2_708w8"]
 [ext_resource type="Texture2D" uid="uid://folxvcwl8aaa" path="res://assets/Art Folder/placeholder_sketches/placeholder_tut_2.png" id="3_4he3u"]
 [ext_resource type="Texture2D" uid="uid://ify8pvhipjxq" path="res://assets/Art Folder/placeholder_sketches/placeholder_tut_3.png" id="4_e7cmo"]
 [ext_resource type="Texture2D" uid="uid://du46n8lgtughl" path="res://assets/Art Folder/placeholder_sketches/placeholder_tut_last.png" id="5_bla37"]
+[ext_resource type="Texture2D" uid="uid://bdr0cvcxblant" path="res://assets/Art Folder/backgrounds/bg-blur.png" id="6_pcnqx"]
 
 [node name="Root" type="Node2D"]
 script = ExtResource("1_4t6en")
@@ -12,6 +13,16 @@ textures = Array[CompressedTexture2D]([ExtResource("2_708w8"), ExtResource("3_4h
 goto_scene_on_end = "renovated"
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = 53.0
+offset_top = 38.0
+offset_right = 1205.0
+offset_bottom = 686.0
+scale = Vector2(0.9, 0.9)
 expand_mode = 2
+
+[node name="gameplay_blurred" type="TextureRect" parent="."]
+z_index = -1
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.299991, 0.298927)
+texture = ExtResource("6_pcnqx")

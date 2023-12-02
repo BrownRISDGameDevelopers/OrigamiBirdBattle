@@ -17,7 +17,6 @@ enum Stage {
 
 var cur_stage: Stage = Stage.START
 @onready var timer: Timer = $Timer
-
 # Start
 # - ready game
 # - start timer for transition, go into build mode

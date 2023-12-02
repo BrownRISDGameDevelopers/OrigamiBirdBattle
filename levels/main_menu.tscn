@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvx56heuihmeh"]
+[gd_scene load_steps=7 format=3 uid="uid://dvx56heuihmeh"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_5lls4"]
 [ext_resource type="Texture2D" uid="uid://cm3hr5ru7w30i" path="res://assets/Art Folder/main-menu.png" id="5_jp2v3"]
 [ext_resource type="Script" path="res://scripts/audio_manager.gd" id="5_tgi12"]
+[ext_resource type="AudioStream" uid="uid://dwnbv8tyuebfl" path="res://assets/sound/paper_crinkle.mp3" id="6_gkpwo"]
 [ext_resource type="AudioStream" uid="uid://b8bk7jqd77vm2" path="res://assets/Music/background music 1.mp3" id="6_plmjh"]
 [ext_resource type="AudioStream" uid="uid://bg7mhgkqgop3p" path="res://assets/Music/background music 2.mp3" id="7_060ya"]
 
@@ -74,3 +75,7 @@ offset_right = 1366.0
 offset_bottom = 766.0
 scale = Vector2(0.84, 0.84)
 texture = ExtResource("5_jp2v3")
+
+[node name="button_press" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_gkpwo")
+pitch_scale = 2.0

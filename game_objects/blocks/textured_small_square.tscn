@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="1_h2edy"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_54mb4"]
-[ext_resource type="Texture2D" uid="uid://cyim2wdqtjpyu" path="res://assets/Art Folder/blocks text textured version/square 1x1 text textured.png" id="3_v8ayl"]
+[ext_resource type="Texture2D" uid="uid://e0puv1dv4jtk" path="res://assets/Art Folder/blocks text textured version/square 1x1 text textured.png" id="3_v8ayl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hfjh"]
 size = Vector2(250, 250)

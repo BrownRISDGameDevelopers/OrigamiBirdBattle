@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cd25ywod3gakd"]
 
-[ext_resource type="Texture2D" uid="uid://r181ywme6cxn" path="res://icon.svg" id="1_spft2"]
+[ext_resource type="Texture2D" uid="uid://kbmgkas1eves" path="res://icon.svg" id="1_spft2"]
 [ext_resource type="PackedScene" uid="uid://cls4p6r4uyhl6" path="res://game_objects/base_bird.tscn" id="2_uix8w"]
 
 [sub_resource type="GDScript" id="GDScript_rvhyf"]
@@ -38,5 +38,3 @@ texture = ExtResource("1_spft2")
 
 [node name="Bird" parent="." instance=ExtResource("2_uix8w")]
 position = Vector2(798, 178)
-max_contacts_reported = 1
-contact_monitor = true

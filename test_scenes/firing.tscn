@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://jaeggyic56rb"]
 
 [ext_resource type="Script" path="res://scripts/firing.gd" id="1_crr5r"]
-[ext_resource type="Texture2D" uid="uid://nm5ju6h06t3k" path="res://assets/temporary/protractortemp.png" id="2_hpmm0"]
-[ext_resource type="Texture2D" uid="uid://xseformykuts" path="res://assets/temporary/firingneedletemp.png" id="2_mh6mu"]
-[ext_resource type="AudioStream" uid="uid://dqbq0t5het2y4" path="res://assets/sound/pop_1.mp3" id="4_ocg6v"]
-[ext_resource type="Texture2D" uid="uid://bgmv5yvmifgj3" path="res://assets/Art Folder/catqpult hand flicking animation frames/2.png" id="6_tg206"]
-[ext_resource type="Texture2D" uid="uid://d1kbc3ub82prw" path="res://assets/Art Folder/catqpult hand flicking animation frames/3.png" id="7_jgkqs"]
-[ext_resource type="Texture2D" uid="uid://cmj8nlb2kptto" path="res://assets/Art Folder/catqpult hand flicking animation frames/4.png" id="8_p738r"]
-[ext_resource type="Texture2D" uid="uid://8omxigsolr75" path="res://assets/Art Folder/catqpult hand flicking animation frames/5.png" id="9_8iwe0"]
+[ext_resource type="Texture2D" uid="uid://cridl7u47f3jd" path="res://assets/temporary/protractortemp.png" id="2_hpmm0"]
+[ext_resource type="Texture2D" uid="uid://bmyga7ykstgt1" path="res://assets/temporary/firingneedletemp.png" id="2_mh6mu"]
+[ext_resource type="AudioStream" uid="uid://di64nstvkmo07" path="res://assets/sound/pop_1.mp3" id="4_ocg6v"]
+[ext_resource type="Texture2D" uid="uid://bgopfyo3sfwyc" path="res://assets/Art Folder/catqpult hand flicking animation frames/2.png" id="6_tg206"]
+[ext_resource type="Texture2D" uid="uid://ck1vk03rp6yg7" path="res://assets/Art Folder/catqpult hand flicking animation frames/3.png" id="7_jgkqs"]
+[ext_resource type="Texture2D" uid="uid://dq5mkyr2xq3m3" path="res://assets/Art Folder/catqpult hand flicking animation frames/4.png" id="8_p738r"]
+[ext_resource type="Texture2D" uid="uid://dgemoy4gh05tt" path="res://assets/Art Folder/catqpult hand flicking animation frames/5.png" id="9_8iwe0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0mga2"]
 animations = [{

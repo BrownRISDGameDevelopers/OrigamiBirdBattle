@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bllyoimjfhg4y"]
 
 [ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="1_i7ifg"]
-[ext_resource type="Texture2D" uid="uid://bg4k1cfo02nfo" path="res://assets/Art Folder/blocks text textured version/long rectangle 1x6 text textured.png" id="2_x6lin"]
+[ext_resource type="Texture2D" uid="uid://uvhqeqpe67ne" path="res://assets/Art Folder/blocks text textured version/long rectangle 1x6 text textured.png" id="2_x6lin"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="3_ewf51"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjj80"]

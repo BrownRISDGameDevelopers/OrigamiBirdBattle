@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://mgtnbkj8b0sm"]
 
 [ext_resource type="Script" path="res://levels/credit_screen.gd" id="1_s8bi4"]
-[ext_resource type="FontFile" uid="uid://dejavde7we083" path="res://assets/Art Folder/Dekko-Regular.ttf" id="2_a8e40"]
+[ext_resource type="FontFile" uid="uid://b2lvmcmegdsc" path="res://assets/Art Folder/Dekko-Regular.ttf" id="2_a8e40"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7rg46"]
 font = ExtResource("2_a8e40")

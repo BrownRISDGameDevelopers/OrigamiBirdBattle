@@ -2,11 +2,13 @@ extends Control
 
 
 @onready var end_label = $GameEnd
+@onready var pause = $Pause
 @export var game_manager: GameManager 
 @export var game_end_sceen: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	pause.visible = false 
 	end_label.visible = false
 	$GameEnd/MainMenu.button_down.connect(on_main_menu)
 	
@@ -26,4 +28,11 @@ func on_main_menu():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if (Input.is_action_just_pressed("pause")):
+		get_tree().paused = !get_tree().paused
+		pause.visible = get_tree().paused
+	
+	if (get_tree().paused and Input.is_action_just_pressed("restart")):
+		get_tree().change_scene_to_file("res://levels/" + "main_menu" + ".tscn")
+		
+		

@@ -111,4 +111,5 @@ func get_new_winner(pos, player_num):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dlel4wfarjd1c"]
+[gd_scene load_steps=21 format=3 uid="uid://dlel4wfarjd1c"]
 
 [ext_resource type="Texture2D" uid="uid://f071wxs70l3v" path="res://assets/Art Folder/backgrounds/playground-background-revised.png" id="1_yw4wk"]
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_nsr2b"]
@@ -17,9 +17,14 @@
 [ext_resource type="Script" path="res://game_objects/start_message.gd" id="13_uxu28"]
 [ext_resource type="AudioStream" uid="uid://3f72ujoq2ht" path="res://assets/Music/background music 2.mp3" id="13_y5ye8"]
 [ext_resource type="PackedScene" uid="uid://dvx56heuihmeh" path="res://levels/main_menu.tscn" id="15_0chs3"]
+[ext_resource type="FontFile" uid="uid://7dwv3y0hrkox" path="res://assets/Art Folder/Dekko-Regular.ttf" id="18_rq2gx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utvaf"]
 size = Vector2(3836, 1084)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gceno"]
+font = ExtResource("18_rq2gx")
+font_size = 128
 
 [node name="Root" type="Node2D"]
 
@@ -172,6 +177,7 @@ script = ExtResource("12_q87wk")
 timer = NodePath("../Game/Timer")
 
 [node name="UI" type="Control" parent="." node_paths=PackedStringArray("game_manager")]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1504.0
@@ -181,6 +187,7 @@ game_manager = NodePath("../Game")
 game_end_sceen = ExtResource("15_0chs3")
 
 [node name="OnGameStart" type="Control" parent="UI"]
+process_mode = 1
 layout_mode = 1
 anchor_left = -0.426
 anchor_top = -0.22
@@ -244,6 +251,18 @@ text = "
 label_settings = ExtResource("13_tbsy6")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Pause" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -688.0
+offset_top = 184.0
+offset_right = 2199.0
+offset_bottom = 1026.0
+text = "Paused
+Press 'R' to go to 
+the main menu"
+label_settings = SubResource("LabelSettings_gceno")
+horizontal_alignment = 1
 
 [editable path="Game/Player1/Firing"]
 [editable path="Game/Player2/Firing"]

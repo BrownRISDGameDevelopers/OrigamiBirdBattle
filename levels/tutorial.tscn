@@ -26,3 +26,21 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.299991, 0.298927)
 texture = ExtResource("6_pcnqx")
+
+[node name="next" type="Button" parent="."]
+offset_left = 1019.0
+offset_top = 552.0
+offset_right = 1100.0
+offset_bottom = 612.0
+text = "Next"
+
+[node name="back" type="Button" parent="."]
+visible = false
+offset_left = 30.0
+offset_top = 543.0
+offset_right = 127.0
+offset_bottom = 614.0
+text = "Back"
+
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

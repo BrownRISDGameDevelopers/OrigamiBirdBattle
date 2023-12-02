@@ -1,6 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://dlel4wfarjd1c"]
 
 [ext_resource type="Texture2D" uid="uid://46g43yy14gm8" path="res://assets/Art Folder/backgrounds/playground-background-revised.png" id="1_yw4wk"]
+[ext_resource type="Texture2D" uid="uid://byfbk0kjgersq" path="res://assets/Art Folder/backgrounds/playground-background-revised.png" id="1_yw4wk"]
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_nsr2b"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_mjl51"]
 [ext_resource type="Script" path="res://scripts/player_manager.gd" id="4_cvtrv"]
@@ -11,11 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://clqjlmmu8h11k" path="res://assets/Art Folder/backgrounds/background-floor-tex-2.png" id="10_sqtde"]
 [ext_resource type="Script" path="res://scripts/audio_manager.gd" id="11_bf1fp"]
 [ext_resource type="AudioStream" uid="uid://b8bk7jqd77vm2" path="res://assets/Music/background music 1.mp3" id="12_m2nlu"]
+[ext_resource type="AudioStream" uid="uid://ctt2q50ouuuh2" path="res://assets/Music/background music 1.mp3" id="12_m2nlu"]
 [ext_resource type="Script" path="res://levels/Label.gd" id="12_q87wk"]
 [ext_resource type="Script" path="res://levels/MainUI.gd" id="13_rj3vm"]
 [ext_resource type="LabelSettings" uid="uid://csv4pvy2jn3pd" path="res://default_label.tres" id="13_tbsy6"]
 [ext_resource type="Script" path="res://game_objects/start_message.gd" id="13_uxu28"]
 [ext_resource type="AudioStream" uid="uid://bg7mhgkqgop3p" path="res://assets/Music/background music 2.mp3" id="13_y5ye8"]
+[ext_resource type="AudioStream" uid="uid://bebcrweovw7w3" path="res://assets/Music/background music 2.mp3" id="13_y5ye8"]
 [ext_resource type="PackedScene" uid="uid://dvx56heuihmeh" path="res://levels/main_menu.tscn" id="15_0chs3"]
 [ext_resource type="FontFile" uid="uid://djnmhny3cbwm2" path="res://assets/Art Folder/Dekko-Regular.ttf" id="18_rq2gx"]
 

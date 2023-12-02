@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cls4p6r4uyhl6"]
+[gd_scene load_steps=20 format=3 uid="uid://cls4p6r4uyhl6"]
 
 [ext_resource type="Script" path="res://scripts/base_bird.gd" id="1_7165y"]
 [ext_resource type="PackedScene" uid="uid://c5hfmi635v4qw" path="res://test_scenes/temp_explosion.tscn" id="2_gw3la"]
@@ -9,9 +9,10 @@
 [ext_resource type="AudioStream" uid="uid://b4x7jijwoq3js" path="res://assets/sound/Recorded SFX/Bird Impact/Bird Impact 2.wav" id="7_62wot"]
 [ext_resource type="AudioStream" uid="uid://lvv7sxbflehe" path="res://assets/sound/Recorded SFX/Bird Impact/Bird Impact 3.wav" id="8_l6f7r"]
 [ext_resource type="AudioStream" uid="uid://g0whhjttav5l" path="res://assets/sound/Recorded SFX/Bird Impact/Bird Impact 4.wav" id="9_keppp"]
+[ext_resource type="Texture2D" uid="uid://bkmetvri4ed3u" path="res://assets/Art Folder/spritesheets for animation/swanALT1sheet_300x364.png" id="10_vgor4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qgnae"]
-radius = 56.0089
+radius = 101.079
 
 [sub_resource type="Animation" id="Animation_drj6e"]
 length = 0.001
@@ -68,29 +69,29 @@ _data = {
 "explode": SubResource("Animation_5wgxn")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_je11q"]
-atlas = ExtResource("2_proxx")
-region = Rect2(0, 0, 300, 364)
+[sub_resource type="AtlasTexture" id="AtlasTexture_p48du"]
+atlas = ExtResource("10_vgor4")
+region = Rect2(0, 0, 276, 359)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rgmg1"]
-atlas = ExtResource("2_proxx")
-region = Rect2(300, 0, 300, 364)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6umse"]
+atlas = ExtResource("10_vgor4")
+region = Rect2(276, 0, 276, 359)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i33ep"]
-atlas = ExtResource("2_proxx")
-region = Rect2(600, 0, 300, 364)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv64d"]
+atlas = ExtResource("10_vgor4")
+region = Rect2(552, 0, 276, 359)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hqpmw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_je11q")
+"texture": SubResource("AtlasTexture_p48du")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rgmg1")
+"texture": SubResource("AtlasTexture_6umse")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_i33ep")
+"texture": SubResource("AtlasTexture_wv64d")
 }],
 "loop": true,
 "name": &"flying",
@@ -137,7 +138,7 @@ tracks = Array[AudioStream]([ExtResource("6_vnajg"), ExtResource("7_62wot"), Ext
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_hqpmw")
 animation = &"flying"
 

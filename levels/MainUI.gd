@@ -11,6 +11,8 @@ func _ready():
 	pause.visible = false 
 	end_label.visible = false
 	$GameEnd/MainMenu.button_down.connect(on_main_menu)
+	$Pause/MainMenu.button_down.connect(on_main_menu)
+	$Pause/Resume.button_down.connect(on_resume)
 	
 	if (game_manager != null):
 		game_manager.connect("game_complete", on_end)
@@ -25,6 +27,10 @@ func on_end(player_won: String):
 
 func on_main_menu():
 	get_tree().change_scene_to_packed(game_end_sceen)
+	
+func on_resume():
+	get_tree().paused = false
+	pause.visible = get_tree().paused
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

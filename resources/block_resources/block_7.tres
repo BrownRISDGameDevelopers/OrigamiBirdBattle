@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Droppable_Block" load_steps=4 format=3 uid="uid://c8ch3088bjdyb"]
+
+[ext_resource type="PackedScene" path="res://game_objects/blocks/textured_shorter_long_rect.tscn" id="1_micwp"]
+[ext_resource type="Script" path="res://scripts/droppable.gd" id="1_ovebx"]
+[ext_resource type="Texture2D" uid="uid://r6ow8s3qoe5v" path="res://assets/Art Folder/blocks text textured version/shorter long rectangle 1x4 text textured.png" id="2_40yd5"]
+
+[resource]
+script = ExtResource("1_ovebx")
+block_shape = ExtResource("1_micwp")
+block_thumb = ExtResource("2_40yd5")
+name = ""

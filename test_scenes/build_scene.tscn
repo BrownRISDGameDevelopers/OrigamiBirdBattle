@@ -13,6 +13,7 @@ offset_bottom = 0.0
 item_num = 30
 
 [node name="block_timer" type="Timer" parent="conveyor"]
+wait_time = 2.0
 one_shot = true
 
 [connection signal="drop_block" from="conveyor" to="." method="_on_conveyor_drop_block"]

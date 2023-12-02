@@ -65,7 +65,7 @@ func _setActive():
 		block_free = true
 
 func _on_block_timer_timeout():
-	#print("block timer timeout")
+	print("block timer timeout")
 	block_timer_timeout = true
 	if block_contacted_ground:
 		block_free = true

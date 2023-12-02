@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpxwq6pd1oxm5"]
+[gd_scene load_steps=8 format=3 uid="uid://cpxwq6pd1oxm5"]
 
 [ext_resource type="Script" path="res://tutorial.gd" id="1_4t6en"]
 [ext_resource type="Texture2D" uid="uid://dpj5me35fwcfq" path="res://assets/Art Folder/placeholder_sketches/placeholder_tut_1.png" id="2_708w8"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://ify8pvhipjxq" path="res://assets/Art Folder/placeholder_sketches/placeholder_tut_3.png" id="4_e7cmo"]
 [ext_resource type="Texture2D" uid="uid://du46n8lgtughl" path="res://assets/Art Folder/placeholder_sketches/placeholder_tut_last.png" id="5_bla37"]
 [ext_resource type="Texture2D" uid="uid://bdr0cvcxblant" path="res://assets/Art Folder/backgrounds/bg-blur.png" id="6_pcnqx"]
+[ext_resource type="Texture2D" uid="uid://b74p05q06yuy4" path="res://assets/Art Folder/Tutorial Frames/tutorial_arrow.png" id="7_2noqi"]
 
-[node name="Root" type="Node2D"]
+[node name="Root2" type="Node2D"]
 script = ExtResource("1_4t6en")
 textures = Array[CompressedTexture2D]([ExtResource("2_708w8"), ExtResource("3_4he3u"), ExtResource("4_e7cmo"), ExtResource("5_bla37")])
 goto_scene_on_end = "renovated"
@@ -26,3 +27,39 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.299991, 0.298927)
 texture = ExtResource("6_pcnqx")
+
+[node name="next" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 999.0
+offset_top = 527.0
+offset_right = 1080.0
+offset_bottom = 587.0
+text = "Next"
+
+[node name="TextureRect" type="TextureRect" parent="next"]
+layout_mode = 0
+offset_right = 332.0
+offset_bottom = 234.0
+scale = Vector2(0.248447, 0.259587)
+texture = ExtResource("7_2noqi")
+
+[node name="back" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 65.0
+offset_top = 524.0
+offset_right = 162.0
+offset_bottom = 595.0
+scale = Vector2(0.883226, 0.838815)
+text = "Back"
+
+[node name="TextureRect2" type="TextureRect" parent="back"]
+offset_left = 2.26443
+offset_top = -2.3844
+offset_right = 334.264
+offset_bottom = 231.616
+scale = Vector2(0.284883, 0.312528)
+texture = ExtResource("7_2noqi")
+flip_h = true
+
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

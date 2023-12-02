@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/blocks/block_aggregate.gd" id="1_8js84"]
 [ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="2_q4gm5"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="3_0itrc"]
-[ext_resource type="Texture2D" uid="uid://r181ywme6cxn" path="res://icon.svg" id="4_b83xt"]
+[ext_resource type="Texture2D" uid="uid://c203sdpf32joy" path="res://icon.svg" id="4_b83xt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkrah"]
 size = Vector2(128, 128)

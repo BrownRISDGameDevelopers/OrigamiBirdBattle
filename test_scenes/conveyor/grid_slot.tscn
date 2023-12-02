@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8nnoqkygx18a"]
 
 [ext_resource type="Script" path="res://scripts/conveyor/conveyorPanel.gd" id="1_jrtkj"]
-[ext_resource type="Texture2D" uid="uid://c8l2oqx3ip8ub" path="res://assets/Art Folder/test paper.png" id="2_77x57"]
+[ext_resource type="Texture2D" uid="uid://5bbiiur3orjc" path="res://assets/Art Folder/test paper.png" id="2_77x57"]
 
 [node name="slot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)

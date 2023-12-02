@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://dlel4wfarjd1c"]
+[gd_scene load_steps=22 format=3 uid="uid://dlel4wfarjd1c"]
 
 [ext_resource type="Texture2D" uid="uid://46g43yy14gm8" path="res://assets/Art Folder/backgrounds/playground-background-revised.png" id="1_yw4wk"]
+[ext_resource type="Texture2D" path="res://assets/Art Folder/backgrounds/playground-background-revised.png" id="1_yw4wk"]
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_nsr2b"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_mjl51"]
 [ext_resource type="Script" path="res://scripts/player_manager.gd" id="4_cvtrv"]
@@ -11,11 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://clqjlmmu8h11k" path="res://assets/Art Folder/backgrounds/background-floor-tex-2.png" id="10_sqtde"]
 [ext_resource type="Script" path="res://scripts/audio_manager.gd" id="11_bf1fp"]
 [ext_resource type="AudioStream" uid="uid://b8bk7jqd77vm2" path="res://assets/Music/background music 1.mp3" id="12_m2nlu"]
+[ext_resource type="AudioStream" path="res://assets/Music/background music 1.mp3" id="12_m2nlu"]
 [ext_resource type="Script" path="res://levels/Label.gd" id="12_q87wk"]
 [ext_resource type="Script" path="res://levels/MainUI.gd" id="13_rj3vm"]
 [ext_resource type="LabelSettings" uid="uid://csv4pvy2jn3pd" path="res://default_label.tres" id="13_tbsy6"]
 [ext_resource type="Script" path="res://game_objects/start_message.gd" id="13_uxu28"]
 [ext_resource type="AudioStream" uid="uid://bg7mhgkqgop3p" path="res://assets/Music/background music 2.mp3" id="13_y5ye8"]
+[ext_resource type="AudioStream" path="res://assets/Music/background music 2.mp3" id="13_y5ye8"]
 [ext_resource type="PackedScene" uid="uid://dvx56heuihmeh" path="res://levels/main_menu.tscn" id="15_0chs3"]
 [ext_resource type="FontFile" uid="uid://djnmhny3cbwm2" path="res://assets/Art Folder/Dekko-Regular.ttf" id="18_rq2gx"]
 
@@ -25,6 +28,10 @@ size = Vector2(3836, 1084)
 [sub_resource type="LabelSettings" id="LabelSettings_gceno"]
 font = ExtResource("18_rq2gx")
 font_size = 128
+
+[sub_resource type="LabelSettings" id="LabelSettings_cx0tl"]
+font = ExtResource("18_rq2gx")
+font_size = 100
 
 [node name="Root" type="Node2D"]
 
@@ -253,16 +260,84 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Pause" type="Label" parent="UI"]
+z_index = 2
 layout_mode = 0
 offset_left = -688.0
 offset_top = 184.0
 offset_right = 2199.0
 offset_bottom = 1026.0
-text = "Paused
-Press 'R' to go to 
-the main menu"
+text = "Paused"
 label_settings = SubResource("LabelSettings_gceno")
 horizontal_alignment = 1
+
+[node name="PauseOverlay" type="ColorRect" parent="UI/Pause"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2591.5
+offset_top = -976.0
+offset_right = 2408.5
+offset_bottom = 1024.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2.08165e-12, 2.08165e-12)
+color = Color(0, 0, 0, 0.505882)
+
+[node name="MainMenu" type="Button" parent="UI/Pause"]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.5
+offset_top = 84.0
+offset_right = -52.4999
+offset_bottom = 114.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+
+[node name="Label" type="Label" parent="UI/Pause/MainMenu"]
+layout_mode = 0
+offset_left = 5.33333
+offset_right = 192.333
+offset_bottom = 167.0
+scale = Vector2(0.2, 0.2)
+text = "Main Menu
+"
+label_settings = SubResource("LabelSettings_cx0tl")
+
+[node name="Resume" type="Button" parent="UI/Pause"]
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.5
+offset_top = -114.0
+offset_right = -53.4999
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+
+[node name="Label" type="Label" parent="UI/Pause/Resume"]
+layout_mode = 0
+offset_left = 12.9999
+offset_right = 323.0
+offset_bottom = 167.0
+scale = Vector2(0.2, 0.2)
+text = "Resume
+"
+label_settings = SubResource("LabelSettings_cx0tl")
 
 [editable path="Game/Player1/Firing"]
 [editable path="Game/Player2/Firing"]

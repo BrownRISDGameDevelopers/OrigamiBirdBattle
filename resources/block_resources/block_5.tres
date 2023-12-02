@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Droppable_Block" load_steps=4 format=3 uid="uid://dkttsse3ujit4"]
+
+[ext_resource type="Script" path="res://scripts/droppable.gd" id="1_bt51d"]
+[ext_resource type="PackedScene" uid="uid://cans72wxeya3x" path="res://game_objects/blocks/textured_long_rectangle.tscn" id="1_s6x0n"]
+[ext_resource type="Texture2D" uid="uid://c6h1oot6vyxq6" path="res://assets/Art Folder/blocks text textured version/long rectangle 1x6 text textured.png" id="2_2um0f"]
+
+[resource]
+script = ExtResource("1_bt51d")
+block_shape = ExtResource("1_s6x0n")
+block_thumb = ExtResource("2_2um0f")
+name = ""

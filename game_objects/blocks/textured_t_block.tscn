@@ -1,23 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://e6cegawddars"]
+[gd_scene load_steps=3 format=3 uid="uid://c16mhm8quyw2j"]
 
-[ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="1_rad4w"]
-[ext_resource type="Script" path="res://scripts/health.gd" id="2_o6oe5"]
+[ext_resource type="PackedScene" uid="uid://7a3oyt2rsyhf" path="res://game_objects/blocks/block_base.tscn" id="1_r57eu"]
 [ext_resource type="Texture2D" uid="uid://cghndjmpxgyh5" path="res://assets/Art Folder/blocks text textured version/t block 1x3 text textured.png" id="3_eaddi"]
 
-[node name="TBlock" type="RigidBody2D"]
-collision_layer = 5
-collision_mask = 5
-contact_monitor = true
-can_sleep = false
-script = ExtResource("1_rad4w")
+[node name="LargeBlock" instance=ExtResource("1_r57eu")]
+mass = 10.0
+inertia = 0.0
+gravity_scale = 1.0
 
-[node name="Health" type="Node2D" parent="."]
-script = ExtResource("2_o6oe5")
-
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" parent="." index="1"]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_eaddi")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(0.3, 0.3)
-polygon = PackedVector2Array(-360, -240, 360, -240, 360, 5, 125, 5, 125, 240, -120, 240, -120, 5, -360, 5)
+[node name="CollisionPolygon2D" parent="." index="2"]
+scale = Vector2(6, 6)
+polygon = PackedVector2Array(-18.1667, -12.1667, 17.8333, -12, 18, 0.666667, 6.16667, 0.833333, 5.83333, 11.3333, -5.83333, 11.8333, -5.66667, 0.833333, -17.8333, 0.5)

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4n1v601d3jak"]
+
+[ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="1_j5rq8"]
+[ext_resource type="Texture2D" uid="uid://dujbec1fpxlks" path="res://assets/Art Folder/blocks text textured version/Lblock 2x3 text textured.png" id="2_d81xu"]
+[ext_resource type="Script" path="res://scripts/health.gd" id="3_4c28l"]
+
+[node name="LBlock" type="RigidBody2D"]
+script = ExtResource("1_j5rq8")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_d81xu")
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("3_4c28l")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-105, -10, 360, -10, 360, 240, -360, 240, -360, -240, -105, -240)

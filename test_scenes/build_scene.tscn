@@ -7,7 +7,6 @@
 script = ExtResource("1_kg2ge")
 
 [node name="conveyor" parent="." instance=ExtResource("1_i60ja")]
-visible = false
 offset_left = 216.0
 offset_right = 216.0
 offset_bottom = 0.0

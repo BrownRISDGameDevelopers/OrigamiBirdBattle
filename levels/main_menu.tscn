@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_5lls4"]
 [ext_resource type="Script" path="res://scripts/audio_manager.gd" id="5_tgi12"]
-[ext_resource type="AudioStream" uid="uid://b31bg7gygupgx" path="res://assets/Music/background music 1.mp3" id="6_plmjh"]
-[ext_resource type="AudioStream" uid="uid://3f72ujoq2ht" path="res://assets/Music/background music 2.mp3" id="7_060ya"]
+[ext_resource type="AudioStream" uid="uid://b8bk7jqd77vm2" path="res://assets/Music/background music 1.mp3" id="6_plmjh"]
+[ext_resource type="AudioStream" uid="uid://bg7mhgkqgop3p" path="res://assets/Music/background music 2.mp3" id="7_060ya"]
 
 [node name="Node2D" type="Node2D"]
 

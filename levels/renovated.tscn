@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://dlel4wfarjd1c"]
 
-[ext_resource type="Texture2D" uid="uid://f071wxs70l3v" path="res://assets/Art Folder/backgrounds/playground-background-revised.png" id="1_yw4wk"]
+[ext_resource type="Texture2D" uid="uid://46g43yy14gm8" path="res://assets/Art Folder/backgrounds/playground-background-revised.png" id="1_yw4wk"]
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_nsr2b"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_mjl51"]
 [ext_resource type="Script" path="res://scripts/player_manager.gd" id="4_cvtrv"]
@@ -8,16 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://ct7132vh51c8q" path="res://test_scenes/check_height.tscn" id="6_r0jvv"]
 [ext_resource type="PackedScene" uid="uid://gbvopuoe0kt8" path="res://game_objects/folding_minigame.tscn" id="7_vbw40"]
 [ext_resource type="PackedScene" uid="uid://dsenqsyvi5a6o" path="res://test_scenes/bird-launcher.tscn" id="8_jd12v"]
-[ext_resource type="Texture2D" uid="uid://d24y1wnevexry" path="res://assets/Art Folder/backgrounds/background-floor-tex-2.png" id="10_sqtde"]
+[ext_resource type="Texture2D" uid="uid://clqjlmmu8h11k" path="res://assets/Art Folder/backgrounds/background-floor-tex-2.png" id="10_sqtde"]
 [ext_resource type="Script" path="res://scripts/audio_manager.gd" id="11_bf1fp"]
-[ext_resource type="AudioStream" uid="uid://b31bg7gygupgx" path="res://assets/Music/background music 1.mp3" id="12_m2nlu"]
+[ext_resource type="AudioStream" uid="uid://b8bk7jqd77vm2" path="res://assets/Music/background music 1.mp3" id="12_m2nlu"]
 [ext_resource type="Script" path="res://levels/Label.gd" id="12_q87wk"]
 [ext_resource type="Script" path="res://levels/MainUI.gd" id="13_rj3vm"]
 [ext_resource type="LabelSettings" uid="uid://csv4pvy2jn3pd" path="res://default_label.tres" id="13_tbsy6"]
 [ext_resource type="Script" path="res://game_objects/start_message.gd" id="13_uxu28"]
-[ext_resource type="AudioStream" uid="uid://3f72ujoq2ht" path="res://assets/Music/background music 2.mp3" id="13_y5ye8"]
+[ext_resource type="AudioStream" uid="uid://bg7mhgkqgop3p" path="res://assets/Music/background music 2.mp3" id="13_y5ye8"]
 [ext_resource type="PackedScene" uid="uid://dvx56heuihmeh" path="res://levels/main_menu.tscn" id="15_0chs3"]
-[ext_resource type="FontFile" uid="uid://7dwv3y0hrkox" path="res://assets/Art Folder/Dekko-Regular.ttf" id="18_rq2gx"]
+[ext_resource type="FontFile" uid="uid://djnmhny3cbwm2" path="res://assets/Art Folder/Dekko-Regular.ttf" id="18_rq2gx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utvaf"]
 size = Vector2(3836, 1084)
@@ -62,8 +62,16 @@ position = Vector2(1224, 280)
 script = ExtResource("4_cvtrv")
 player_name = "Left Player"
 
+[node name="Fold" type="Node2D" parent="Game/Player1"]
+z_index = 11
+position = Vector2(-268, 857)
+
+[node name="FoldingMinigame" parent="Game/Player1/Fold" instance=ExtResource("7_vbw40")]
+z_index = 10
+scale = Vector2(0.75, 0.75)
+
 [node name="Building" parent="Game/Player1" node_paths=PackedStringArray("to_parent", "spawn_pos") instance=ExtResource("5_n0oa0")]
-position = Vector2(-856, -424)
+position = Vector2(-748, -480)
 scale = Vector2(2, 2)
 to_parent = NodePath("../../../World")
 spawn_pos = NodePath("../../../World/SpawnPos1")
@@ -73,12 +81,6 @@ block_collision_mask = 1
 [node name="CheckHeight" parent="Game/Player1" instance=ExtResource("6_r0jvv")]
 position = Vector2(-776, -800)
 scale = Vector2(2, 1)
-
-[node name="Fold" type="Node2D" parent="Game/Player1"]
-position = Vector2(-268, 857)
-
-[node name="FoldingMinigame" parent="Game/Player1/Fold" instance=ExtResource("7_vbw40")]
-scale = Vector2(0.75, 0.75)
 
 [node name="Firing" parent="Game/Player1" instance=ExtResource("8_jd12v")]
 z_index = 1
@@ -94,8 +96,16 @@ position = Vector2(2144, 280)
 script = ExtResource("4_cvtrv")
 player_name = "Right Player"
 
+[node name="Fold" type="Node2D" parent="Game/Player2"]
+z_index = 9
+position = Vector2(685, 860)
+
+[node name="FoldingMinigame" parent="Game/Player2/Fold" instance=ExtResource("7_vbw40")]
+z_index = 10
+scale = Vector2(0.75, 0.75)
+
 [node name="Building" parent="Game/Player2" node_paths=PackedStringArray("to_parent", "spawn_pos") instance=ExtResource("5_n0oa0")]
-position = Vector2(-24, -424)
+position = Vector2(-128, -485)
 scale = Vector2(2, 2)
 to_parent = NodePath("../../../World")
 spawn_pos = NodePath("../../../World/SpawnPos2")
@@ -105,12 +115,6 @@ block_collision_mask = 2
 [node name="CheckHeight" parent="Game/Player2" instance=ExtResource("6_r0jvv")]
 position = Vector2(16, -800)
 scale = Vector2(2, 2)
-
-[node name="Fold" type="Node2D" parent="Game/Player2"]
-position = Vector2(685, 860)
-
-[node name="FoldingMinigame" parent="Game/Player2/Fold" instance=ExtResource("7_vbw40")]
-scale = Vector2(0.75, 0.75)
 
 [node name="Firing" parent="Game/Player2" instance=ExtResource("8_jd12v")]
 z_index = 1

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://du46n8lgtughl" path="res://assets/Art Folder/placeholder_sketches/placeholder_tut_last.png" id="5_bla37"]
 [ext_resource type="Texture2D" uid="uid://bdr0cvcxblant" path="res://assets/Art Folder/backgrounds/bg-blur.png" id="6_pcnqx"]
 
-[node name="Root" type="Node2D"]
+[node name="Root2" type="Node2D"]
 script = ExtResource("1_4t6en")
 textures = Array[CompressedTexture2D]([ExtResource("2_708w8"), ExtResource("3_4he3u"), ExtResource("4_e7cmo"), ExtResource("5_bla37")])
 goto_scene_on_end = "renovated"

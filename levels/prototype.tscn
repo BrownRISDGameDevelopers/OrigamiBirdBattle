@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://crnv1jnvepyxn"]
 
-[ext_resource type="Texture2D" uid="uid://0btigop7jgdw" path="res://assets/Art Folder/backgrounds/background op4.jpg" id="1_0g5qd"]
+[ext_resource type="Texture2D" uid="uid://dxkqpfutlwsle" path="res://assets/Art Folder/backgrounds/background op4.jpg" id="1_0g5qd"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_cvwoe"]
 [ext_resource type="PackedScene" uid="uid://gbvopuoe0kt8" path="res://game_objects/folding_minigame.tscn" id="2_04l87"]
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_dyisa"]

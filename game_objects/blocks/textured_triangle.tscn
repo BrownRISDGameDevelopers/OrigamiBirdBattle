@@ -1,20 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://nwd0r6doheke"]
+[gd_scene load_steps=3 format=3 uid="uid://cp21lw8tbpfnp"]
 
-[ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="1_wbkni"]
-[ext_resource type="Script" path="res://scripts/health.gd" id="2_dqkcn"]
-[ext_resource type="Texture2D" uid="uid://d1xbjau47rjny" path="res://assets/Art Folder/blocks textured version/triangle 5x2 textured.png" id="3_wmbfv"]
+[ext_resource type="PackedScene" uid="uid://7a3oyt2rsyhf" path="res://game_objects/blocks/block_base.tscn" id="1_phc7f"]
+[ext_resource type="Texture2D" uid="uid://ck16tho558d8a" path="res://assets/Art Folder/blocks/triangle block 2x5.png" id="2_jbigu"]
 
-[node name="Triangle" type="RigidBody2D"]
-max_contacts_reported = 1
-contact_monitor = true
-script = ExtResource("1_wbkni")
+[node name="NormalBlock" instance=ExtResource("1_phc7f")]
+mass = 5.0
+inertia = 0.0
+gravity_scale = 1.0
 
-[node name="Health" type="Node2D" parent="."]
-script = ExtResource("2_dqkcn")
+[node name="Sprite" parent="." index="1"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_jbigu")
 
-[node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_wmbfv")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-1, -27, -65, 24, 68, 24)
+[node name="CollisionPolygon2D" parent="." index="2"]
+scale = Vector2(3, 3)
+polygon = PackedVector2Array(-0.666667, -22.3333, 54.3333, 19.6667, -55.3333, 20.3333)

@@ -10,7 +10,7 @@
 [node name="MainMenu" type="CanvasLayer" parent="."]
 script = ExtResource("1_5lls4")
 start_to = "renovated"
-credits_to = "credit_sceen"
+credits_to = "credit_screen"
 tutorial_to = "tutorial"
 
 [node name="MainMessage" type="Label" parent="MainMenu"]

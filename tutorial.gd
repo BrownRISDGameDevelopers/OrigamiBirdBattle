@@ -10,9 +10,7 @@ var cur_text_in: int = 0
 
 func _ready():
 	text_rect.texture = textures[cur_text_in]
-
-	
-		
+	$next2.hide()	
 
 
 func _on_next_pressed():
@@ -20,6 +18,9 @@ func _on_next_pressed():
 		cur_text_in += 1
 		text_rect.texture = textures[cur_text_in]
 		$back.show()
+		if (cur_text_in == textures.size() - 1):
+			$next.hide()
+			$next2.show()
 	else:
 		get_tree().change_scene_to_file("res://levels/" + goto_scene_on_end + ".tscn")
 	pass # Replace with function body.

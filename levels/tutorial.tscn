@@ -1,16 +1,16 @@
 [gd_scene load_steps=8 format=3 uid="uid://cpxwq6pd1oxm5"]
 
 [ext_resource type="Script" path="res://tutorial.gd" id="1_4t6en"]
-[ext_resource type="Texture2D" uid="uid://dpj5me35fwcfq" path="res://assets/Art Folder/placeholder_sketches/placeholder_tut_1.png" id="2_708w8"]
-[ext_resource type="Texture2D" uid="uid://folxvcwl8aaa" path="res://assets/Art Folder/placeholder_sketches/placeholder_tut_2.png" id="3_4he3u"]
-[ext_resource type="Texture2D" uid="uid://ify8pvhipjxq" path="res://assets/Art Folder/placeholder_sketches/placeholder_tut_3.png" id="4_e7cmo"]
-[ext_resource type="Texture2D" uid="uid://du46n8lgtughl" path="res://assets/Art Folder/placeholder_sketches/placeholder_tut_last.png" id="5_bla37"]
-[ext_resource type="Texture2D" uid="uid://bdr0cvcxblant" path="res://assets/Art Folder/backgrounds/bg-blur.png" id="6_pcnqx"]
-[ext_resource type="Texture2D" uid="uid://b74p05q06yuy4" path="res://assets/Art Folder/Tutorial Frames/tutorial_arrow.png" id="7_2noqi"]
+[ext_resource type="Texture2D" uid="uid://dxt47y7ek3y0l" path="res://assets/Art Folder/Tutorial Frames/tutorial1.png" id="2_mspu6"]
+[ext_resource type="Texture2D" uid="uid://r5wth8v3t7h0" path="res://assets/Art Folder/Tutorial Frames/tutorial2.png" id="3_hsnbg"]
+[ext_resource type="Texture2D" uid="uid://b468pyig718wx" path="res://assets/Art Folder/Tutorial Frames/tutorial3.png" id="4_84agd"]
+[ext_resource type="Texture2D" uid="uid://cm618ppjqfokt" path="res://assets/Art Folder/Tutorial Frames/tutorial4.png" id="5_pyhxa"]
+[ext_resource type="Texture2D" uid="uid://cgm05g0uwkc5a" path="res://assets/Art Folder/backgrounds/bg-blur.png" id="6_pcnqx"]
+[ext_resource type="Texture2D" uid="uid://dp2v5nwl4cgwc" path="res://assets/Art Folder/Tutorial Frames/tutorial_arrow.png" id="7_2noqi"]
 
 [node name="Root2" type="Node2D"]
 script = ExtResource("1_4t6en")
-textures = Array[CompressedTexture2D]([ExtResource("2_708w8"), ExtResource("3_4he3u"), ExtResource("4_e7cmo"), ExtResource("5_bla37")])
+textures = Array[CompressedTexture2D]([ExtResource("2_mspu6"), ExtResource("3_hsnbg"), ExtResource("4_84agd"), ExtResource("5_pyhxa")])
 goto_scene_on_end = "renovated"
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -19,6 +19,7 @@ offset_top = 38.0
 offset_right = 1205.0
 offset_bottom = 686.0
 scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_pyhxa")
 expand_mode = 2
 
 [node name="gameplay_blurred" type="TextureRect" parent="."]
@@ -43,6 +44,25 @@ offset_bottom = 234.0
 scale = Vector2(0.248447, 0.259587)
 texture = ExtResource("7_2noqi")
 
+[node name="next2" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 1004.0
+offset_top = 531.0
+offset_right = 1085.0
+offset_bottom = 591.0
+rotation = -0.00312995
+text = "Next"
+
+[node name="TextureRect" type="TextureRect" parent="next2"]
+layout_mode = 0
+offset_left = -197.0
+offset_top = -53.0
+offset_right = 135.0
+offset_bottom = 181.0
+rotation = 0.368289
+scale = Vector2(0.355083, 0.371004)
+texture = ExtResource("7_2noqi")
+
 [node name="back" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 65.0
@@ -53,6 +73,7 @@ scale = Vector2(0.883226, 0.838815)
 text = "Back"
 
 [node name="TextureRect2" type="TextureRect" parent="back"]
+layout_mode = 0
 offset_left = 2.26443
 offset_top = -2.3844
 offset_right = 334.264
@@ -62,4 +83,5 @@ texture = ExtResource("7_2noqi")
 flip_h = true
 
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="next2" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]

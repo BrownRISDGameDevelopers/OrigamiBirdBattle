@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dlel4wfarjd1c"]
+[gd_scene load_steps=26 format=3 uid="uid://dlel4wfarjd1c"]
 
 [ext_resource type="Texture2D" uid="uid://byfbk0kjgersq" path="res://assets/Art Folder/backgrounds/playground-background-revised.png" id="1_yw4wk"]
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_nsr2b"]
@@ -17,10 +17,11 @@
 [ext_resource type="Script" path="res://game_objects/start_message.gd" id="13_uxu28"]
 [ext_resource type="AudioStream" uid="uid://bebcrweovw7w3" path="res://assets/Music/background music 2.mp3" id="13_y5ye8"]
 [ext_resource type="PackedScene" uid="uid://dvx56heuihmeh" path="res://levels/main_menu.tscn" id="15_0chs3"]
+[ext_resource type="Texture2D" uid="uid://d3xm5pwor35rm" path="res://assets/Art Folder/timer frames/timerbg5.png" id="15_qb3px"]
 [ext_resource type="PackedScene" uid="uid://cpxwq6pd1oxm5" path="res://levels/tutorial.tscn" id="17_27cb3"]
 [ext_resource type="FontFile" uid="uid://b2lvmcmegdsc" path="res://assets/Art Folder/Dekko-Regular.ttf" id="18_rq2gx"]
 [ext_resource type="Texture2D" uid="uid://dqmlsuaa2hp8q" path="res://assets/Art Folder/pause screen.png" id="19_pbhqb"]
-[ext_resource type="Texture2D" uid="uid://ccglase3pttxg" path="res://assets/Art Folder/timer sign.png" id="21_soup3"]
+[ext_resource type="Texture2D" uid="uid://bj7kl6bo6jj1r" path="res://assets/Art Folder/timer frames/timerbg1.png" id="20_sesfc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utvaf"]
 size = Vector2(3836, 1084)
@@ -188,9 +189,9 @@ timer = NodePath("../Game/Timer")
 
 [node name="TimerSign" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(749, 1446)
+position = Vector2(763, 1143)
 scale = Vector2(0.363047, 0.443295)
-texture = ExtResource("21_soup3")
+texture = ExtResource("15_qb3px")
 
 [node name="UI" type="Control" parent="." node_paths=PackedStringArray("game_manager")]
 process_mode = 3
@@ -226,10 +227,28 @@ offset_top = 272.0
 offset_right = 751.296
 offset_bottom = -343.552
 text = "
+Ready...
 "
 label_settings = ExtResource("13_tbsy6")
 horizontal_alignment = 1
 script = ExtResource("13_uxu28")
+
+[node name="TextureRect" type="TextureRect" parent="UI/OnGameStart/Label"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -348.5
+offset_top = -377.0
+offset_right = 621.5
+offset_bottom = 378.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("20_sesfc")
 
 [node name="GameEnd" type="Control" parent="UI"]
 layout_mode = 1

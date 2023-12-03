@@ -77,6 +77,8 @@ texture = ExtResource("3_aub3p")
 [node name="inactive" type="ColorRect" parent="NinePatchRect"]
 z_index = 1
 layout_mode = 0
+offset_top = -8.0
 offset_right = 637.0
-offset_bottom = 66.0
+offset_bottom = 58.0
+scale = Vector2(1, 1.2)
 color = Color(0, 0, 0, 0.368627)

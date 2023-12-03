@@ -27,9 +27,11 @@ func on_end(player_won: String):
 	
 
 func on_main_menu():
+	get_tree().paused = false
 	get_tree().change_scene_to_packed(game_end_sceen)
 	
 func on_tutorial():
+	get_tree().paused = false
 	get_tree().change_scene_to_packed(tutorial_screen)
 
 

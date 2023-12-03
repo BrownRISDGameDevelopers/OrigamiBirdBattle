@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cs1xg0yrnkgqq"]
+[gd_scene load_steps=5 format=3 uid="uid://1m4ftyikn110"]
 
 [ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="1_1hcrj"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_ne6p6"]
-[ext_resource type="Texture2D" uid="uid://cc6gwpdn3mekb" path="res://assets/Art Folder/blocks text textured version/ball 2x2 text textured.png" id="3_arry5"]
+[ext_resource type="Texture2D" uid="uid://malfoc3g3tr1" path="res://assets/Art Folder/blocks text textured version/ball 2x2 text textured.png" id="3_arry5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ejjr"]
 radius = 249.25

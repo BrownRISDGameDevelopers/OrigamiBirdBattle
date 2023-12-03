@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="Droppable_Block" load_steps=4 format=3 uid="uid://dguj8ojymgvck"]
+[gd_resource type="Resource" script_class="Droppable_Block" load_steps=4 format=3 uid="uid://chrvstfbdl8j4"]
 
-[ext_resource type="PackedScene" uid="uid://dxoi6vytujn0k" path="res://game_objects/blocks/textured_small_rect.tscn" id="1_dbn1n"]
+[ext_resource type="PackedScene" path="res://game_objects/blocks/textured_small_rect.tscn" id="1_dbn1n"]
 [ext_resource type="Script" path="res://scripts/droppable.gd" id="1_pesfl"]
-[ext_resource type="Texture2D" uid="uid://bm8nrl2d2dcdq" path="res://assets/Art Folder/blocks text textured version/small rectangle 2x2 text textured.png" id="2_an1e4"]
+[ext_resource type="Texture2D" uid="uid://cfwermutn4p8b" path="res://assets/Art Folder/blocks text textured version/small rectangle 2x2 text textured.png" id="2_an1e4"]
 
 [resource]
 script = ExtResource("1_pesfl")

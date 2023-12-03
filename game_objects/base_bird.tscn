@@ -1,15 +1,15 @@
 [gd_scene load_steps=20 format=3 uid="uid://cls4p6r4uyhl6"]
 
 [ext_resource type="Script" path="res://scripts/base_bird.gd" id="1_7165y"]
-[ext_resource type="PackedScene" uid="uid://c5hfmi635v4qw" path="res://test_scenes/temp_explosion.tscn" id="2_gw3la"]
-[ext_resource type="Texture2D" uid="uid://cnyyhvyfoxlwi" path="res://assets/Art Folder/spritesheets for animation/swansheet_300x364.png" id="2_proxx"]
-[ext_resource type="Texture2D" uid="uid://j3lqkfwjk036" path="res://assets/Art Folder/spritesheets for animation/explosionALTsheet_532x506.png" id="4_a8u8u"]
+[ext_resource type="PackedScene" path="res://test_scenes/temp_explosion.tscn" id="2_gw3la"]
+[ext_resource type="Texture2D" uid="uid://d16w1rafvrcxu" path="res://assets/Art Folder/spritesheets for animation/swansheet_300x364.png" id="2_proxx"]
+[ext_resource type="Texture2D" uid="uid://cak7uf2mp4tyo" path="res://assets/Art Folder/spritesheets for animation/explosionALTsheet_532x506.png" id="4_a8u8u"]
 [ext_resource type="Script" path="res://scripts/audio_manager.gd" id="5_armo8"]
-[ext_resource type="AudioStream" uid="uid://c7sbcsn05ewv6" path="res://assets/sound/Recorded SFX/Bird Impact/Bird Impact 1.wav" id="6_vnajg"]
-[ext_resource type="AudioStream" uid="uid://b4x7jijwoq3js" path="res://assets/sound/Recorded SFX/Bird Impact/Bird Impact 2.wav" id="7_62wot"]
-[ext_resource type="AudioStream" uid="uid://lvv7sxbflehe" path="res://assets/sound/Recorded SFX/Bird Impact/Bird Impact 3.wav" id="8_l6f7r"]
-[ext_resource type="AudioStream" uid="uid://g0whhjttav5l" path="res://assets/sound/Recorded SFX/Bird Impact/Bird Impact 4.wav" id="9_keppp"]
-[ext_resource type="Texture2D" uid="uid://bkmetvri4ed3u" path="res://assets/Art Folder/spritesheets for animation/swanALT1sheet_300x364.png" id="10_vgor4"]
+[ext_resource type="AudioStream" uid="uid://bnyeuun8kwqw1" path="res://assets/sound/Recorded SFX/Bird Impact/Bird Impact 1.wav" id="6_vnajg"]
+[ext_resource type="AudioStream" uid="uid://bexj2o4ondmjq" path="res://assets/sound/Recorded SFX/Bird Impact/Bird Impact 2.wav" id="7_62wot"]
+[ext_resource type="AudioStream" uid="uid://cx8yr5iaq0q4j" path="res://assets/sound/Recorded SFX/Bird Impact/Bird Impact 3.wav" id="8_l6f7r"]
+[ext_resource type="AudioStream" uid="uid://cl3mb4w5kakw1" path="res://assets/sound/Recorded SFX/Bird Impact/Bird Impact 4.wav" id="9_keppp"]
+[ext_resource type="Texture2D" uid="uid://q0ocpkn3a53h" path="res://assets/Art Folder/spritesheets for animation/swanALT1sheet_300x364.png" id="10_vgor4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qgnae"]
 radius = 101.079

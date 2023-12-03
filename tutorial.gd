@@ -10,7 +10,6 @@ var cur_text_in: int = 0
 
 func _ready():
 	text_rect.texture = textures[cur_text_in]
-	$next2.hide()
 	$back.hide()
 
 
@@ -23,16 +22,12 @@ func _on_next_pressed():
 		text_rect.texture = textures[cur_text_in]
 		$back.show()
 		if cur_text_in == textures.size() - 1:
+			$start_button.show()
 			$next.hide()
-			$next2.show()
 		else:
+			$start_button.hide()
 			$next.show()
-			$next2.hide()
-	else:
-		cur_text_in += 1
-		text_rect.texture = textures[cur_text_in]
-		$next.hide()
-		$start_button.show()
+		
 	
 	pass # Replace with function body.
 
@@ -50,16 +45,18 @@ func _on_back_pressed():
 		$back.hide()
 	if cur_text_in == textures.size() - 1:
 		$next.hide()
-		$next2.show()
 	else:
 		$next.show()
-		$next2.hide()
 	pass # Replace with function body.
 
 
 func _on_start_button_pressed():
-	$start.play()
+	
+	if (!$start_button.visible):
+		return
+	
+	$button_press.play()
 	await get_tree().create_timer(0.40).timeout
-	$start.stop()
+	$button_press.stop()
 	get_tree().change_scene_to_file("res://levels/" + goto_scene_on_end + ".tscn")
 	pass # Replace with function body.

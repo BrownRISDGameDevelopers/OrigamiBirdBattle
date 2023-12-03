@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://mgtnbkj8b0sm"]
 
 [ext_resource type="Script" path="res://levels/credit_screen.gd" id="1_s8bi4"]
-[ext_resource type="FontFile" uid="uid://b2lvmcmegdsc" path="res://assets/Art Folder/Dekko-Regular.ttf" id="2_a8e40"]
-[ext_resource type="Texture2D" uid="uid://bb3c1ywryxecb" path="res://assets/Art Folder/Credits2.png" id="3_22yud"]
+[ext_resource type="FontFile" uid="uid://7dwv3y0hrkox" path="res://assets/Art Folder/Dekko-Regular.ttf" id="2_a8e40"]
+[ext_resource type="Texture2D" uid="uid://7x3aial12xxo" path="res://assets/Art Folder/Credits2.png" id="3_22yud"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7rg46"]
 font = ExtResource("2_a8e40")

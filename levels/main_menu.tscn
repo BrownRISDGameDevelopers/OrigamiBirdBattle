@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dvx56heuihmeh"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_5lls4"]
-[ext_resource type="Texture2D" uid="uid://401m2fxah671" path="res://assets/Art Folder/main-menu.png" id="5_jp2v3"]
+[ext_resource type="Texture2D" uid="uid://drn0rysmt5hnr" path="res://assets/Art Folder/main-menu.png" id="5_jp2v3"]
 [ext_resource type="Script" path="res://scripts/audio_manager.gd" id="5_tgi12"]
-[ext_resource type="AudioStream" uid="uid://ctd13d6wkfb16" path="res://assets/sound/paper_crinkle.mp3" id="6_gkpwo"]
-[ext_resource type="AudioStream" uid="uid://ctt2q50ouuuh2" path="res://assets/Music/background music 1.mp3" id="6_plmjh"]
-[ext_resource type="AudioStream" uid="uid://bebcrweovw7w3" path="res://assets/Music/background music 2.mp3" id="7_060ya"]
+[ext_resource type="AudioStream" uid="uid://iroh2gmajqys" path="res://assets/sound/paper_crinkle.mp3" id="6_gkpwo"]
+[ext_resource type="AudioStream" uid="uid://b31bg7gygupgx" path="res://assets/Music/background music 1.mp3" id="6_plmjh"]
+[ext_resource type="AudioStream" uid="uid://3f72ujoq2ht" path="res://assets/Music/background music 2.mp3" id="7_060ya"]
 
 [node name="Node2D" type="Node2D"]
 

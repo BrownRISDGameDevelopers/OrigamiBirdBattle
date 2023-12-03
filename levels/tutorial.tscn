@@ -1,18 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://cpxwq6pd1oxm5"]
+[gd_scene load_steps=9 format=3 uid="uid://cpxwq6pd1oxm5"]
 
 [ext_resource type="Script" path="res://tutorial.gd" id="1_4t6en"]
-[ext_resource type="Texture2D" uid="uid://dv1p64qynxbrd" path="res://assets/Art Folder/Tutorial Frames/tutorial1.png" id="2_ayx6o"]
-[ext_resource type="Texture2D" uid="uid://dtqcvoqlf4e1b" path="res://assets/Art Folder/Tutorial Frames/tutorial2.png" id="3_cto1u"]
-[ext_resource type="Texture2D" uid="uid://kcih5li282u0" path="res://assets/Art Folder/Tutorial Frames/tutorial3.png" id="4_06ava"]
-[ext_resource type="Texture2D" uid="uid://cv2tj1tra83k2" path="res://assets/Art Folder/Tutorial Frames/tutorial4.png" id="5_mnw4k"]
-[ext_resource type="Texture2D" uid="uid://bdr0cvcxblant" path="res://assets/Art Folder/backgrounds/bg-blur.png" id="6_pcnqx"]
-[ext_resource type="Texture2D" uid="uid://b74p05q06yuy4" path="res://assets/Art Folder/Tutorial Frames/tutorial_arrow.png" id="7_2noqi"]
-[ext_resource type="AudioStream" uid="uid://dfxqnhvdqw42u" path="res://assets/sound/Recorded SFX/Crumples/Crumple#03.wav" id="8_1emij"]
-[ext_resource type="AudioStream" uid="uid://cmkfp2pqbg7oj" path="res://assets/sound/Recorded SFX/Crumples/Crumple#02.wav" id="8_qt78a"]
+[ext_resource type="Texture2D" uid="uid://ccnr586hsrcfq" path="res://assets/Art Folder/Tutorial Frames/tutorial1.png" id="2_mspu6"]
+[ext_resource type="Texture2D" uid="uid://c6grtlqpiy3ye" path="res://assets/Art Folder/Tutorial Frames/tutorial2.png" id="3_hsnbg"]
+[ext_resource type="Texture2D" uid="uid://crn4pxttw6v6c" path="res://assets/Art Folder/Tutorial Frames/tutorial3.png" id="4_84agd"]
+[ext_resource type="Texture2D" uid="uid://ckv7yaa1pqtjf" path="res://assets/Art Folder/Tutorial Frames/tutorial4.png" id="5_pyhxa"]
+[ext_resource type="Texture2D" uid="uid://chc84fra4yo7k" path="res://assets/Art Folder/backgrounds/bg-blur.png" id="6_pcnqx"]
+[ext_resource type="Texture2D" uid="uid://jr66bhn3gcxa" path="res://assets/Art Folder/Tutorial Frames/tutorial_arrow.png" id="7_2noqi"]
+[ext_resource type="AudioStream" uid="uid://iroh2gmajqys" path="res://assets/sound/paper_crinkle.mp3" id="8_en6ht"]
 
 [node name="Root2" type="Node2D"]
 script = ExtResource("1_4t6en")
-textures = Array[CompressedTexture2D]([ExtResource("2_ayx6o"), ExtResource("3_cto1u"), ExtResource("4_06ava"), ExtResource("5_mnw4k")])
+textures = Array[CompressedTexture2D]([ExtResource("2_mspu6"), ExtResource("3_hsnbg"), ExtResource("4_84agd"), ExtResource("5_pyhxa")])
 goto_scene_on_end = "renovated"
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -31,6 +30,14 @@ offset_bottom = 40.0
 scale = Vector2(0.299991, 0.298927)
 texture = ExtResource("6_pcnqx")
 
+[node name="start_button" type="Button" parent="."]
+visible = false
+z_index = -2
+offset_left = 768.0
+offset_top = 472.0
+offset_right = 920.0
+offset_bottom = 600.0
+
 [node name="next" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 999.0
@@ -46,27 +53,7 @@ offset_bottom = 234.0
 scale = Vector2(0.248447, 0.259587)
 texture = ExtResource("7_2noqi")
 
-[node name="next2" type="Button" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = 1004.0
-offset_top = 531.0
-offset_right = 1085.0
-offset_bottom = 591.0
-rotation = -0.00312995
-text = "Next"
-
-[node name="TextureRect" type="TextureRect" parent="next2"]
-layout_mode = 0
-offset_left = -197.0
-offset_top = -53.0
-offset_right = 135.0
-offset_bottom = 181.0
-rotation = 0.368289
-scale = Vector2(0.355083, 0.371004)
-texture = ExtResource("7_2noqi")
-
 [node name="back" type="Button" parent="."]
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 65.0
 offset_top = 524.0
@@ -85,25 +72,10 @@ scale = Vector2(0.284883, 0.312528)
 texture = ExtResource("7_2noqi")
 flip_h = true
 
-[node name="start_button" type="Button" parent="."]
-visible = false
-self_modulate = Color(1, 1, 1, 0)
-offset_left = 815.0
-offset_top = 478.0
-offset_right = 928.0
-offset_bottom = 547.0
-rotation = 0.390578
-scale = Vector2(1.09445, 1.25502)
+[node name="button_press" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_en6ht")
+pitch_scale = 2.0
 
-[node name="button_pressed" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_1emij")
-volume_db = -10.0
-
-[node name="start" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_qt78a")
-volume_db = -15.0
-
+[connection signal="button_down" from="start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="next2" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]

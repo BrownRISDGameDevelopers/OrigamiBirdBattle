@@ -10,6 +10,12 @@ signal finish()
 var loop_time
 @export var loop_time_up = float(700)
 @export var loop_time_down = float(100)
+@export var speed: float = 10
+@export var delay_min: float = .75
+@export var delay_max: float = 1
+
+var delay = 0
+
 var current_time
 var distance
 var indicator
@@ -73,24 +79,29 @@ func _process(delta):
 #			_timing_press(2)
 #		elif Input.is_action_just_released("fold_right"):
 #			_timing_press(3)
-			
-		if miss_flag:
-#			print("miss")
-			miss_time = miss_time + 1
-			if miss_time > miss_punish:
-				miss_flag = false
-				miss_time = 0
+		
+		if (delay <= 0):
+			if miss_flag:
+	#			print("miss")
+				miss_time = miss_time + 1
+				if miss_time > miss_punish:
+					miss_flag = false
+					miss_time = 0
+			else:
+				current_time = current_time + loop_dir * delta * speed 
+				
+				if current_time > loop_time or current_time < 0: 
+					if loop_dir == 1:
+						current_time = loop_time - 1
+					else:
+						current_time = 1
+					loop_dir = loop_dir * -1
 		else:
-			current_time = current_time + loop_dir
-			loop_percent = current_time / loop_time
-			indicator.set_position(Vector2(indicator_pos.x, (loop_percent * distance) - (distance / 2)))
-			indicator_pos = indicator.get_position()
-			if current_time > loop_time or current_time < 0: 
-				if loop_dir == 1:
-					current_time = loop_time - 1
-				else:
-					current_time = 1
-				loop_dir = loop_dir * -1
+			delay -= delta
+		
+		loop_percent = current_time / loop_time
+		indicator.set_position(Vector2(indicator_pos.x, (loop_percent * distance) - (distance / 2)))
+		indicator_pos = indicator.get_position()
 	pass
 	
 func start_rounds(num):
@@ -112,9 +123,11 @@ func _start_game():
 	
 	steps[repeat_count].visible = true
 	
-	current_time = randf_range(0, 50)
-	loop_percent = randf_range(0, 50)
+	current_time = randf_range(0, 5)
+#	loop_percent = randf_range(0, 50)
 	loop_dir = 1 # 1 is down, -1 is up
+	
+	delay = rng.randf_range(delay_min, delay_max)
 	
 	goal_y = goal.get_position().y
 	goal_range = ((kindness / 2.0) / 100.0) * distance

@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnihb678mukdo"]
+[gd_scene load_steps=5 format=3 uid="uid://n1uqhjmdixxx"]
 
 [ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="1_d8dh7"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_pac4c"]
-[ext_resource type="Texture2D" uid="uid://cfwermutn4p8b" path="res://assets/Art Folder/blocks text textured version/small rectangle 2x2 text textured.png" id="3_sucv7"]
+[ext_resource type="Texture2D" uid="uid://bm8nrl2d2dcdq" path="res://assets/Art Folder/blocks text textured version/small rectangle 2x2 text textured.png" id="3_sucv7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbac0"]
 size = Vector2(480, 240)

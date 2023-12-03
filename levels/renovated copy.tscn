@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://gbvopuoe0kt8" path="res://game_objects/folding_minigame.tscn" id="7_vbw40"]
 [ext_resource type="PackedScene" uid="uid://dsenqsyvi5a6o" path="res://test_scenes/bird-launcher.tscn" id="8_jd12v"]
 [ext_resource type="PackedScene" uid="uid://7a3oyt2rsyhf" path="res://game_objects/blocks/block_base.tscn" id="9_tnn66"]
-[ext_resource type="Texture2D" uid="uid://clqjlmmu8h11k" path="res://assets/Art Folder/backgrounds/background-floor-tex-2.png" id="10_sqtde"]
+[ext_resource type="Texture2D" uid="uid://b8ty63l1f7wrc" path="res://assets/Art Folder/backgrounds/background-floor-tex-2.png" id="10_sqtde"]
 [ext_resource type="Script" path="res://levels/Label.gd" id="12_q87wk"]
-[ext_resource type="FontFile" uid="uid://djnmhny3cbwm2" path="res://assets/Art Folder/Dekko-Regular.ttf" id="13_i8qtn"]
+[ext_resource type="FontFile" uid="uid://bhqcavnlkhvbs" path="res://assets/Art Folder/Dekko-Regular.ttf" id="13_i8qtn"]
 [ext_resource type="Script" path="res://levels/MainUI.gd" id="13_rj3vm"]
 [ext_resource type="Script" path="res://game_objects/start_message.gd" id="13_uxu28"]
 

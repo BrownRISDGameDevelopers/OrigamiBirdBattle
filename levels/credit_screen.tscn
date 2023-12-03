@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://mgtnbkj8b0sm"]
 
 [ext_resource type="Script" path="res://levels/credit_screen.gd" id="1_s8bi4"]
-[ext_resource type="FontFile" uid="uid://7dwv3y0hrkox" path="res://assets/Art Folder/Dekko-Regular.ttf" id="2_a8e40"]
-[ext_resource type="Texture2D" uid="uid://7x3aial12xxo" path="res://assets/Art Folder/Credits2.png" id="3_22yud"]
+[ext_resource type="FontFile" uid="uid://bhqcavnlkhvbs" path="res://assets/Art Folder/Dekko-Regular.ttf" id="2_a8e40"]
+[ext_resource type="Texture2D" uid="uid://c4nhydnw8ppdx" path="res://assets/Art Folder/drafts/Credits3.png" id="3_mbksm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7rg46"]
 font = ExtResource("2_a8e40")
@@ -97,7 +97,7 @@ scale = Vector2(0.2, 0.2)
 text = "Back"
 label_settings = SubResource("LabelSettings_03inj")
 
-[node name="Credits2" type="Sprite2D" parent="."]
+[node name="Credits3" type="Sprite2D" parent="."]
 position = Vector2(575.5, 322.617)
 scale = Vector2(0.664931, 0.580811)
-texture = ExtResource("3_22yud")
+texture = ExtResource("3_mbksm")

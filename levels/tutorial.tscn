@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpxwq6pd1oxm5"]
+[gd_scene load_steps=9 format=3 uid="uid://cpxwq6pd1oxm5"]
 
 [ext_resource type="Script" path="res://tutorial.gd" id="1_4t6en"]
 [ext_resource type="Texture2D" uid="uid://dxt47y7ek3y0l" path="res://assets/Art Folder/Tutorial Frames/tutorial1.png" id="2_mspu6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cm618ppjqfokt" path="res://assets/Art Folder/Tutorial Frames/tutorial4.png" id="5_pyhxa"]
 [ext_resource type="Texture2D" uid="uid://cgm05g0uwkc5a" path="res://assets/Art Folder/backgrounds/bg-blur.png" id="6_pcnqx"]
 [ext_resource type="Texture2D" uid="uid://dp2v5nwl4cgwc" path="res://assets/Art Folder/Tutorial Frames/tutorial_arrow.png" id="7_2noqi"]
+[ext_resource type="AudioStream" uid="uid://ctd13d6wkfb16" path="res://assets/sound/paper_crinkle.mp3" id="8_en6ht"]
 
 [node name="Root2" type="Node2D"]
 script = ExtResource("1_4t6en")
@@ -81,6 +82,10 @@ offset_bottom = 231.616
 scale = Vector2(0.284883, 0.312528)
 texture = ExtResource("7_2noqi")
 flip_h = true
+
+[node name="button_press" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_en6ht")
+pitch_scale = 2.0
 
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="next2" to="." method="_on_next_pressed"]

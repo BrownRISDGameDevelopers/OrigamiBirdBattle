@@ -24,13 +24,25 @@ func _ready():
 func on_end(player_won: String):
 	end_label.visible = true
 	$GameEnd/EndLabel.text = player_won + " Wins!"
+	if player_won == "Left Player":
+		$GameEnd/LeftWins.show()
+		$GameEnd/RightWins.hide()
+	else:
+		$GameEnd/LeftWins.hide()
+		$GameEnd/RightWins.show()
 	
 
 func on_main_menu():
+	$button_press.play()
+	await get_tree().create_timer(0.40).timeout
+	$button_press.stop()
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(game_end_sceen)
 	
 func on_tutorial():
+	$button_press.play()
+	await get_tree().create_timer(0.40).timeout
+	$button_press.stop()
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(tutorial_screen)
 
@@ -38,6 +50,9 @@ func on_tutorial():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (Input.is_action_just_pressed("pause")):
+		$button_press.play()
+		await get_tree().create_timer(0.40).timeout
+		$button_press.stop()
 		get_tree().paused = !get_tree().paused
 		pause.visible = get_tree().paused
 	

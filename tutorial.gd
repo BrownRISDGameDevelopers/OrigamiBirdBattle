@@ -15,6 +15,9 @@ func _ready():
 
 
 func _on_next_pressed():
+	$button_press.play()
+	await get_tree().create_timer(0.40).timeout
+	$button_press.stop()
 	if (cur_text_in < textures.size() - 1):
 		cur_text_in += 1
 		text_rect.texture = textures[cur_text_in]
@@ -31,6 +34,9 @@ func _on_next_pressed():
 
 
 func _on_back_pressed():
+	$button_press.play()
+	await get_tree().create_timer(0.40).timeout
+	$button_press.stop()
 	if (cur_text_in > 0):
 		cur_text_in -= 1
 		text_rect.texture = textures[cur_text_in]

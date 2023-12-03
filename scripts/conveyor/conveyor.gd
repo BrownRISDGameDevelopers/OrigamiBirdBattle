@@ -4,6 +4,7 @@ class_name Conveyor
 @export var item_num: int = 20
 @onready var conveyor_display: Array = $NinePatchRect/conveyor_grid.get_children()
 @onready var block_timer: Timer = $block_timer
+@onready var inactive = $NinePatchRect/inactive
 signal drop_block(blockdata)
 
 const FILEPATH = "res://resources/block_resources/"
@@ -23,7 +24,9 @@ func _ready():
 	for i in range(conveyor_display.size()):
 		if (i < queue.size()):
 			conveyor_display[i].update(queue[i])
-			
+	
+	inactive.hide()
+
 func addBlock():
 	var blockdata = load(FILEPATH + blocks[randi() % len(blocks)])
 	queue.push_back(blockdata)
@@ -54,6 +57,7 @@ func try_pop():
 		block_free = false
 		block_contacted_ground = false
 		block_timer_timeout = false
+		inactive.show()
 		block_timer.start()
 		pop_block()
 	
@@ -62,10 +66,12 @@ func _setActive():
 	#print("block contacted ground")
 	block_contacted_ground = true
 	if block_timer_timeout:
+		inactive.hide()
 		block_free = true
 
 func _on_block_timer_timeout():
 	print("block timer timeout")
 	block_timer_timeout = true
 	if block_contacted_ground:
+		inactive.hide()
 		block_free = true

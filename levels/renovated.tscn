@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dlel4wfarjd1c"]
+[gd_scene load_steps=25 format=3 uid="uid://dlel4wfarjd1c"]
 
 [ext_resource type="Texture2D" uid="uid://byfbk0kjgersq" path="res://assets/Art Folder/backgrounds/playground-background-revised.png" id="1_yw4wk"]
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_nsr2b"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cpxwq6pd1oxm5" path="res://levels/tutorial.tscn" id="17_27cb3"]
 [ext_resource type="FontFile" uid="uid://b2lvmcmegdsc" path="res://assets/Art Folder/Dekko-Regular.ttf" id="18_rq2gx"]
 [ext_resource type="Texture2D" uid="uid://dqmlsuaa2hp8q" path="res://assets/Art Folder/pause screen.png" id="19_pbhqb"]
+[ext_resource type="Texture2D" uid="uid://ccglase3pttxg" path="res://assets/Art Folder/timer sign.png" id="21_soup3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utvaf"]
 size = Vector2(3836, 1084)
@@ -173,14 +174,23 @@ play_on_ready = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 
 [node name="TimerLabel" type="Label" parent="." node_paths=PackedStringArray("timer")]
-offset_left = 656.0
-offset_top = 1086.0
-offset_right = 1279.0
-offset_bottom = 1221.0
-text = "alkdjflkasdjfa"
+offset_left = 451.0
+offset_top = 1079.0
+offset_right = 1074.0
+offset_bottom = 1240.0
+text = "0w0
+
+"
 label_settings = ExtResource("13_tbsy6")
+horizontal_alignment = 1
 script = ExtResource("12_q87wk")
 timer = NodePath("../Game/Timer")
+
+[node name="TimerSign" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(749, 1446)
+scale = Vector2(0.363047, 0.443295)
+texture = ExtResource("21_soup3")
 
 [node name="UI" type="Control" parent="." node_paths=PackedStringArray("game_manager")]
 process_mode = 3

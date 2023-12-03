@@ -5,6 +5,7 @@ extends Control
 @onready var pause = $Pause
 @export var game_manager: GameManager 
 @export var game_end_sceen: PackedScene
+@export var tutorial_screen: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,7 +13,7 @@ func _ready():
 	end_label.visible = false
 	$GameEnd/MainMenu.button_down.connect(on_main_menu)
 	$Pause/MainMenu.button_down.connect(on_main_menu)
-	$Pause/Resume.button_down.connect(on_resume)
+	$Pause/Tutorial.button_down.connect(on_tutorial)
 	
 	if (game_manager != null):
 		game_manager.connect("game_complete", on_end)
@@ -23,18 +24,35 @@ func _ready():
 func on_end(player_won: String):
 	end_label.visible = true
 	$GameEnd/EndLabel.text = player_won + " Wins!"
+	if player_won == "Left Player":
+		$GameEnd/LeftWins.show()
+		$GameEnd/RightWins.hide()
+	else:
+		$GameEnd/LeftWins.hide()
+		$GameEnd/RightWins.show()
 	
 
 func on_main_menu():
+	$button_press.play()
+	await get_tree().create_timer(0.40).timeout
+	$button_press.stop()
+	get_tree().paused = false
 	get_tree().change_scene_to_packed(game_end_sceen)
 	
-func on_resume():
+func on_tutorial():
+	$button_press.play()
+	await get_tree().create_timer(0.40).timeout
+	$button_press.stop()
 	get_tree().paused = false
-	pause.visible = get_tree().paused
+	get_tree().change_scene_to_packed(tutorial_screen)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (Input.is_action_just_pressed("pause")):
+		$button_press.play()
+		await get_tree().create_timer(0.40).timeout
+		$button_press.stop()
 		get_tree().paused = !get_tree().paused
 		pause.visible = get_tree().paused
 	

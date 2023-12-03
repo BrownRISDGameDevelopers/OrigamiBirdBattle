@@ -1,6 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://dlel4wfarjd1c"]
+[gd_scene load_steps=29 format=3 uid="uid://dlel4wfarjd1c"]
 
-[ext_resource type="Texture2D" uid="uid://46g43yy14gm8" path="res://assets/Art Folder/backgrounds/playground-background-revised.png" id="1_yw4wk"]
+[ext_resource type="Texture2D" uid="uid://byfbk0kjgersq" path="res://assets/Art Folder/backgrounds/playground-background-revised.png" id="1_yw4wk"]
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="2_nsr2b"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_mjl51"]
 [ext_resource type="Script" path="res://scripts/player_manager.gd" id="4_cvtrv"]
@@ -8,27 +8,34 @@
 [ext_resource type="PackedScene" uid="uid://ct7132vh51c8q" path="res://test_scenes/check_height.tscn" id="6_r0jvv"]
 [ext_resource type="PackedScene" uid="uid://gbvopuoe0kt8" path="res://game_objects/folding_minigame.tscn" id="7_vbw40"]
 [ext_resource type="PackedScene" uid="uid://dsenqsyvi5a6o" path="res://test_scenes/bird-launcher.tscn" id="8_jd12v"]
-[ext_resource type="Texture2D" uid="uid://clqjlmmu8h11k" path="res://assets/Art Folder/backgrounds/background-floor-tex-2.png" id="10_sqtde"]
+[ext_resource type="Texture2D" uid="uid://cfut18h473sjm" path="res://assets/Art Folder/backgrounds/background-floor-tex-2.png" id="10_sqtde"]
 [ext_resource type="Script" path="res://scripts/audio_manager.gd" id="11_bf1fp"]
-[ext_resource type="AudioStream" uid="uid://b8bk7jqd77vm2" path="res://assets/Music/background music 1.mp3" id="12_m2nlu"]
+[ext_resource type="AudioStream" uid="uid://ctt2q50ouuuh2" path="res://assets/Music/background music 1.mp3" id="12_m2nlu"]
 [ext_resource type="Script" path="res://levels/Label.gd" id="12_q87wk"]
 [ext_resource type="Script" path="res://levels/MainUI.gd" id="13_rj3vm"]
 [ext_resource type="LabelSettings" uid="uid://csv4pvy2jn3pd" path="res://default_label.tres" id="13_tbsy6"]
 [ext_resource type="Script" path="res://game_objects/start_message.gd" id="13_uxu28"]
-[ext_resource type="AudioStream" uid="uid://bg7mhgkqgop3p" path="res://assets/Music/background music 2.mp3" id="13_y5ye8"]
+[ext_resource type="AudioStream" uid="uid://bebcrweovw7w3" path="res://assets/Music/background music 2.mp3" id="13_y5ye8"]
 [ext_resource type="PackedScene" uid="uid://dvx56heuihmeh" path="res://levels/main_menu.tscn" id="15_0chs3"]
-[ext_resource type="FontFile" uid="uid://djnmhny3cbwm2" path="res://assets/Art Folder/Dekko-Regular.ttf" id="18_rq2gx"]
+[ext_resource type="PackedScene" uid="uid://cpxwq6pd1oxm5" path="res://levels/tutorial.tscn" id="17_27cb3"]
+[ext_resource type="FontFile" uid="uid://b2lvmcmegdsc" path="res://assets/Art Folder/Dekko-Regular.ttf" id="18_rq2gx"]
+[ext_resource type="Texture2D" uid="uid://dqmlsuaa2hp8q" path="res://assets/Art Folder/pause screen.png" id="19_pbhqb"]
+[ext_resource type="Texture2D" uid="uid://bj7kl6bo6jj1r" path="res://assets/Art Folder/timer frames/timerbg1.png" id="20_sesfc"]
+[ext_resource type="Texture2D" uid="uid://dkucumyw4hnr2" path="res://assets/Art Folder/win lose scene/pink left wins.png" id="21_sdx5n"]
+[ext_resource type="Texture2D" uid="uid://ccglase3pttxg" path="res://assets/Art Folder/timer sign.png" id="21_soup3"]
+[ext_resource type="Texture2D" uid="uid://dkpjkugofxqc" path="res://assets/Art Folder/win lose scene/green right wins.png" id="22_x4hsk"]
+[ext_resource type="AudioStream" uid="uid://ctd13d6wkfb16" path="res://assets/sound/paper_crinkle.mp3" id="25_36oy3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utvaf"]
 size = Vector2(3836, 1084)
 
-[sub_resource type="LabelSettings" id="LabelSettings_gceno"]
-font = ExtResource("18_rq2gx")
-font_size = 128
-
 [sub_resource type="LabelSettings" id="LabelSettings_cx0tl"]
 font = ExtResource("18_rq2gx")
 font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_gceno"]
+font = ExtResource("18_rq2gx")
+font_size = 128
 
 [node name="Root3" type="Node2D"]
 
@@ -171,24 +178,35 @@ play_on_ready = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 
 [node name="TimerLabel" type="Label" parent="." node_paths=PackedStringArray("timer")]
-offset_left = 656.0
-offset_top = 1086.0
-offset_right = 1279.0
-offset_bottom = 1221.0
-text = "alkdjflkasdjfa"
+offset_left = 451.0
+offset_top = 1079.0
+offset_right = 1074.0
+offset_bottom = 1240.0
+text = "0w0
+
+"
 label_settings = ExtResource("13_tbsy6")
+horizontal_alignment = 1
 script = ExtResource("12_q87wk")
 timer = NodePath("../Game/Timer")
+
+[node name="TimerSign" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(757, 1426)
+scale = Vector2(0.283049, 0.403295)
+texture = ExtResource("21_soup3")
 
 [node name="UI" type="Control" parent="." node_paths=PackedStringArray("game_manager")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1504.0
+offset_left = -3.0
+offset_right = 1501.0
 offset_bottom = 944.0
 script = ExtResource("13_rj3vm")
 game_manager = NodePath("../Game")
 game_end_sceen = ExtResource("15_0chs3")
+tutorial_screen = ExtResource("17_27cb3")
 
 [node name="OnGameStart" type="Control" parent="UI"]
 process_mode = 1
@@ -212,12 +230,31 @@ offset_top = 272.0
 offset_right = 751.296
 offset_bottom = -343.552
 text = "
+Ready...
 "
 label_settings = ExtResource("13_tbsy6")
 horizontal_alignment = 1
 script = ExtResource("13_uxu28")
 
+[node name="TextureRect" type="TextureRect" parent="UI/OnGameStart/Label"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -348.5
+offset_top = -377.0
+offset_right = 621.5
+offset_bottom = 378.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("20_sesfc")
+
 [node name="GameEnd" type="Control" parent="UI"]
+z_index = 1000
 layout_mode = 1
 anchor_left = -0.426
 anchor_top = -0.22
@@ -228,7 +265,27 @@ offset_top = 207.68
 offset_right = -591.264
 offset_bottom = -464.4
 
-[node name="MainMenu" type="Button" parent="UI/GameEnd"]
+[node name="EndOverlay" type="ColorRect" parent="UI/GameEnd"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2624.0
+offset_top = -835.0
+offset_right = 2376.0
+offset_bottom = 1165.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.00172754
+pivot_offset = Vector2(2.08165e-12, 2.08165e-12)
+color = Color(0, 0, 0, 0.505882)
+
+[node name="MainMenuOld" type="Button" parent="UI/GameEnd"]
+visible = false
+z_index = 1
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -242,6 +299,7 @@ scale = Vector2(3, 3)
 text = "Main Menu"
 
 [node name="EndLabel" type="Label" parent="UI/GameEnd"]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.904
@@ -251,13 +309,50 @@ offset_top = 256.0
 offset_right = 751.296
 offset_bottom = -343.552
 text = "
-"
+Blank Wins!"
 label_settings = ExtResource("13_tbsy6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="LeftWins" type="TextureRect" parent="UI/GameEnd"]
+layout_mode = 0
+offset_left = -566.0
+offset_top = -255.0
+offset_right = 1887.0
+offset_bottom = 1258.0
+texture = ExtResource("21_sdx5n")
+
+[node name="RightWins" type="TextureRect" parent="UI/GameEnd"]
+layout_mode = 0
+offset_left = -441.0
+offset_top = -262.0
+offset_right = 1998.0
+offset_bottom = 1249.0
+texture = ExtResource("22_x4hsk")
+
+[node name="MainMenu" type="Button" parent="UI/GameEnd"]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 650.0
+offset_right = 592.0
+offset_bottom = 681.0
+scale = Vector2(5.04, 5.04)
+text = "
+"
+
+[node name="Label" type="Label" parent="UI/GameEnd/MainMenu"]
+layout_mode = 0
+offset_left = 7.14288
+offset_right = 411.143
+offset_bottom = 167.0
+scale = Vector2(0.2, 0.2)
+text = "Main Menu
+"
+label_settings = SubResource("LabelSettings_cx0tl")
+
 [node name="Pause" type="Label" parent="UI"]
-z_index = 2
+visible = false
+z_index = 1000
 layout_mode = 0
 offset_left = -688.0
 offset_top = 184.0
@@ -267,20 +362,25 @@ text = "Paused"
 label_settings = SubResource("LabelSettings_gceno")
 horizontal_alignment = 1
 
-[node name="PauseOverlay" type="ColorRect" parent="UI/Pause"]
+[node name="PauseScreen" type="Sprite2D" parent="UI/Pause"]
+z_index = 3
+position = Vector2(1419, 359)
+texture = ExtResource("19_pbhqb")
+
+[node name="PauseOverlay" type="ColorRect" parent="UI/Pause/PauseScreen"]
 z_index = -1
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -2591.5
-offset_top = -976.0
-offset_right = 2408.5
-offset_bottom = 1024.0
+offset_left = -3495.0
+offset_top = -1536.0
+offset_right = 1505.0
+offset_bottom = 464.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 0.00172754
 pivot_offset = Vector2(2.08165e-12, 2.08165e-12)
 color = Color(0, 0, 0, 0.505882)
 
@@ -292,13 +392,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -140.5
-offset_top = 84.0
-offset_right = -52.4999
-offset_bottom = 114.0
+offset_left = -351.5
+offset_top = 195.0
+offset_right = -263.5
+offset_bottom = 225.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
+scale = Vector2(8.25183, 6.77472)
 
 [node name="Label" type="Label" parent="UI/Pause/MainMenu"]
 layout_mode = 0
@@ -310,7 +410,7 @@ text = "Main Menu
 "
 label_settings = SubResource("LabelSettings_cx0tl")
 
-[node name="Resume" type="Button" parent="UI/Pause"]
+[node name="Tutorial" type="Button" parent="UI/Pause"]
 z_index = 2
 layout_mode = 1
 anchors_preset = 8
@@ -318,15 +418,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -141.5
-offset_top = -114.0
-offset_right = -53.4999
-offset_bottom = -84.0
+offset_left = -283.5
+offset_top = -96.9999
+offset_right = -195.5
+offset_bottom = -66.9999
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
+scale = Vector2(5.9865, 7.22967)
 
-[node name="Label" type="Label" parent="UI/Pause/Resume"]
+[node name="Label" type="Label" parent="UI/Pause/Tutorial"]
 layout_mode = 0
 offset_left = 12.9999
 offset_right = 323.0
@@ -335,6 +435,10 @@ scale = Vector2(0.2, 0.2)
 text = "Resume
 "
 label_settings = SubResource("LabelSettings_cx0tl")
+
+[node name="button_press" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("25_36oy3")
+pitch_scale = 2.0
 
 [editable path="Game/Player1/Firing"]
 [editable path="Game/Player2/Firing"]

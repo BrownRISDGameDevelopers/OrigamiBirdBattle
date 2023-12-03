@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dx1tooh4y5g1m"]
+[gd_scene load_steps=5 format=3 uid="uid://cnihb678mukdo"]
 
 [ext_resource type="Script" path="res://scripts/blocks/base_block.gd" id="1_d8dh7"]
 [ext_resource type="Script" path="res://scripts/health.gd" id="2_pac4c"]

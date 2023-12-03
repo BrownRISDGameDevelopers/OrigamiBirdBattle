@@ -10,19 +10,24 @@ var cur_text_in: int = 0
 
 func _ready():
 	text_rect.texture = textures[cur_text_in]
-
-	
-		
+	$next2.hide()
+	$back.hide()
 
 
 func _on_next_pressed():
-	$button_pressed.play()
+	$button_press.play()
 	await get_tree().create_timer(0.40).timeout
-	$button_pressed.stop()
-	if (cur_text_in < textures.size() - 2):
+	$button_press.stop()
+	if (cur_text_in < textures.size() - 1):
 		cur_text_in += 1
 		text_rect.texture = textures[cur_text_in]
 		$back.show()
+		if cur_text_in == textures.size() - 1:
+			$next.hide()
+			$next2.show()
+		else:
+			$next.show()
+			$next2.hide()
 	else:
 		cur_text_in += 1
 		text_rect.texture = textures[cur_text_in]
@@ -33,9 +38,9 @@ func _on_next_pressed():
 
 
 func _on_back_pressed():
-	$button_pressed.play()
+	$button_press.play()
 	await get_tree().create_timer(0.40).timeout
-	$button_pressed.stop()
+	$button_press.stop()
 	if (cur_text_in > 0):
 		cur_text_in -= 1
 		text_rect.texture = textures[cur_text_in]
@@ -43,6 +48,12 @@ func _on_back_pressed():
 		$start_button.hide()
 	if (cur_text_in == 0):
 		$back.hide()
+	if cur_text_in == textures.size() - 1:
+		$next.hide()
+		$next2.show()
+	else:
+		$next.show()
+		$next2.hide()
 	pass # Replace with function body.
 
 

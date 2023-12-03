@@ -21,6 +21,7 @@ offset_top = 38.0
 offset_right = 1205.0
 offset_bottom = 686.0
 scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_pyhxa")
 expand_mode = 2
 
 [node name="gameplay_blurred" type="TextureRect" parent="."]
@@ -45,6 +46,25 @@ offset_bottom = 234.0
 scale = Vector2(0.248447, 0.259587)
 texture = ExtResource("7_2noqi")
 
+[node name="next2" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 1004.0
+offset_top = 531.0
+offset_right = 1085.0
+offset_bottom = 591.0
+rotation = -0.00312995
+text = "Next"
+
+[node name="TextureRect" type="TextureRect" parent="next2"]
+layout_mode = 0
+offset_left = -197.0
+offset_top = -53.0
+offset_right = 135.0
+offset_bottom = 181.0
+rotation = 0.368289
+scale = Vector2(0.355083, 0.371004)
+texture = ExtResource("7_2noqi")
+
 [node name="back" type="Button" parent="."]
 visible = false
 self_modulate = Color(1, 1, 1, 0)
@@ -56,6 +76,7 @@ scale = Vector2(0.883226, 0.838815)
 text = "Back"
 
 [node name="TextureRect2" type="TextureRect" parent="back"]
+layout_mode = 0
 offset_left = 2.26443
 offset_top = -2.3844
 offset_right = 334.264
@@ -83,5 +104,6 @@ stream = ExtResource("8_qt78a")
 volume_db = -15.0
 
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="next2" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
